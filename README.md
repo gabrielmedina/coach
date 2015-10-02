@@ -6,7 +6,7 @@ Application for managing information in the training programs used by body build
 
 ## How to contribute
 
-You can contribute to this project . However , this can not be used commercially.
+You can contribute to this project. However, this can not be used commercially.
 
 Fork this project and send us your pull request.
 
