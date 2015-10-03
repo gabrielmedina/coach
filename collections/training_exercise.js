@@ -15,7 +15,7 @@ Schemas.TrainingExercise = new SimpleSchema({
     type: String,
     label: 'Treinamento',
     optional: false
-  }
+  },
 
   sets: {
     type: Number,
