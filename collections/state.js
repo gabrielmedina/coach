@@ -9,6 +9,12 @@ Schemas.State = new SimpleSchema({
     type: String,
     label: 'Nome',
     optional: false
+  },
+
+  uf: {
+    type: String,
+    label: 'UF',
+    optional: false
   }
 });
 
