@@ -11,14 +11,14 @@ Schemas.Training = new SimpleSchema({
     optional: false
   },
 
-  practitioner: {
-    type: Object,
+  practitioner_id: {
+    type: String,
     label: 'Praticante',
     optional: false
   },
 
-  instructor: {
-    type: Object,
+  instructor_id: {
+    type: String,
     label: 'Instrutor',
     optional: false
   },
