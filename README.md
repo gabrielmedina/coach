@@ -6,14 +6,29 @@ Application for managing information in the training programs used by body build
 
 ## Models
 
+#### State
+name
+
+#### City
+name, state
+
 #### User
-name, type, emails and password.
+name / type / emails / password / create_at / status
+
+#### Gym
+name / phone / email / users / city / create_at / status
+
+#### Muscle
+name
 
 #### Exercise
-name, muscle, sets, reps, images.
+name / prop / muscle / images / create_at
+
+#### Training Exercise
+exercise / sets / reps / create_at
 
 #### Training
-routine, exercises, status, user_id and creator_id.
+routine / training_exercise / practitioner / instructor / create_at / status
 
 
 ## How to contribute
