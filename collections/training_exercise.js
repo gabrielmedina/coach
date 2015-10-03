@@ -7,13 +7,13 @@ var Schemas = {};
 Schemas.TrainingExercise = new SimpleSchema({
   exercise_id: {
     type: String,
-    label: 'Exercício',
+    label: 'Referência ao exercício',
     optional: false
   },
 
   training_id: {
     type: String,
-    label: 'Treinamento',
+    label: 'Referência ao treinamento',
     optional: false
   },
 

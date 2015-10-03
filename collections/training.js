@@ -13,13 +13,13 @@ Schemas.Training = new SimpleSchema({
 
   practitioner_id: {
     type: String,
-    label: 'Praticante',
+    label: 'Referência ao praticante',
     optional: false
   },
 
   instructor_id: {
     type: String,
-    label: 'Instrutor',
+    label: 'Referência ao instrutor',
     optional: false
   },
 

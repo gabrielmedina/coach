@@ -25,7 +25,7 @@ Schemas.Gym = new SimpleSchema({
 
   city_id: {
     type: String,
-    label: 'Cidade',
+    label: 'Referência a cidade',
     optional: false
   },
 

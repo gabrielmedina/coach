@@ -11,15 +11,15 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
-  prop: {
+  prop_id: {
     type: String,
-    label: 'Adereço',
+    label: 'Referência ao adereço/equipamento',
     optional: false
   },
 
   muscle_id: {
     type: String,
-    label: 'Músculo',
+    label: 'Referência ao músculo',
     optional: false
   },
 
