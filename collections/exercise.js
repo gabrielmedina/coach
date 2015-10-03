@@ -17,7 +17,7 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
-  muscle: {
+  muscle_id: {
     type: String,
     label: 'Músculo',
     optional: false
