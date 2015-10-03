@@ -11,21 +11,27 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
+  prop: {
+    type: String,
+    label: 'Adereço',
+    optional: false
+  },
+
   muscle: {
     type: String,
     label: 'Músculo',
     optional: false
   },
 
-  sets: {
-    type: Number,
-    label: 'Séries',
+  images: {
+    type: String,
+    label: 'Imagens',
     optional: false
   },
 
-  reps: {
-    type: Number,
-    label: 'Repetições',
+  createdAt: {
+    type: Date,
+    label: 'Criado em',
     optional: false
   }
 });
