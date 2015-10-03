@@ -23,14 +23,8 @@ Schemas.Gym = new SimpleSchema({
     optional: false
   },
 
-  users: {
-    type: [Object],
-    label: 'Usuários',
-    optional: false
-  },
-
-  city: {
-    type: Object,
+  city_id: {
+    type: String,
     label: 'Cidade',
     optional: false
   },

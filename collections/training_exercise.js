@@ -5,11 +5,17 @@ TrainingExercise = new Mongo.Collection('training_exercise');
 var Schemas = {};
 
 Schemas.TrainingExercise = new SimpleSchema({
-  exercise: {
-    type: Object,
+  exercise_id: {
+    type: String,
     label: 'Exercício',
     optional: false
   },
+
+  training_id: {
+    type: String,
+    label: 'Treinamento',
+    optional: false
+  }
 
   sets: {
     type: Number,

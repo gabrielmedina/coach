@@ -11,12 +11,6 @@ Schemas.Training = new SimpleSchema({
     optional: false
   },
 
-  trainingExercise: {
-    type: [Object],
-    label: 'Exercícios',
-    optional: false
-  },
-
   practitioner: {
     type: Object,
     label: 'Praticante',

@@ -11,8 +11,8 @@ Schemas.City = new SimpleSchema({
     optional: false
   },
 
-  state: {
-    type: Object,
+  state_id: {
+    type: String,
     label: 'Estado',
     optional: false
   }
