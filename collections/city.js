@@ -9,12 +9,6 @@ Schemas.City = new SimpleSchema({
     type: String,
     label: 'Nome',
     optional: false
-  },
-
-  state_id: {
-    type: String,
-    label: 'Referência ao estado',
-    optional: false
   }
 });
 
