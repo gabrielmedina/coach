@@ -23,3 +23,5 @@ iron:router
 ejson
 aldeed:collection2
 aldeed:simple-schema
+accounts-base
+accounts-password

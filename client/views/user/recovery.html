@@ -1,0 +1,25 @@
+<template name="userRecovery">
+  {{#if resetPassword}}
+    <form id="form-recovery-send" action="post">
+      <div class="form-field">
+        <label for="password">Nova senha</label>
+        <input type="text" id="new-password-password">
+      </div>
+
+      <div class="form-submit">
+        <input type="submit" value="Trocar senha">
+      </div>
+    </form>
+  {{else}}
+    <form id="form-recovery" action="post">
+      <div class="form-field">
+        <label for="email">E-mail</label>
+        <input type="text" id="recovery-email">
+      </div>
+
+      <div class="form-submit">
+        <input type="submit" value="Send Reset Instructions">
+      </div>
+    </form>
+  {{/if}}
+</template>
