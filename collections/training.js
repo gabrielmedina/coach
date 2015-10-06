@@ -1,6 +1,22 @@
 // collection training
 
-Training = new Mongo.Collection('trainings');
+Training = new Mongo.Collection('trainings', {
+  // transform: function(doc){
+  //   doc.parctitionerObj = User.findOne({
+  //     _id: doc.parctitioner
+  //   });
+  //
+  //   return doc;
+  // },
+  //
+  // transform: function(doc){
+  //   doc.instructorObj = User.findOne({
+  //     _id: doc.instructor
+  //   });
+  //
+  //   return doc;
+  // }
+});
 
 var Schemas = {};
 
@@ -11,13 +27,13 @@ Schemas.Training = new SimpleSchema({
     optional: false
   },
 
-  practitioner_id: {
+  practitioner: {
     type: String,
     label: 'Referência ao praticante',
     optional: false
   },
 
-  instructor_id: {
+  instructor: {
     type: String,
     label: 'Referência ao instrutor',
     optional: false
