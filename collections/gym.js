@@ -1,6 +1,14 @@
 // collection gym
 
-Gym = new Mongo.Collection('gyms');
+Gym = new Mongo.Collection('gyms', {
+  transform: function(doc){
+    doc.cityObj = City.findOne({
+      _id: doc.city
+    });
+
+    return doc;
+  }
+});
 
 var Schemas = {};
 
@@ -23,7 +31,7 @@ Schemas.Gym = new SimpleSchema({
     optional: false
   },
 
-  city_id: {
+  city: {
     type: String,
     label: 'Referência a cidade',
     optional: false
