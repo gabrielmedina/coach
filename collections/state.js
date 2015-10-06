@@ -1,7 +1,7 @@
 // collection state
 
 State = new Mongo.Collection('states', {
-  transform: function(doc) {
+  transform: function(doc){
     doc.citiesObj = City.find({
       _id: { $in: doc.cities }
     });

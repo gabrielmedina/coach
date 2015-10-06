@@ -1,6 +1,22 @@
 // collection exercise
 
-Exercise = new Mongo.Collection('exercises');
+Exercise = new Mongo.Collection('exercises', {
+  transform: function(doc){
+    doc.muscleObj = Muscle.findOne({
+      _id: doc.muscle
+    });
+
+    return doc;
+  },
+
+  transform: function(doc){
+    doc.propObj = Prop.findOne({
+      _id: doc.prop
+    });
+
+    return doc;
+  }
+});
 
 var Schemas = {};
 
@@ -11,13 +27,13 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
-  prop_id: {
+  prop: {
     type: String,
     label: 'Referência ao adereço/equipamento',
     optional: false
   },
 
-  muscle_id: {
+  muscle: {
     type: String,
     label: 'Referência ao músculo',
     optional: false
