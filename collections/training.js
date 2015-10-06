@@ -15,7 +15,15 @@ Training = new Mongo.Collection('trainings', {
   //   });
   //
   //   return doc;
-  // }
+  // },
+
+  transform: function(doc){
+    doc.exercisesObj = Exercise.find({
+      _id: { $in: doc.exercises }
+    });
+
+    return doc;
+  }
 });
 
 var Schemas = {};
@@ -36,6 +44,12 @@ Schemas.Training = new SimpleSchema({
   instructor: {
     type: String,
     label: 'Referência ao instrutor',
+    optional: false
+  },
+
+  exercises: {
+    type: [String],
+    label: 'Referência aos exercícios',
     optional: false
   },
 
