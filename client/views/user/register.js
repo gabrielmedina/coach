@@ -1,12 +1,14 @@
 // user register
 
-Template.register.events({
-  'submit #form-register' : function(e, t) {
+Template.userRegister.events({
+  'submit #form-register': function(e, t) {
     e.preventDefault();
-    var email = t.find('#account-email').value
-    var password = t.find('#account-password').value;
 
-    Accounts.createUser({email: email, password : password}, function(err){
+    var name = t.find('#name').value;
+    var email = t.find('#email').value;
+    var password = t.find('#password').value;
+
+    Accounts.createUser({email: email, password: password}, function(err){
       if(err){
         console.log(err);
       }

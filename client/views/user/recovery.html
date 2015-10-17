@@ -3,7 +3,7 @@
     <form id="form-recovery-send" action="post">
       <div class="form-field">
         <label for="password">Nova senha</label>
-        <input type="text" id="new-password-password">
+        <input type="text" name="password" id="password" required>
       </div>
 
       <div class="form-submit">
@@ -14,11 +14,11 @@
     <form id="form-recovery" action="post">
       <div class="form-field">
         <label for="email">E-mail</label>
-        <input type="text" id="recovery-email">
+        <input type="email" name="email" id="email" required>
       </div>
 
       <div class="form-submit">
-        <input type="submit" value="Send Reset Instructions">
+        <input type="submit" value="Enviar instruções">
       </div>
     </form>
   {{/if}}

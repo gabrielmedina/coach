@@ -1,5 +1,5 @@
 // routes home
 
-Router.route('/', function (){
+Router.route('/', function(){
   this.render('home');
 });

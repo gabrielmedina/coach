@@ -2,16 +2,16 @@
   <form id="form-login" action="post">
     <div class="form-field">
       <label for="email">E-mail</label>
-      <input type="email" id="login-email">
+      <input type="email" name="email" id="email" required>
     </div>
 
     <div class="form-field">
       <label for="password">Senha</label>
-      <input type="password" id="login-password">
+      <input type="password" name="password" id="password" required>
     </div>
 
     <div class="form-submit">
-      <input type="submit" id="login-button" value="Entrar">
+      <input type="submit" value="Entrar">
     </div>
   </form>
 </template>

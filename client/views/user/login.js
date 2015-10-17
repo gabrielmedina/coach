@@ -1,11 +1,11 @@
 // user login
 
 Template.userLogin.events({
-  'submit #form-login' : function(e, t){
+  'submit #form-login': function(e, t){
     e.preventDefault();
 
-    var email = t.find('#login-email').value;
-    var password = t.find('#login-password').value;
+    var email = t.find('#email').value;
+    var password = t.find('#password').value;
 
     Meteor.loginWithPassword(email, password, function(err){
       if(err){

@@ -6,34 +6,31 @@ Template.userRecovery.helpers({
   }
 });
 
-Template.passwordRecovery.events({
-  'submit #form-recovery-send' : function(e, t) {
-    e.preventDefault()
-    var email = trimInput(t.find('#recovery-email').value)
+Template.userRecovery.events({
+  'submit #form-recovery-send': function(e, t) {
+    e.preventDefault();
 
-    if(isNotEmpty(email) && isEmail(email)){
-      Accounts.forgotPassword({email: email}, function(err){
-        if(err){
-          console.log(err)
-        }
-      });
-    }
+    var email = t.find('#email').value;
+
+    Accounts.forgotPassword({email: email}, function(err){
+      if(err){
+        console.log(err)
+      }
+    });
 
     return false;
   },
 
-  'submit #form-recovery' : function(e, t) {
+  'submit #form-recovery': function(e, t) {
     e.preventDefault();
 
-    var pw = t.find('#new-password-password').value;
+    var pw = t.find('#password').value;
 
-    if(isNotEmpty(pw) && isValidPassword(pw)){
-      Accounts.resetPassword(Session.get('resetPassword'), pw, function(err){
-        if(err){
-          console.log(err);
-        }
-      });
-    }
+    Accounts.resetPassword(Session.get('resetPassword'), pw, function(err){
+      if(err){
+        console.log(err);
+      }
+    });
 
     return false;
   }
