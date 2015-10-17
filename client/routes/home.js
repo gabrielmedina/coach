@@ -1,5 +1,9 @@
 // routes home
 
-Router.route('/', function(){
-  this.render('home');
+Router.route('home', {
+  path: '/',
+
+  action: function(){
+    this.render('home');
+  }
 });
