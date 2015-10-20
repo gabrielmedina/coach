@@ -1,5 +1,7 @@
 # Coach
 
+![Coach Logo](http://pasteboard.co/1w0A9IUX.jpg)
+
 Meteor project for app Coach.
 
 Application for managing information in the training programs used by body builders.
@@ -15,6 +17,8 @@ To run the project , just take the Meteor installed on your machine and run the 
 `` cd coach ``
 
 `` meteor ``
+
+`` localhost:3000 ``
 
 :ship:
 
