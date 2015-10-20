@@ -1,6 +1,6 @@
 # Coach
 
-![Coach Logo](https://cdn.pbrd.co/images/1w0A9IUX.jpg)
+![Coach Logo](https://cdn.pbrd.co/images/1w3bK0c4.jpg)
 
 Meteor project for app Coach.
 
