@@ -1,10 +1,13 @@
 # Coach
 
+**[Under development]**
+
 ![Coach Logo](https://cdn.pbrd.co/images/1w3bK0c4.jpg)
 
 Meteor project for app Coach.
 
 Application for managing information in the training programs used by body builders.
+
 
 ## How to contribute
 
@@ -12,13 +15,21 @@ Fork the project and send your pull request.
 
 To run the project , just take the Meteor installed on your machine and run the following commands:
 
-`` git clone git@github.com:gabrielmedina/coach.git ``
+```
+git clone git@github.com:gabrielmedina/coach.git
+```
 
-`` cd coach ``
+```
+cd coach
+```
 
-`` meteor ``
+```javascript
+meteor
+```
 
-`` localhost:3000 ``
+```javascript
+localhost:3000
+```
 
 :ship:
 
