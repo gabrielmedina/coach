@@ -1,21 +1,21 @@
 // collection training
 
 Training = new Mongo.Collection('trainings', {
-  // transform: function(doc){
-  //   doc.parctitionerObj = User.findOne({
-  //     _id: doc.parctitioner
-  //   });
-  //
-  //   return doc;
-  // },
-  //
-  // transform: function(doc){
-  //   doc.instructorObj = User.findOne({
-  //     _id: doc.instructor
-  //   });
-  //
-  //   return doc;
-  // },
+  transform: function(doc){
+    doc.parctitionerObj = Meteor.users.findOne({
+      _id: doc.parctitioner
+    });
+
+    return doc;
+  },
+
+  transform: function(doc){
+    doc.instructorObj = Meteor.users.findOne({
+      _id: doc.instructor
+    });
+
+    return doc;
+  },
 
   transform: function(doc){
     doc.exercisesObj = Exercise.find({
