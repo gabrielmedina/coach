@@ -12,6 +12,10 @@ Router.route('userLogin', {
   }
 });
 
+Router.route('userProfile', {
+  path: '/profile'
+});
+
 Router.route('userRegister', {
   path: '/register',
 
