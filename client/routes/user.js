@@ -13,7 +13,11 @@ Router.route('userLogin', {
 });
 
 Router.route('userProfile', {
-  path: '/profile'
+  path: '/profile',
+
+  waitOn: function(){
+    return Meteor.subscribe('user', Meteor.userId());
+  }
 });
 
 Router.route('userRegister', {
