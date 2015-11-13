@@ -9,7 +9,10 @@ Template.userRegister.events({
 
     var profile = {
       name: t.find('#name').value,
-      type: 3,
+      type: {
+        name: 'Praticante',
+        value: 3
+      },
       status: true
     }
 

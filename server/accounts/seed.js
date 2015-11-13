@@ -8,7 +8,10 @@ Meteor.startup(function() {
 
       profile: {
         name: 'Administrador',
-        type: 1,
+        type: {
+          name: 'Praticante',
+          value: 3
+        },
         status: true
       }
     });
