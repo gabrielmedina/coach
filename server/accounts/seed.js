@@ -7,10 +7,10 @@ Meteor.startup(function() {
       password: 'coach',
 
       profile: {
-        name: 'Administrador',
+        name: 'Coach',
         type: {
-          name: 'Praticante',
-          value: 3
+          name: 'Administrador',
+          value: 1
         },
         status: true
       }
