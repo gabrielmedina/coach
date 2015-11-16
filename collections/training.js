@@ -18,7 +18,7 @@ Training = new Mongo.Collection('trainings', {
   },
 
   transform: function(doc){
-    doc.exercisesObj = Exercise.find({
+    doc.exercisesObj = TrainingExercise.find({
       _id: { $in: doc.exercises }
     });
 
@@ -49,7 +49,7 @@ Schemas.Training = new SimpleSchema({
 
   exercises: {
     type: [String],
-    label: 'Referência aos exercícios',
+    label: 'Referência aos exercícios deste treinamento',
     optional: false
   },
 
