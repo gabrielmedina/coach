@@ -1,0 +1,22 @@
+<template name="cityEdit">
+  <h1>City edit</h1>
+
+  <form id="city-edit" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" placeholder="{{city.name}}" required>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Atualizar">
+    </div>
+  </form>
+
+  {{#if city.status}}
+    <a href="#" id="city-status">Desativar</a>
+  {{else}}
+    <a href="#" id="city-status">Ativar</a>
+
+    <a href="#" id="city-delete">Remover</a>
+  {{/if}}
+</template>

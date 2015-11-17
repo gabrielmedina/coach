@@ -1,6 +1,6 @@
 <template name="userRecovery">
   {{#if resetPassword}}
-    <form id="form-recovery" action="post">
+    <form id="user-recovery" action="post">
       <div class="form-field">
         <label for="password">Nova senha</label>
         <input type="text" name="password" id="password" required>
@@ -11,7 +11,7 @@
       </div>
     </form>
   {{else}}
-    <form id="form-recovery-send" action="post">
+    <form id="user-recovery-send" action="post">
       <div class="form-field">
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" required>

@@ -1,7 +1,7 @@
 // user login
 
 Template.userLogin.events({
-  'submit #form-login': function(e, t){
+  'submit #user-login': function(e, t){
     e.preventDefault();
 
     var email = t.find('#email').value;
