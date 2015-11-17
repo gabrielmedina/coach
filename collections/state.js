@@ -1,14 +1,6 @@
 // collection state
 
-State = new Mongo.Collection('states', {
-  transform: function(doc){
-    doc.citiesObj = City.find({
-      _id: { $in: doc.cities }
-    });
-
-    return doc;
-  }
-});
+State = new Mongo.Collection('states');
 
 var Schemas = {};
 
@@ -25,9 +17,9 @@ Schemas.State = new SimpleSchema({
     optional: false
   },
 
-  cities: {
-    type: [String],
-    label: 'Cidades',
+  status: {
+    type: Boolean,
+    label: 'Status',
     optional: false
   }
 });

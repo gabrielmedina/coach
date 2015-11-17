@@ -1,19 +1,15 @@
-<template name="cityCreate">
-  <h1>City create</h1>
+<template name="stateCreate">
+  <h1>State create</h1>
 
-  <form id="city-create" action="post">
+  <form id="state-create" action="post">
     <div class="form-field">
       <label for="name">Nome</label>
       <input type="text" id="name" name="name" required autofocus>
     </div>
 
     <div class="form-field">
-      <label for="state">Estado</label>
-      <select name="state" id="state" required>
-        {{#each states}}
-          <option value="{{_id}}">{{uf}}</option>
-        {{/each}}
-      </select>
+      <label for="uf">UF</label>
+      <input type="text" id="uf" name="uf" required>
     </div>
 
     <div class="form-submit">

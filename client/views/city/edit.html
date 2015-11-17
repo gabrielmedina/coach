@@ -7,6 +7,15 @@
       <input type="text" id="name" name="name" placeholder="{{city.name}}" required autofocus>
     </div>
 
+    <div class="form-field">
+      <label for="state">Estado</label>
+      <select name="state" id="state" required>
+        {{#each states}}
+          <option value="{{_id}}">{{uf}}</option>
+        {{/each}}
+      </select>
+    </div>
+
     <div class="form-submit">
       <input type="submit" value="Atualizar">
     </div>

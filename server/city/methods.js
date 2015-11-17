@@ -9,8 +9,8 @@ Meteor.methods({
     }
   },
 
-  editCity: function(city){
-    return City.update({ _id: city._id }, { $set: { name: city.name, status: true }});
+  editCity: function(id, city){
+    return City.update({ _id: id }, { $set: city });
   },
 
   deleteCity: function(id){

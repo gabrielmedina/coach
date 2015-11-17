@@ -8,11 +8,11 @@
     <li>
       {{#if status}}
       <a href="/city/edit/{{_id}}">
-        {{name}}
+        {{name}}/{{stateObj.uf}}
       </a>
       {{else}}
       <a class="desabled" href="/city/edit/{{_id}}">
-        {{name}}
+        {{name}}/{{stateObj.name}}
       </a>
       {{/if}}
     </li>

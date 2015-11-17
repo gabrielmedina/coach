@@ -1,7 +1,9 @@
 // city create
 
 Template.cityCreate.helpers({
-
+  states: function(){
+    return State.find({});
+  }
 });
 
 Template.cityCreate.events({
@@ -10,6 +12,7 @@ Template.cityCreate.events({
 
     var city = {
       name: t.find('#name').value,
+      state: t.find('#state').value,
       status: true
     };
 

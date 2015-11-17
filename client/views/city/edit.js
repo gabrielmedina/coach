@@ -3,6 +3,10 @@
 Template.cityEdit.helpers({
   city: function(){
     return City.findOne({ _id: this._id });
+  },
+
+  states: function(){
+    return State.find({});
   }
 });
 
@@ -11,11 +15,11 @@ Template.cityEdit.events({
     e.preventDefault();
 
     var city = {
-      _id: this._id,
-      name: t.find('#name').value
+      name: t.find('#name').value,
+      state: t.find('#state').value
     };
 
-    Meteor.call('editCity', city, function(err){
+    Meteor.call('editCity', this._id, city, function(err){
       if(err){
         console.log(err.reason);
       } else {
