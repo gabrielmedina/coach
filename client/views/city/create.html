@@ -1,3 +1,14 @@
 <template name="cityCreate">
-  <p>Create user</p>
+  <h1>City create</h1>
+  
+  <form id="city-create" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Cadastrar">
+    </div>
+  </form>
 </template>

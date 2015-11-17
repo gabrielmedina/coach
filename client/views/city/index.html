@@ -1,3 +1,21 @@
 <template name="city">
-  <p>City index</p>
+  <h1>Cities</h1>
+
+  <a href="/city/create">Adicionar</a>
+
+  <ul>
+    {{#each cities}}
+    <li>
+      {{#if status}}
+      <a href="/city/edit/{{_id}}">
+        {{name}}
+      </a>
+      {{else}}
+      <a class="desabled" href="/city/edit/{{_id}}">
+        {{name}}
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
 </template>
