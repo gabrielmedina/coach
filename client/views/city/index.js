@@ -2,7 +2,7 @@
 
 Template.city.helpers({
   cities: function(){
-    return City.find({});
+    return City.find({}, {sort: {name: 1}});
   }
 });
 
