@@ -2,7 +2,12 @@
 
 Template.userProfile.helpers({
   user: function(){
-    return Meteor.users.findOne({ _id: Meteor.userId() });
+    var user = Meteor.users.findOne({ _id: Meteor.userId() });
+
+    return {
+      name: user.profile.name,
+      type: user.profile.type.name
+    };
   }
 });
 
