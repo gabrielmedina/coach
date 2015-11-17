@@ -9,6 +9,12 @@ Schemas.City = new SimpleSchema({
     type: String,
     label: 'Nome',
     optional: false
+  },
+
+  status: {
+    type: Boolean,
+    label: 'Status',
+    optional: false
   }
 });
 
