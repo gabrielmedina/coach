@@ -43,12 +43,6 @@ Schemas.TrainingExercise = new SimpleSchema({
     type: Number,
     label: 'Repetições',
     optional: false
-  },
-
-  createAt: {
-    type: Date,
-    label: 'Criado em',
-    optional: false
   }
 });
 

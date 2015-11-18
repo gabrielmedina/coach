@@ -39,15 +39,9 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
-  images: {
-    type: String,
-    label: 'Imagens',
-    optional: false
-  },
-
-  createdAt: {
-    type: Date,
-    label: 'Criado em',
+  status: {
+    type: Boolean,
+    label: 'Status',
     optional: false
   }
 });

@@ -9,6 +9,12 @@ Schemas.Prop = new SimpleSchema({
     type: String,
     label: 'Nome do adereço/equipamento',
     optional: false
+  },
+
+  status: {
+    type: Boolean,
+    label: 'Status',
+    optional: false
   }
 });
 

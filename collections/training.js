@@ -53,12 +53,6 @@ Schemas.Training = new SimpleSchema({
     optional: false
   },
 
-  createAt: {
-    type: Date,
-    label: 'Criado em',
-    optional: false
-  },
-
   status: {
     type: Boolean,
     label: 'Status',
