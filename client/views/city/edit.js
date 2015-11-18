@@ -28,7 +28,7 @@ Template.cityEdit.events({
     });
   },
 
-  'click #city-status': function(e){
+  'click .btn-status': function(e){
     e.preventDefault();
 
     Meteor.call('statusCity', this._id, function(err){
@@ -40,7 +40,7 @@ Template.cityEdit.events({
     });
   },
 
-  'click #city-delete': function(e){
+  'click .btn-delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteCity', this._id, function(err){

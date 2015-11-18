@@ -32,11 +32,11 @@
     </div>
   </form>
 
-  {{#if gym.status}}
-    <a href="#" id="gym-status">Desativar</a>
+  {{#if city.status}}
+    <a href="#" class="btn-status">Desativar</a>
   {{else}}
-    <a href="#" id="gym-status">Ativar</a>
-
-    <a href="#" id="gym-delete">Remover</a>
+    <a href="#" class="btn-status">Ativar</a>
   {{/if}}
+
+  <a href="#" class="btn-delete">Remover</a>
 </template>

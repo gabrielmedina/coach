@@ -25,7 +25,7 @@ Template.stateEdit.events({
     });
   },
 
-  'click #state-status': function(e){
+  'click .btn-status': function(e){
     e.preventDefault();
 
     Meteor.call('statusState', this._id, function(err){
@@ -37,7 +37,7 @@ Template.stateEdit.events({
     });
   },
 
-  'click #state-delete': function(e){
+  'click .btn-delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteState', this._id, function(err){

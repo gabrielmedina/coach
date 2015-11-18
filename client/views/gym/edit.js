@@ -30,7 +30,7 @@ Template.gymEdit.events({
     });
   },
 
-  'click #gym-status': function(e){
+  'click .btn-status': function(e){
     e.preventDefault();
 
     Meteor.call('statusGym', this._id, function(err){
@@ -42,7 +42,7 @@ Template.gymEdit.events({
     });
   },
 
-  'click #gym-delete': function(e){
+  'click .btn-delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteGym', this._id, function(err){
