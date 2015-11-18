@@ -10,6 +10,17 @@ Gym = new Mongo.Collection('gyms', {
   }
 });
 
+
+Gym.before.insert(function(id, doc){
+  doc.createdAt = Date.now();
+});
+
+Gym.before.update(function(id, doc, fields, modifier, options){
+  modifier.$set = modifier.$set || {};
+  modifier.$set.modifiedAt = Date.now();
+});
+
+
 var Schemas = {};
 
 Schemas.Gym = new SimpleSchema({
@@ -34,12 +45,6 @@ Schemas.Gym = new SimpleSchema({
   city: {
     type: String,
     label: 'Referência a cidade',
-    optional: false
-  },
-
-  createAt: {
-    type: Date,
-    label: 'Criado em',
     optional: false
   },
 

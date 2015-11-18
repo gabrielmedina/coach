@@ -1,0 +1,34 @@
+<template name="gymCreate">
+  <h1>Gym create</h1>
+
+  <form id="gym-create" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" required autofocus>
+    </div>
+
+    <div class="form-field">
+      <label for="phone">Telefone</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+
+    <div class="form-field">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-field">
+      <label for="city">City</label>
+
+      <select name="city" id="city">
+        {{#each cities}}
+          <option value="{{_id}}">{{name}}/{{stateObj.uf}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Cadastrar">
+    </div>
+  </form>
+</template>
