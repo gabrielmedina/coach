@@ -1,0 +1,27 @@
+<template name="stateEdit">
+  <h1>State edit</h1>
+
+  <form id="state-edit" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" placeholder="{{state.name}}" required autofocus>
+    </div>
+
+    <div class="form-field">
+      <label for="uf">UF</label>
+      <input type="text" id="uf" name="uf" placeholder="{{state.uf}}" required>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Atualizar">
+    </div>
+  </form>
+
+  {{#if state.status}}
+    <a href="#" id="state-status">Desativar</a>
+  {{else}}
+    <a href="#" id="state-status">Ativar</a>
+
+    <a href="#" id="state-delete">Remover</a>
+  {{/if}}
+</template>

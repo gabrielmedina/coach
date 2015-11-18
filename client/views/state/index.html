@@ -1,0 +1,21 @@
+<template name="state">
+  <h1>States</h1>
+
+  <a href="/state/create">Adicionar</a>
+
+  <ul>
+    {{#each states}}
+    <li>
+      {{#if status}}
+      <a href="/state/edit/{{_id}}">
+        {{name}}
+      </a>
+      {{else}}
+      <a class="desabled" href="/state/edit/{{_id}}">
+        {{name}}
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+</template>
