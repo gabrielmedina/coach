@@ -1,0 +1,21 @@
+<template name="gym">
+  <h1>Gyms</h1>
+
+  <a href="/gym/create">Adicionar</a>
+
+  <ul>
+    {{#each gyms}}
+    <li>
+      {{#if status}}
+      <a href="/gym/edit/{{_id}}">
+        {{name}} - {{cityObj.name}}/{{cityObj.stateObj.uf}}
+      </a>
+      {{else}}
+      <a class="desabled" href="/gym/edit/{{_id}}">
+        {{name}} - {{cityObj.name}}/{{cityObj.stateObj.uf}}
+      </a>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+</template>
