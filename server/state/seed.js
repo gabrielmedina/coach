@@ -1,4 +1,4 @@
-// server seed
+// state seed
 
 Meteor.startup(function() {
   if(State.find({}).count() === 0){
