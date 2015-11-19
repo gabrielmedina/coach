@@ -20,7 +20,7 @@ Meteor.methods({
   statusState: function(id){
     var state = State.findOne({ _id: id });
 
-    if(State.status == true){
+    if(state.status == true){
       State.update({ _id: state._id }, { $set: { status: false }});
     } else {
       State.update({ _id: state._id }, { $set: { status: true }});
