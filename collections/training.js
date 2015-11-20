@@ -26,6 +26,17 @@ Training = new Mongo.Collection('trainings', {
   }
 });
 
+
+Training.before.insert(function(id, doc){
+  doc.createdAt = Date.now();
+});
+
+Training.before.update(function(id, doc, fields, modifier, options){
+  modifier.$set = modifier.$set || {};
+  modifier.$set.modifiedAt = Date.now();
+});
+
+
 var Schemas = {};
 
 Schemas.Training = new SimpleSchema({

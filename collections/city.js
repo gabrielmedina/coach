@@ -10,6 +10,17 @@ City = new Mongo.Collection('cities', {
   }
 });
 
+
+City.before.insert(function(id, doc){
+  doc.createdAt = Date.now();
+});
+
+City.before.update(function(id, doc, fields, modifier, options){
+  modifier.$set = modifier.$set || {};
+  modifier.$set.modifiedAt = Date.now();
+});
+
+
 var Schemas = {};
 
 Schemas.City = new SimpleSchema({
