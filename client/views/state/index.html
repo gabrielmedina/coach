@@ -6,15 +6,9 @@
   <ul>
     {{#each states}}
     <li>
-      {{#if status}}
-      <a href="/state/edit/{{_id}}">
+      <a class="{{checkStatus status}}" href="/state/edit/{{_id}}">
         {{name}}
       </a>
-      {{else}}
-      <a class="desabled" href="/state/edit/{{_id}}">
-        {{name}}
-      </a>
-      {{/if}}
     </li>
     {{/each}}
   </ul>

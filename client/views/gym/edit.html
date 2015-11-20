@@ -1,20 +1,20 @@
 <template name="gymEdit">
   <h1>Gym edit</h1>
 
-  <form id="gym-edit" action="post">
+  <form class="form-edit" action="post">
     <div class="form-field">
       <label for="name">Nome</label>
-      <input type="text" id="name" name="name" required autofocus>
+      <input type="text" id="name" name="name" value="{{gym.name}}" required autofocus>
     </div>
 
     <div class="form-field">
       <label for="phone">Telefone</label>
-      <input type="tel" id="phone" name="phone" required>
+      <input type="tel" id="phone" name="phone" value="{{gym.phone}}" required>
     </div>
 
     <div class="form-field">
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" value="{{gym.email}}" required>
     </div>
 
     <div class="form-field">

@@ -7,7 +7,7 @@ Template.stateEdit.helpers({
 });
 
 Template.stateEdit.events({
-  'submit #state-edit': function(e, t){
+  'submit .form-edit': function(e, t){
     e.preventDefault();
 
     var state = {

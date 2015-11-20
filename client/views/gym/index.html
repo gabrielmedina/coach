@@ -6,15 +6,9 @@
   <ul>
     {{#each gyms}}
     <li>
-      {{#if status}}
-      <a href="/gym/edit/{{_id}}">
+      <a class="{{checkStatus status}}" href="/gym/edit/{{_id}}">
         {{name}} - {{cityObj.name}}/{{cityObj.stateObj.uf}}
       </a>
-      {{else}}
-      <a class="desabled" href="/gym/edit/{{_id}}">
-        {{name}} - {{cityObj.name}}/{{cityObj.stateObj.uf}}
-      </a>
-      {{/if}}
     </li>
     {{/each}}
   </ul>

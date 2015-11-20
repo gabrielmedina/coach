@@ -11,7 +11,7 @@ Template.cityEdit.helpers({
 });
 
 Template.cityEdit.events({
-  'submit #city-edit': function(e, t){
+  'submit .form-edit': function(e, t){
     e.preventDefault();
 
     var city = {
@@ -23,7 +23,7 @@ Template.cityEdit.events({
       if(err){
         console.log(err.reason);
       } else {
-        Router.go('/city');
+        history.back();
       }
     });
   },
@@ -35,7 +35,7 @@ Template.cityEdit.events({
       if(err){
         console.log(err.reason);
       } else {
-        Router.go('/city');
+        history.back();
       }
     });
   },
@@ -47,7 +47,7 @@ Template.cityEdit.events({
       if(err){
         console.log(err.reason);
       } else {
-        Router.go('/city');
+        history.back();
       }
     });
   }

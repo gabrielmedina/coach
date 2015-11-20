@@ -11,7 +11,7 @@ Template.gymEdit.helpers({
 });
 
 Template.gymEdit.events({
-  'submit #gym-edit': function(e, t){
+  'submit .form-edit': function(e, t){
     e.preventDefault();
 
     var gym = {

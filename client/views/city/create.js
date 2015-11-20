@@ -7,7 +7,7 @@ Template.cityCreate.helpers({
 });
 
 Template.cityCreate.events({
-  'submit #city-create': function(e, t){
+  'submit .form-create': function(e, t){
     e.preventDefault();
 
     var city = {

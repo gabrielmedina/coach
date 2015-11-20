@@ -7,7 +7,7 @@ Template.gymCreate.helpers({
 });
 
 Template.gymCreate.events({
-  'submit #gym-create': function(e, t){
+  'submit .form-create': function(e, t){
     e.preventDefault();
 
     var gym = {
