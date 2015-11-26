@@ -1,0 +1,15 @@
+<template name="prop">
+  <h1>Props</h1>
+
+  <a href="/prop/create">Adicionar</a>
+
+  <ul>
+    {{#each props}}
+    <li>
+      <a class="{{checkStatus status}}" href="/prop/edit/{{_id}}">
+        {{name}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>
