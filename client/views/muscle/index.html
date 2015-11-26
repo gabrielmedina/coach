@@ -1,0 +1,15 @@
+<template name="muscle">
+  <h1>Muscles</h1>
+
+  <a href="/muscle/create">Adicionar</a>
+
+  <ul>
+    {{#each muscles}}
+    <li>
+      <a class="{{checkStatus status}}" href="/muscle/edit/{{_id}}">
+        {{name}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>
