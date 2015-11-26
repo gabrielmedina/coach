@@ -1,0 +1,41 @@
+<template name="exerciseEdit">
+  <h1>Exercise edit</h1>
+
+  <form class="form-edit" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" value="{{exercise.name}}" required autofocus>
+    </div>
+
+    <div class="form-field">
+      <label for="prop">Adereço/Equipamento</label>
+      <select name="prop" id="prop">
+        {{#each props}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="muscles">Músculo</label>
+
+      {{#each muscles}}
+      <div class="form-checkbox">
+        <input class="muscles" type="checkbox" name="muscle" id="{{_id}}" value="{{_id}}">
+        <label for="{{_id}}">{{name}}</label>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Atualizar">
+    </div>
+  </form>
+
+  {{#if exercise.status}}
+    <a href="#" class="btn-status">Desativar</a>
+  {{else}}
+    <a href="#" class="btn-status">Ativar</a>
+    <a href="#" class="btn-delete">Remover</a>
+  {{/if}}
+</template>

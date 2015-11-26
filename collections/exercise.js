@@ -2,8 +2,8 @@
 
 Exercise = new Mongo.Collection('exercises', {
   transform: function(doc){
-    doc.muscleObj = Muscle.findOne({
-      _id: doc.muscle
+    doc.musclesObj = Muscle.find({
+      _id: { $in: doc.muscles }
     });
 
     return doc;
@@ -44,9 +44,9 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
-  muscle: {
-    type: String,
-    label: 'Referência ao músculo',
+  muscles: {
+    type: [String],
+    label: 'Referências aos músculos deste treinamento',
     optional: false
   },
 

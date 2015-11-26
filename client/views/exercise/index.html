@@ -1,0 +1,19 @@
+<template name="exercise">
+  <h1>Exercises</h1>
+
+  <a href="/exercise/create">Adicionar</a>
+
+  <ul>
+    {{#each exercises}}
+    <li>
+      <a class="{{checkStatus status}}" href="/exercise/edit/{{_id}}">
+        {{name}} /
+        {{propObj.name}} /
+        {{#each musclesObj}}
+          {{name}}
+        {{/each}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>
