@@ -1,0 +1,33 @@
+<template name="trainingEdit">
+  <h1>Training edit</h1>
+
+  <form class="form-create" action="post">
+    <div class="form-field">
+      <label for="practitioner">Praticante</label>
+      <select name="practitioner" id="practitioner">
+        {{#each practitioners}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-list">
+      {{#each routines}}
+        <a href="/routine/edit/{{_id}}">{{description}}</a>
+      {{else}}
+        <a href="/routine/create">Adicionar rotina</a>
+      {{/each}}
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Atualizar">
+    </div>
+  </form>
+
+  {{#if training.status}}
+    <a href="#" class="btn-status">Desativar</a>
+  {{else}}
+    <a href="#" class="btn-status">Ativar</a>
+    <a href="#" class="btn-delete">Remover</a>
+  {{/if}}
+</template>

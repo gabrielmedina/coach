@@ -1,0 +1,23 @@
+<template name="trainingCreate">
+  <h1>Training create</h1>
+
+  <form class="form-create" action="post">
+    <div class="form-field">
+      <label for="description">Descrição</label>
+      <input type="text" name="description" id="description" required autofocus>
+    </div>
+
+    <div class="form-field">
+      <label for="practitioner">Praticante</label>
+      <select name="practitioner" id="practitioner">
+        {{#each practitioners}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Cadastrar">
+    </div>
+  </form>
+</template>

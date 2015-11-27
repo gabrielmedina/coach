@@ -6,20 +6,12 @@ Training = new Mongo.Collection('trainings', {
       _id: doc.parctitioner
     });
 
-    return doc;
-  },
-
-  transform: function(doc){
     doc.instructorObj = Meteor.users.findOne({
       _id: doc.instructor
     });
 
-    return doc;
-  },
-
-  transform: function(doc){
-    doc.exercisesObj = TrainingExercise.find({
-      _id: { $in: doc.exercises }
+    doc.routinesObj = Routine.find({
+      _id: { $in: doc.routines }
     });
 
     return doc;
@@ -40,9 +32,9 @@ Training.before.update(function(id, doc, fields, modifier, options){
 var Schemas = {};
 
 Schemas.Training = new SimpleSchema({
-  routine: {
+  description: {
     type: String,
-    label: 'Rotina',
+    label: 'Descrição do treinamento',
     optional: false
   },
 
@@ -58,10 +50,10 @@ Schemas.Training = new SimpleSchema({
     optional: false
   },
 
-  exercises: {
+  routines: {
     type: [String],
-    label: 'Referência aos exercícios deste treinamento',
-    optional: false
+    label: 'Referência as rotinas do treinamento',
+    optional: true
   },
 
   status: {
