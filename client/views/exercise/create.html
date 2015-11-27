@@ -1,0 +1,34 @@
+<template name="exerciseCreate">
+  <h1>Exercise create</h1>
+
+  <form class="form-create" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <input type="text" id="name" name="name" required autofocus>
+    </div>
+
+    <div class="form-field">
+      <label for="prop">Adereço/Equipamento</label>
+      <select name="prop" id="prop">
+        {{#each props}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="muscles">Músculo</label>
+
+      {{#each muscles}}
+      <div class="form-checkbox">
+        <input class="muscles" type="checkbox" name="muscle" id="{{_id}}" value="{{_id}}">
+        <label for="{{_id}}">{{name}}</label>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Cadastrar">
+    </div>
+  </form>
+</template>
