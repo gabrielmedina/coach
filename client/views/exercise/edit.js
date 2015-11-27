@@ -18,8 +18,19 @@ Template.exerciseEdit.events({
   'submit .form-edit': function(e, t){
     e.preventDefault();
 
+    var muscles = [];
+    var musclesElements = t.findAll('.muscles');
+
+    for(var i = 0; i < musclesElements.length; i++){
+      if(musclesElements[i].checked){
+        muscles.push(musclesElements[i].value);
+      }
+    }
+
     var exercise = {
-      name: t.find('#name').value
+      name: t.find('#name').value,
+      prop: t.find('#prop').value,
+      muscles: muscles,
     };
 
     Meteor.call('editExercise', this._id, exercise, function(err){

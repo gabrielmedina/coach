@@ -7,11 +7,7 @@
     {{#each exercises}}
     <li>
       <a class="{{checkStatus status}}" href="/exercise/edit/{{_id}}">
-        {{name}} /
-        {{propObj.name}} /
-        {{#each musclesObj}}
-          {{name}}
-        {{/each}}
+        {{name}} - {{propObj.name}}
       </a>
     </li>
     {{/each}}

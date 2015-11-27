@@ -20,7 +20,7 @@ Router.route('exerciseCreate', {
   path: '/exercise/create',
 
   waitOn: function(){
-    return Meteor.subscribe('exercises') && Meteor.subscribe('props') && Meteor.subscribe('muscles');
+    return Meteor.subscribe('props') && Meteor.subscribe('muscles');
   },
 
   onBeforeAction: function(){
