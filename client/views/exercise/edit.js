@@ -6,11 +6,11 @@ Template.exerciseEdit.helpers({
   },
 
   props: function(){
-    return Prop.find({}, {sort: {name: 1}});
+    return Prop.find({}, {sort: { name: 1 }});
   },
 
   muscles: function(){
-    return Muscle.find({}, {sort: {name: 1}});
+    return Muscle.find({}, {sort: { name: 1 }});
   }
 });
 
