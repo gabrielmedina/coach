@@ -4,7 +4,7 @@ Router.route('training', {
   path: '/training',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings');
+    return Meteor.subscribe('trainings') && Meteor.subscribe('users');
   },
 
   onBeforeAction: function(){

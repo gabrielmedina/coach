@@ -2,6 +2,8 @@
   <h1>Training create</h1>
 
   <form class="form-create" action="post">
+    <input type="hidden" id="instrutor" name="instrutor" value="{{currentUser._id}}">
+
     <div class="form-field">
       <label for="description">Descrição</label>
       <input type="text" name="description" id="description" required autofocus>
@@ -11,10 +13,12 @@
       <label for="practitioner">Praticante</label>
       <select name="practitioner" id="practitioner">
         {{#each practitioners}}
-          <option value="{{_id}}">{{name}}</option>
+          <option value="{{_id}}">{{profile.name}}</option>
         {{/each}}
       </select>
     </div>
+
+    
 
     <div class="form-submit">
       <input type="submit" value="Cadastrar">

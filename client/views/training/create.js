@@ -2,7 +2,11 @@
 
 Template.trainingCreate.helpers({
   practitioners: function(){
-    return Meteor.users.find({});
+    return Meteor.users.find({'profile.type.value': 3});
+  },
+
+  instructors: function(){
+    return Meteor.users.find({'profile.type.value': 2});
   }
 });
 
