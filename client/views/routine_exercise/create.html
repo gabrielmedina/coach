@@ -1,0 +1,28 @@
+<template name="routineExerciseCreate">
+  <h1>Routine exercise create</h1>
+
+  <form class="form-create" action="post">
+    <div class="form-field">
+      <label for="name">Exercício</label>
+      <select name="exercise" id="exercise" required autofocus>
+        {{#each exercises}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="sets">Séries</label>
+      <input type="number" id="sets" name="sets" required>
+    </div>
+
+    <div class="form-field">
+      <label for="reps">Repetições</label>
+      <input type="number" id="reps" name="reps" required>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Cadastrar">
+    </div>
+  </form>
+</template>

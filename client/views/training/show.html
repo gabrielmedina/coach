@@ -1,0 +1,21 @@
+<template name="trainingShow">
+  <h1>{{training.description}}</h1>
+
+  <a href="/training/edit/{{_id}}">Editar</a>
+
+  {{#each training.routinesObj}}
+  <section>
+    <h1>{{description}}</h1>
+
+    <ol>
+      {{#each exercisesObj}}
+      <li>
+        <a href="/routine-exercise/show/{{_id}}">
+          {{exerciseObj.name}}
+        </a>
+      </li>
+      {{/each}}
+    </ol>
+  </section>
+  {{/each}}
+</template>

@@ -3,6 +3,14 @@
 Template.trainingEdit.helpers({
   training: function(){
     return Training.findOne({ _id: this._id });
+  },
+
+  practitioners: function(){
+    return Meteor.users.find({'profile.type.value': 3});
+  },
+
+  routines: function(){
+    return Routine.find({});
   }
 });
 
@@ -10,20 +18,21 @@ Template.trainingEdit.events({
   'submit .form-edit': function(e, t){
     e.preventDefault();
 
-    var muscles = [];
-    var musclesElements = t.findAll('.muscles');
+    var routines = [];
+    var routinesElements = t.findAll('.routines');
 
-    for(var i = 0; i < musclesElements.length; i++){
-      if(musclesElements[i].checked){
-        muscles.push(musclesElements[i].value);
+    for(var i = 0; i < routinesElements.length; i++){
+      if(routinesElements[i].checked){
+        routines.push(routinesElements[i].value);
       }
     }
 
     var training = {
-      name: t.find('#name').value,
-      prop: t.find('#prop').value,
-      muscles: muscles,
-    };
+      instructor: t.find('#instructor').value,
+      description: t.find('#description').value,
+      practitioner: t.find('#practitioner').value,
+      routines: routines
+    }
 
     Meteor.call('editTraining', this._id, training, function(err){
       if(err){

@@ -1,0 +1,15 @@
+<template name="routineExercise">
+  <h1>Routine Exercises</h1>
+
+  <a href="/routine-exercise/create">Adicionar</a>
+
+  <ul>
+    {{#each routineExercise}}
+    <li>
+      <a class="{{checkStatus status}}" href="/routine-exercise/edit/{{_id}}">
+        {{exerciseObj.name}} / Séries: {{sets}} - Repetições: {{reps}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>

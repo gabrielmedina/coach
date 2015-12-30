@@ -2,7 +2,7 @@
 
 Template.training.helpers({
   trainings: function(){
-    return Training.find({});
+    return Training.find({}, {sort: {description: 1}});
   },
 
   checkStatus: function(status){

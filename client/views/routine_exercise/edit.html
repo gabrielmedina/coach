@@ -1,0 +1,35 @@
+<template name="routineExerciseEdit">
+  <h1>Routine exercise edit</h1>
+
+  <form class="form-edit" action="post">
+    <div class="form-field">
+      <label for="name">Nome</label>
+      <select name="exercise" id="exercise" required autofocus>
+        {{#each exercises}}
+          <option value="{{_id}}">{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="sets">Séries</label>
+      <input type="number" id="sets" name="sets" value="{{routineExercise.sets}}" required>
+    </div>
+
+    <div class="form-field">
+      <label for="reps">Repetições</label>
+      <input type="number" id="reps" name="reps" value="{{routineExercise.reps}}" required>
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Atualizar">
+    </div>
+  </form>
+
+  {{#if routineExercise.status}}
+    <a href="#" class="btn-status">Desativar</a>
+  {{else}}
+    <a href="#" class="btn-status">Ativar</a>
+    <a href="#" class="btn-delete">Remover</a>
+  {{/if}}
+</template>

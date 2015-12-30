@@ -1,13 +1,13 @@
 <template name="training">
-  <h1>Trainings</h1>
+  <h1>Treinamentos</h1>
 
   <a href="/training/create">Adicionar</a>
 
   <ul>
     {{#each trainings}}
     <li>
-      <a class="{{checkStatus status}}" href="/training/edit/{{_id}}">
-        {{description}} - {{practitionerObj.name}}
+      <a class="{{checkStatus status}}" href="/training/show/{{_id}}">
+        {{description}}
       </a>
     </li>
     {{/each}}

@@ -1,0 +1,25 @@
+<template name="routineCreate">
+  <h1>Routine create</h1>
+
+  <form class="form-create" action="post">
+    <div class="form-field">
+      <label for="description">Descrição</label>
+      <input type="text" name="description" id="description" required>
+    </div>
+
+    <div class="form-field">
+      <label for="exercises">Exercícios</label>
+
+      {{#each exercises}}
+      <div class="form-checkbox">
+        <input class="exercises" type="checkbox" name="exercises" id="{{_id}}" value="{{_id}}">
+        <label for="{{_id}}">{{exerciseObj.name}} / Séries: {{sets}} - Repetições: {{reps}}</label>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="form-submit">
+      <input type="submit" value="Cadastrar">
+    </div>
+  </form>
+</template>

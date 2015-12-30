@@ -1,0 +1,15 @@
+<template name="routine">
+  <h1>Routine</h1>
+
+  <a href="/routine/create">Adicionar</a>
+
+  <ul>
+    {{#each routines}}
+    <li>
+      <a class="{{checkStatus status}}" href="/routine/edit/{{_id}}">
+        {{description}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>

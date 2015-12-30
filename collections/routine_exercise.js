@@ -40,6 +40,12 @@ Schemas.RoutineExercise = new SimpleSchema({
     type: Number,
     label: 'Repetições',
     optional: false
+  },
+
+  status: {
+    type: Boolean,
+    label: 'Status',
+    optional: false
   }
 });
 

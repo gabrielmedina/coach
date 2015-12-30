@@ -1,0 +1,32 @@
+<template name="routineExerciseShow">
+  <h1>{{routineExercise.description}}</h1>
+
+  <section>
+    <h1>{{routineExercise.exerciseObj.name}}</h1>
+
+    <div>
+      <h2>Músculo(s)</h2>
+
+      <ul>
+      {{#each routineExercise.exerciseObj.musclesObj}}
+        <li>{{name}}</li>
+      {{/each}}
+      </ul>
+    </div>
+
+    <div>
+      <h2>Adereço/Equipamento</h2>
+      <p>{{routineExercise.exerciseObj.propObj.name}}</p>
+    </div>
+
+    <div>
+      <h2>Séries</h2>
+      <p>{{routineExercise.sets}}</p>
+
+      <h2>Repetições</h2>
+      <p>{{routineExercise.reps}}</p>
+    </div>
+  </section>
+
+  <a href="#">Feito!</a>
+</template>

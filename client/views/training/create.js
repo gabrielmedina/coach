@@ -5,8 +5,8 @@ Template.trainingCreate.helpers({
     return Meteor.users.find({'profile.type.value': 3});
   },
 
-  instructors: function(){
-    return Meteor.users.find({'profile.type.value': 2});
+  routines: function(){
+    return Routine.find({});
   }
 });
 
@@ -14,10 +14,20 @@ Template.trainingCreate.events({
   'submit .form-create': function(e, t){
     e.preventDefault();
 
+    var routines = [];
+    var routinesElements = t.findAll('.routines');
+
+    for(var i = 0; i < routinesElements.length; i++){
+      if(routinesElements[i].checked){
+        routines.push(routinesElements[i].value);
+      }
+    }
+
     var training = {
+      instructor: t.find('#instructor').value,
       description: t.find('#description').value,
       practitioner: t.find('#practitioner').value,
-      instructor: Meteor.userId(),
+      routines: routines,
       status: true
     }
 

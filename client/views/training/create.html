@@ -2,7 +2,7 @@
   <h1>Training create</h1>
 
   <form class="form-create" action="post">
-    <input type="hidden" id="instrutor" name="instrutor" value="{{currentUser._id}}">
+    <input type="hidden" id="instructor" name="instructor" value="{{currentUser._id}}">
 
     <div class="form-field">
       <label for="description">Descrição</label>
@@ -18,7 +18,16 @@
       </select>
     </div>
 
-    
+    <div class="form-field">
+      <label for="routine">Rotinas</label>
+
+      {{#each routines}}
+      <div class="form-checkbox">
+        <input class="routines" type="checkbox" name="routines" id="{{_id}}" value="{{_id}}">
+        <label for="{{_id}}">{{description}}</label>
+      </div>
+      {{/each}}
+    </div>
 
     <div class="form-submit">
       <input type="submit" value="Cadastrar">

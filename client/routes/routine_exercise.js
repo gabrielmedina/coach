@@ -1,10 +1,10 @@
-// routes training
+// routes routine exercise
 
-Router.route('training', {
-  path: '/training',
+Router.route('routineExercise', {
+  path: '/routine-exercise',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('users') && Meteor.subscribe('routines');
+    return Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
   },
 
   onBeforeAction: function(){
@@ -16,11 +16,11 @@ Router.route('training', {
   }
 });
 
-Router.route('trainingCreate', {
-  path: '/training/create',
+Router.route('routineExerciseCreate', {
+  path: '/routine-exercise/create',
 
   waitOn: function(){
-    return Meteor.subscribe('users') && Meteor.subscribe('routines');
+    return Meteor.subscribe('exercises');
   },
 
   onBeforeAction: function(){
@@ -32,11 +32,11 @@ Router.route('trainingCreate', {
   }
 });
 
-Router.route('trainingEdit', {
-  path: '/training/edit/:_id',
+Router.route('routineExerciseEdit', {
+  path: '/routine-exercise/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('users') && Meteor.subscribe('routines');
+    return Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
   },
 
   data: function(){
@@ -54,11 +54,11 @@ Router.route('trainingEdit', {
   }
 });
 
-Router.route('trainingShow', {
-  path: '/training/show/:_id',
+Router.route('routineExerciseShow', {
+  path: '/routine-exercise/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
+    return Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises') && Meteor.subscribe('props') && Meteor.subscribe('muscles');
   },
 
   data: function(){
