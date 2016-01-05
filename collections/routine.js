@@ -36,6 +36,12 @@ Schemas.Routine = new SimpleSchema({
     optional: true
   },
 
+  training: {
+    type: String,
+    label: 'Referência ao treinamento',
+    optional: false
+  },
+
   status: {
     type: Boolean,
     label: 'Status',

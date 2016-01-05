@@ -42,6 +42,12 @@ Schemas.RoutineExercise = new SimpleSchema({
     optional: false
   },
 
+  routine: {
+    type: String,
+    label: 'Referência a rotina',
+    optional: false
+  },
+
   status: {
     type: Boolean,
     label: 'Status',

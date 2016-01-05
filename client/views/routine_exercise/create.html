@@ -1,7 +1,9 @@
 <template name="routineExerciseCreate">
-  <h1>Nova rotina de exercício</h1>
+  <h1>Rotinas de exercício para {{routine.description}}</h1>
 
   <form class="form-create" action="post">
+    <input type="hidden" id="routine" name="routine" value="{{routine._id}}">
+
     <div class="form-field">
       <label for="name">Exercício</label>
       <select name="exercise" id="exercise" required autofocus>

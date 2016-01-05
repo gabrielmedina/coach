@@ -18,17 +18,6 @@
       </select>
     </div>
 
-    <div class="form-field">
-      <label for="routine">Rotinas</label>
-
-      {{#each routines}}
-      <div class="form-checkbox">
-        <input class="routines" type="checkbox" name="routines" id="{{_id}}" value="{{_id}}">
-        <label for="{{_id}}">{{description}}</label>
-      </div>
-      {{/each}}
-    </div>
-
     <div class="form-submit">
       <input type="submit" value="Cadastrar">
     </div>

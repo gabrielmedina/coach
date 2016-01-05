@@ -17,10 +17,16 @@ Router.route('routineExercise', {
 });
 
 Router.route('routineExerciseCreate', {
-  path: '/routine-exercise/create',
+  path: '/routine-exercise/create/:_id',
 
   waitOn: function(){
     return Meteor.subscribe('exercises');
+  },
+
+  data: function(){
+    return {
+      routine_id: this.params._id
+    };
   },
 
   onBeforeAction: function(){
@@ -65,13 +71,5 @@ Router.route('routineExerciseShow', {
     return {
       _id: this.params._id
     };
-  },
-
-  onBeforeAction: function(){
-    if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
-    } else {
-      this.next();
-    }
   }
 });

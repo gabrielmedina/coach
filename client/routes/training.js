@@ -65,13 +65,5 @@ Router.route('trainingShow', {
     return {
       _id: this.params._id
     };
-  },
-
-  onBeforeAction: function(){
-    if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
-    } else {
-      this.next();
-    }
   }
 });

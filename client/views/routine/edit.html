@@ -7,17 +7,6 @@
       <input type="text" name="description" id="description" value="{{routine.description}}" required>
     </div>
 
-    <div class="form-field">
-      <label for="exercises">Exercícios</label>
-
-      {{#each exercises}}
-      <div class="form-checkbox">
-        <input class="exercises" type="checkbox" name="exercises" id="{{_id}}" value="{{_id}}">
-        <label for="{{_id}}">{{exerciseObj.name}} / Séries: {{sets}} - Repetições: {{reps}}</label>
-      </div>
-      {{/each}}
-    </div>
-
     <div class="form-submit">
       <input type="submit" value="Atualizar">
     </div>

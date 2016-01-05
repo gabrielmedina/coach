@@ -14,6 +14,7 @@ Template.routineExerciseCreate.events({
       exercise: t.find('#exercise').value,
       sets: t.find('#sets').value,
       reps: t.find('#reps').value,
+      routine: this.routine_id,
       status: true
     };
 
@@ -21,7 +22,7 @@ Template.routineExerciseCreate.events({
       if(err){
         console.log(err.reason);
       } else {
-        Router.go('/routine-exercise');
+        history.back();
       }
     });
   }

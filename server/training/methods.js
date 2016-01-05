@@ -10,6 +10,12 @@ Meteor.methods({
   },
 
   deleteTraining: function(id){
+    var training = Training.findOne({ _id: id });
+
+    for(var i = 0; i< training.routines.length; i++){
+      Meteor.call('deleteRoutine', training.routines[i]);
+    }
+
     return Training.remove(id);
   },
 

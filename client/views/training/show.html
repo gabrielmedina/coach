@@ -1,21 +1,41 @@
 <template name="trainingShow">
   <h1>{{training.description}}</h1>
 
-  <a href="/training/edit/{{_id}}">Editar</a>
+  {{#if admin}}
+    <a href="/training/edit/{{_id}}">Editar</a>
+  {{/if}}
 
   {{#each training.routinesObj}}
-  <section>
-    <h1>{{description}}</h1>
+    <section>
+      <header>
+        <h1>{{description}}</h1>
 
-    <ol>
-      {{#each exercisesObj}}
-      <li>
-        <a href="/routine-exercise/show/{{_id}}">
-          {{exerciseObj.name}}
-        </a>
-      </li>
-      {{/each}}
-    </ol>
-  </section>
+        {{#if admin}}
+          <a href="/routine/edit/{{_id}}">Editar</a>
+        {{/if}}
+      </header>
+
+      {{#if admin}}
+        <a href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
+      {{/if}}
+
+      <ol>
+        {{#each exercisesObj}}
+          <li>
+            <a href="/routine-exercise/show/{{_id}}">
+              {{exerciseObj.name}}
+            </a>
+
+            {{#if admin}}
+              <a href="/routine-exercise/edit/{{_id}}">Editar</a>
+            {{/if}}
+          </li>
+        {{/each}}
+      </ol>
+    </section>
   {{/each}}
+
+  {{#if admin}}
+    <a href="/routine/create/{{training._id}}">Adicionar rotina</a>
+  {{/if}}
 </template>

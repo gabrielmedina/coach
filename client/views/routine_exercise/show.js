@@ -7,7 +7,5 @@ Template.routineExerciseShow.helpers({
 });
 
 Template.routineExerciseShow.events({
-  'click .': function(e, t){
-
-  }
+  
 });

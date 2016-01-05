@@ -2,7 +2,18 @@
 
 Meteor.methods({
   createRoutine: function(routine){
-    return Routine.insert(routine);
+    var training = Training.findOne({ _id: routine.training });
+
+    var id = Routine.insert(routine);
+
+    training.routines.push(id);
+
+    Training.update(
+      { _id: routine.training },
+      { $set: { routines: training.routines } }
+    );
+
+    return id;
   },
 
   editRoutine: function(id, routine){
@@ -10,7 +21,27 @@ Meteor.methods({
   },
 
   deleteRoutine: function(id){
-    return Routine.remove(id);
+    var routine = Routine.findOne({ _id: id });
+
+    for(var i = 0; i< routine.exercises.length; i++){
+      Meteor.call('deleteRoutineExercise', routine.exercises[i]);
+    }
+
+    var training = Training.findOne({ _id: routine.training });
+
+    for(var i = 0; i < training.routines.length; i++){
+      if(training.routines[i].indexOf(id) !== -1){
+        training.routines.splice(i, 1);
+        break;
+      }
+    }
+
+    Training.update(
+      { _id: routine.training },
+      { $set: { routines: training.routines } }
+    );
+
+    Routine.remove(id);
   },
 
   statusRoutine: function(id){
