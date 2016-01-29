@@ -11,7 +11,7 @@ Template.routineExerciseEdit.helpers({
 });
 
 Template.routineExerciseEdit.events({
-  'submit .form-edit': function(e, t){
+  'submit .form--edit': function(e, t){
     e.preventDefault();
 
     var routine_exercise = {
@@ -29,7 +29,7 @@ Template.routineExerciseEdit.events({
     });
   },
 
-  'click .btn-status': function(e){
+  'click .btn--status': function(e){
     e.preventDefault();
 
     Meteor.call('statusRoutineExercise', this._id, function(err){
@@ -41,7 +41,7 @@ Template.routineExerciseEdit.events({
     });
   },
 
-  'click .btn-delete': function(e){
+  'click .btn--delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteRoutineExercise', this._id, function(err){

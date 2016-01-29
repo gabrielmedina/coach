@@ -1,0 +1,27 @@
+<template name="routineShow">
+  <header>
+    <h1>{{routine.description}}</h1>
+
+    {{#if admin}}
+      <a href="/routine/edit/{{_id}}">Editar</a>
+    {{/if}}
+  </header>
+
+  {{#if admin}}
+    <a href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
+  {{/if}}
+
+  <ol>
+    {{#each routine.exercisesObj}}
+      <li>
+        <a href="/routine-exercise/show/{{_id}}">
+          {{exerciseObj.name}}
+        </a>
+
+        {{#if admin}}
+          <a href="/routine-exercise/edit/{{_id}}">Editar</a>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ol>
+</template>

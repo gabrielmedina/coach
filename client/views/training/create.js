@@ -11,7 +11,7 @@ Template.trainingCreate.helpers({
 });
 
 Template.trainingCreate.events({
-  'submit .form-create': function(e, t){
+  'submit .form--create': function(e, t){
     e.preventDefault();
 
     var training = {

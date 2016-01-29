@@ -15,13 +15,14 @@ Template.trainingEdit.helpers({
 });
 
 Template.trainingEdit.events({
-  'submit .form-edit': function(e, t){
+  'submit .form--edit': function(e, t){
     e.preventDefault();
 
     var training = {
       instructor: t.find('#instructor').value,
       description: t.find('#description').value,
-      practitioner: t.find('#practitioner').value
+      practitioner: t.find('#practitioner').value,
+      status: true
     }
 
     Meteor.call('editTraining', this._id, training, function(err){
@@ -33,7 +34,7 @@ Template.trainingEdit.events({
     });
   },
 
-  'click .btn-status': function(e){
+  'click .btn--status': function(e){
     e.preventDefault();
 
     Meteor.call('statusTraining', this._id, function(err){
@@ -45,7 +46,7 @@ Template.trainingEdit.events({
     });
   },
 
-  'click .btn-delete': function(e){
+  'click .btn--delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteTraining', this._id, function(err){

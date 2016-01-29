@@ -51,3 +51,17 @@ Router.route('routineEdit', {
     };
   }
 });
+
+Router.route('routineShow', {
+  path: '/routine/show/:_id',
+
+  waitOn: function(){
+    return Meteor.subscribe('routines') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
+  },
+
+  data: function(){
+    return {
+      _id: this.params._id
+    };
+  }
+});

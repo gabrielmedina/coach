@@ -2,14 +2,28 @@
 
 Template.training.helpers({
   trainings: function(){
-    return Training.find({}, {sort: {description: 1}});
+    var user = Meteor.users.findOne({ _id: Meteor.userId() });
+
+    if(user.profile.type.value === 3){
+      return Training.find({ practitioner: Meteor.userId() }, {sort: {modifiedAt: -1}});
+    } else {
+      return Training.find({}, {sort: {practitioner: 1}});
+    }
+  },
+
+  admin: function(){
+    if(Meteor.users.findOne({ _id: Meteor.userId() }).profile.type.value !== 3){
+      return true;
+    } else {
+      return false;
+    }
   },
 
   checkStatus: function(status){
     if(status){
-      return ' active';
+      return ' link--active';
     } else {
-      return ' inactive';
+      return ' link--inactive';
     }
   }
 });

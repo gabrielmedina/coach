@@ -1,21 +1,21 @@
 <template name="propEdit">
   <h1>Alterar adereço/equipamento</h1>
 
-  <form class="form-edit" action="post">
-    <div class="form-field">
-      <label for="name">Nome</label>
-      <input type="text" id="name" name="name" value="{{prop.name}}" required autofocus>
+  <form class="form form--edit" action="post">
+    <div class="form__field">
+      <label class="form__label" for="name">Nome</label>
+      <input class="form__input" type="text" id="name" name="name" value="{{prop.name}}" required autofocus>
     </div>
 
-    <div class="form-submit">
-      <input type="submit" value="Atualizar">
+    <div class="form__submit">
+      <input class="btn form__btn" type="submit" value="Atualizar">
     </div>
   </form>
 
   {{#if prop.status}}
-    <a href="#" class="btn-status">Desativar</a>
+    <a href="#" class="btn--status">Desativar</a>
   {{else}}
-    <a href="#" class="btn-status">Ativar</a>
-    <a href="#" class="btn-delete">Remover</a>
+    <a href="#" class="btn--status">Ativar</a>
+    <a href="#" class="btn--delete">Remover</a>
   {{/if}}
 </template>

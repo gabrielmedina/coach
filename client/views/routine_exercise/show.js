@@ -7,5 +7,8 @@ Template.routineExerciseShow.helpers({
 });
 
 Template.routineExerciseShow.events({
-  
+  'click .btn--back': function(e, t){
+    e.preventDefault();    
+    history.back();
+  }
 });

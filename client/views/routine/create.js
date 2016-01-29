@@ -7,7 +7,7 @@ Template.routineCreate.helpers({
 });
 
 Template.routineCreate.events({
-  'submit .form-create': function(e, t){
+  'submit .form--create': function(e, t){
     e.preventDefault();
 
     var routine = {

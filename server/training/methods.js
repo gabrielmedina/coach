@@ -6,6 +6,8 @@ Meteor.methods({
   },
 
   editTraining: function(id, training){
+    Training.update({ practitioner: training.practitioner }, { $set: {status: false} }, {multi: true});
+
     return Training.update({ _id: id }, { $set: training });
   },
 

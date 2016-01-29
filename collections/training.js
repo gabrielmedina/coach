@@ -2,8 +2,8 @@
 
 Training = new Mongo.Collection('trainings', {
   transform: function(doc){
-    doc.parctitionerObj = Meteor.users.findOne({
-      _id: doc.parctitioner
+    doc.practitionerObj = Meteor.users.findOne({
+      _id: doc.practitioner
     });
 
     doc.instructorObj = Meteor.users.findOne({
@@ -21,6 +21,7 @@ Training = new Mongo.Collection('trainings', {
 
 Training.before.insert(function(id, doc){
   doc.createdAt = Date.now();
+  doc.modifiedAt = Date.now();
 });
 
 Training.before.update(function(id, doc, fields, modifier, options){

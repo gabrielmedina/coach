@@ -4,15 +4,7 @@ Router.route('training', {
   path: '/training',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('users') && Meteor.subscribe('routines');
-  },
-
-  onBeforeAction: function(){
-    if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
-    } else {
-      this.next();
-    }
+    return Meteor.subscribe('users') && Meteor.subscribe('trainings') && Meteor.subscribe('routines');
   }
 });
 

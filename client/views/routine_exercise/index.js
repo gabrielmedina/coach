@@ -7,9 +7,9 @@ Template.routineExercise.helpers({
 
   checkStatus: function(status){
     if(status){
-      return ' active';
+      return ' link--active';
     } else {
-      return ' inactive';
+      return ' link--inactive';
     }
   }
 });

@@ -8,34 +8,16 @@
   {{#each training.routinesObj}}
     <section>
       <header>
-        <h1>{{description}}</h1>
-
-        {{#if admin}}
-          <a href="/routine/edit/{{_id}}">Editar</a>
-        {{/if}}
+        <h1>
+          <a href="/routine/show/{{_id}}">
+            {{description}}
+          </a>
+        </h1>
       </header>
-
-      {{#if admin}}
-        <a href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
-      {{/if}}
-
-      <ol>
-        {{#each exercisesObj}}
-          <li>
-            <a href="/routine-exercise/show/{{_id}}">
-              {{exerciseObj.name}}
-            </a>
-
-            {{#if admin}}
-              <a href="/routine-exercise/edit/{{_id}}">Editar</a>
-            {{/if}}
-          </li>
-        {{/each}}
-      </ol>
     </section>
   {{/each}}
 
   {{#if admin}}
-    <a href="/routine/create/{{training._id}}">Adicionar rotina</a>
+    <a href="/routine/create/{{_id}}">Adicionar rotina</a>
   {{/if}}
 </template>

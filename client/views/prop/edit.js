@@ -7,7 +7,7 @@ Template.propEdit.helpers({
 });
 
 Template.propEdit.events({
-  'submit .form-edit': function(e, t){
+  'submit .form--edit': function(e, t){
     e.preventDefault();
 
     var prop = {
@@ -23,7 +23,7 @@ Template.propEdit.events({
     });
   },
 
-  'click .btn-status': function(e){
+  'click .btn--status': function(e){
     e.preventDefault();
 
     Meteor.call('statusProp', this._id, function(err){
@@ -35,7 +35,7 @@ Template.propEdit.events({
     });
   },
 
-  'click .btn-delete': function(e){
+  'click .btn--delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteProp', this._id, function(err){

@@ -1,7 +1,7 @@
 // user register
 
 Template.userRegister.events({
-  'submit #user-register': function(e, t){
+  'submit .form--register': function(e, t){
     e.preventDefault();
 
     var email = t.find('#email').value;
