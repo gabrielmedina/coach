@@ -7,7 +7,7 @@ Template.userRecovery.helpers({
 });
 
 Template.userRecovery.events({
-  'submit #user-recovery-send': function(e, t){
+  'submit .form--send': function(e, t){
     e.preventDefault();
 
     var email = t.find('#email').value;
@@ -21,7 +21,7 @@ Template.userRecovery.events({
     return false;
   },
 
-  'submit #user-recovery': function(e, t) {
+  'submit .form--recovery': function(e, t) {
     e.preventDefault();
 
     var password = t.find('#password').value;

@@ -15,7 +15,7 @@ Template.exerciseEdit.helpers({
 });
 
 Template.exerciseEdit.events({
-  'submit .form-edit': function(e, t){
+  'submit .form--edit': function(e, t){
     e.preventDefault();
 
     var muscles = [];
@@ -42,7 +42,7 @@ Template.exerciseEdit.events({
     });
   },
 
-  'click .btn-status': function(e){
+  'click .btn--status': function(e){
     e.preventDefault();
 
     Meteor.call('statusExercise', this._id, function(err){
@@ -54,7 +54,7 @@ Template.exerciseEdit.events({
     });
   },
 
-  'click .btn-delete': function(e){
+  'click .btn--delete': function(e){
     e.preventDefault();
 
     Meteor.call('deleteExercise', this._id, function(err){

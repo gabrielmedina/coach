@@ -1,0 +1,32 @@
+<template name="trainingEdit">
+  <h1>Alterar treinamento</h1>
+
+  <form class="form form--edit" action="post">
+    <input type="hidden" id="instructor" name="instructor" value="{{currentUser._id}}">
+
+    <div class="form__field">
+      <label class="form__label" for="description">Descrição</label>
+      <input class="form__input" type="text" name="description" id="description" value="{{training.description}}" required autofocus>
+    </div>
+
+    <div class="form__field">
+      <label class="form__label" for="practitioner">Praticante</label>
+      <select class="form__select" name="practitioner" id="practitioner">
+        {{#each practitioners}}
+          <option value="{{_id}}">{{profile.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="form__submit">
+      <input class="btn form__btn" type="submit" value="Atualizar">
+    </div>
+  </form>
+
+  {{#if training.status}}
+    <a href="#" class="btn--status">Desativar</a>
+  {{else}}
+    <a href="#" class="btn--status">Ativar</a>
+    <a href="#" class="btn--delete">Remover</a>
+  {{/if}}
+</template>

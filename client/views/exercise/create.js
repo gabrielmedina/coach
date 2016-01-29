@@ -11,7 +11,7 @@ Template.exerciseCreate.helpers({
 });
 
 Template.exerciseCreate.events({
-  'submit .form-create': function(e, t){
+  'submit .form--create': function(e, t){
     e.preventDefault();
 
     var muscles = [];

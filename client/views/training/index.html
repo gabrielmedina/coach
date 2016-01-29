@@ -1,0 +1,17 @@
+<template name="training">
+  <h1>Treinamentos</h1>
+
+  {{#if admin}}
+    <a href="/training/create">Adicionar</a>
+  {{/if}}
+
+  <ul>
+    {{#each trainings}}
+    <li>
+      <a class="{{checkStatus status}}" href="/training/show/{{_id}}">
+        {{practitionerObj.profile.name}} - {{description}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</template>

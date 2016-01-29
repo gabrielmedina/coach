@@ -5,7 +5,7 @@ Template.muscleCreate.helpers({
 });
 
 Template.muscleCreate.events({
-  'submit .form-create': function(e, t){
+  'submit .form--create': function(e, t){
     e.preventDefault();
 
     var muscle = {
