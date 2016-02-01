@@ -29,5 +29,10 @@ Template.trainingCreate.events({
         Router.go('/training/show/' + result);
       }
     });
+  },
+
+  'click .nav--back': function(e, t){
+    e.preventDefault();
+    history.back();
   }
 });

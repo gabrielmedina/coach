@@ -15,5 +15,8 @@ Template.routineShow.helpers({
 });
 
 Template.routineShow.events({
-
+  'click .nav--back': function(e, t){
+    e.preventDefault();
+    history.back();
+  }
 });

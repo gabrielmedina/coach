@@ -1,19 +1,26 @@
 <template name="userLogin">
-  <h1>Entrar</h1>
+  <header class="header">
+    <h1 class="header__title">Entrar</h1>
+  </header>
 
-  <form class="form form--login" action="post">
-    <div class="form__field">
-      <label class="form__label" for="email">E-mail</label>
-      <input class="form__input" type="email" name="email" id="email" required autofocus>
-    </div>
+  <main class="main">
+    <form class="form form--login" action="post">
+      <div class="form__field">
+        <label class="form__label" for="email">E-mail</label>
+        <input class="form__input" type="email" name="email" id="email" required autofocus>
+      </div>
 
-    <div class="form__field">
-      <label class="form__label" for="password">Senha</label>
-      <input class="form__input" type="password" name="password" id="password" required>
-    </div>
+      <div class="form__field">
+        <label class="form__label" for="password">Senha</label>
+        <input class="form__input" type="password" name="password" id="password" required>
+      </div>
 
-    <div class="form__submit">
-      <input class="btn form__btn" type="submit" value="Entrar">
-    </div>
-  </form>
+      <div class="form__submit">
+        <input class="btn form__btn" type="submit" value="Entrar">
+      </div>
+    </form>
+
+    <a class="btn btn--full" href="/register">Registrar</a>
+    <a class="btn btn--full" href="/recovery">Esqueci minha senha</a>
+  </main>
 </template>

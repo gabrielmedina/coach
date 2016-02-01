@@ -1,6 +1,9 @@
 <template name="userRecovery">
-  <h1>Recuperar senha</h1>
+  <header class="header">
+    <h1 class="header__title">Recuperar senha</h1>
+  </header>
 
+  <main class="main">
   {{#if resetPassword}}
     <form class="form form--recovery" action="post">
       <div class="form__field">
@@ -24,4 +27,5 @@
       </div>
     </form>
   {{/if}}
+  </main>
 </template>

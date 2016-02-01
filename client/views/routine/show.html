@@ -1,27 +1,35 @@
 <template name="routineShow">
-  <header>
-    <h1>{{routine.description}}</h1>
+  <header class="header">
+    <h1 class="header__title">{{routine.description}}</h1>
+
+    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
 
     {{#if admin}}
-      <a href="/routine/edit/{{_id}}">Editar</a>
+    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="/routine/edit/{{_id}}">Editar</a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
+        </li>
+      </ul>
+    </nav>
     {{/if}}
   </header>
 
-  {{#if admin}}
-    <a href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
-  {{/if}}
-
-  <ol>
-    {{#each routine.exercisesObj}}
-      <li>
-        <a href="/routine-exercise/show/{{_id}}">
-          {{exerciseObj.name}}
-        </a>
-
-        {{#if admin}}
-          <a href="/routine-exercise/edit/{{_id}}">Editar</a>
-        {{/if}}
-      </li>
-    {{/each}}
-  </ol>
+  <main class="main">
+    <ol class="list">
+      {{#each routine.exercisesObj}}
+        <li class="list__item">
+          <a class="list__link" href="/routine-exercise/show/{{_id}}">
+            {{exerciseObj.name}}
+          </a>
+        </li>
+      {{/each}}
+    </ol>
+  </main>
 </template>

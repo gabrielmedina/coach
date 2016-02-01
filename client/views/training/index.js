@@ -21,13 +21,16 @@ Template.training.helpers({
 
   checkStatus: function(status){
     if(status){
-      return ' link--active';
+      return ' list__link--active';
     } else {
-      return ' link--inactive';
+      return ' list__link--inactive';
     }
   }
 });
 
 Template.training.events({
-
+  'click .nav--back': function(e, t){
+    e.preventDefault();
+    history.back();
+  }
 });

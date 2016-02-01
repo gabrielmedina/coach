@@ -5,7 +5,7 @@ Router.route('userLogin', {
 
   onBeforeAction: function(){
     if(Meteor.userId()){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -25,7 +25,7 @@ Router.route('userRegister', {
 
   onBeforeAction: function(){
     if(Meteor.userId()){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -37,7 +37,7 @@ Router.route('userRecovery', {
 
   onBeforeAction: function(){
     if(Meteor.userId()){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -52,6 +52,6 @@ Router.route('userLogout', {
       Meteor.logout();
     }
 
-    Router.go('/');
+    Router.go('/training');
   }
 });

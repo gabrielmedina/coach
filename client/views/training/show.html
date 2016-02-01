@@ -1,23 +1,35 @@
 <template name="trainingShow">
-  <h1>{{training.description}}</h1>
+  <header class="header">
+    <h1 class="header__title">{{training.description}}</h1>
 
-  {{#if admin}}
-    <a href="/training/edit/{{_id}}">Editar</a>
-  {{/if}}
+    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
 
-  {{#each training.routinesObj}}
-    <section>
-      <header>
-        <h1>
-          <a href="/routine/show/{{_id}}">
+    {{#if admin}}
+    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="/training/edit/{{_id}}">Editar</a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="/routine/create/{{_id}}">Adicionar rotina</a>
+        </li>
+      </ul>
+    </nav>
+    {{/if}}
+  </header>
+
+  <main class="main">
+    <ol class="list">
+      {{#each training.routinesObj}}
+        <li class="list__item">
+          <a class="list__link" href="/routine/show/{{_id}}">
             {{description}}
           </a>
-        </h1>
-      </header>
-    </section>
-  {{/each}}
-
-  {{#if admin}}
-    <a href="/routine/create/{{_id}}">Adicionar rotina</a>
-  {{/if}}
+        </li>
+      {{/each}}
+    </ol>
+  </main>
 </template>

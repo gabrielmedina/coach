@@ -9,7 +9,7 @@ Router.route('exercise', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -25,7 +25,7 @@ Router.route('exerciseCreate', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -47,7 +47,7 @@ Router.route('exerciseEdit', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }

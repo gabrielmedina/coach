@@ -15,5 +15,8 @@ Template.trainingShow.helpers({
 });
 
 Template.trainingShow.events({
-
+  'click .nav--back': function(e, t){
+    e.preventDefault();
+    history.back();
+  }
 });

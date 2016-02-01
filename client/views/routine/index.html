@@ -1,15 +1,28 @@
 <template name="routine">
-  <h1>Rotinas</h1>
+  <header class="header">
+    <h1 class="header__title">Rotinas</h1>
 
-  <a href="/routine/create">Adicionar</a>
+    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
 
-  <ul>
-    {{#each routines}}
-    <li>
-      <a class="{{checkStatus status}}" href="/routine/edit/{{_id}}">
-        {{description}}
-      </a>
-    </li>
-    {{/each}}
-  </ul>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="/routine/create">Adicionar</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <ul class="list">
+      {{#each routines}}
+      <li class="list__item">
+        <a class="list__link {{checkStatus status}}" href="/routine/edit/{{_id}}">
+          {{description}}
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </main>
 </template>

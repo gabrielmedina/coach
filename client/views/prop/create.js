@@ -20,5 +20,10 @@ Template.propCreate.events({
         Router.go('/prop');
       }
     });
-  }
+  },
+
+  'click .nav--back': function(e, t){
+    e.preventDefault();
+    history.back();
+  },
 });

@@ -1,32 +1,67 @@
 <template name="routineExerciseShow">
-  <h1>{{routineExercise.description}}</h1>
+  <header class="header">
+    <h1 class="header__title">{{routineExercise.exerciseObj.name}}</h1>
 
-  <section>
-    <h1>{{routineExercise.exerciseObj.name}}</h1>
+    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
 
-    <div>
-      <h2>Músculo(s)</h2>
+    {{#if admin}}
+    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
 
-      <ul>
-      {{#each routineExercise.exerciseObj.musclesObj}}
-        <li>{{name}}</li>
-      {{/each}}
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="/routine-exercise/edit/{{_id}}">Editar</a>
+        </li>
       </ul>
-    </div>
+    </nav>
+    {{/if}}
+  </header>
 
-    <div>
-      <h2>Adereço/Equipamento</h2>
-      <p>{{routineExercise.exerciseObj.propObj.name}}</p>
-    </div>
+  <main class="main">
+    <section class="section">
+      <div class="section__group">
+        <h2 class="section__subtitle">Músculo(s)</h2>
 
-    <div>
-      <h2>Séries</h2>
-      <p>{{routineExercise.sets}}</p>
+        <ul class="section-list">
+          {{#each routineExercise.exerciseObj.musclesObj}}
+            <li class="section-list__item">{{name}}</li>
+          {{/each}}
+        </ul>
+      </div>
 
-      <h2>Repetições</h2>
-      <p>{{routineExercise.reps}}</p>
-    </div>
-  </section>
+      <div class="section_group">
+        <h2 class="section__subtitle">Adereço/Equipamento</h2>
 
-  <a class="btn--back" href="#">Feito!</a>
+        <div class="section__text">
+          <p>
+            {{routineExercise.exerciseObj.propObj.name}}
+          </p>
+        </div>
+      </div>
+
+      <div class="section__group">
+        <h2 class="section__subtitle">Séries</h2>
+
+        <div class="section__text">
+          <p>
+            {{routineExercise.sets}}
+          </p>
+        </div>
+      </div>
+
+      <div class="section__group">
+        <h2 class="section__subtitle">Repetições</h2>
+
+        <div class="section__text">
+          <p>
+            {{routineExercise.reps}}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <a class="btn btn--full btn--back" href="#">
+      Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
+    </a>
+  </main>
 </template>
