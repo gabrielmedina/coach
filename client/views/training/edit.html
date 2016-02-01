@@ -3,26 +3,26 @@
     <div class="container">
       <h1 class="header__title">Alterar treinamento</h1>
 
-      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
-      <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+      <a class="nav-action__btn nav-action--back ion-android-arrow-back" href="#"></a>
+      <a class="nav-action__btn nav-action--open ion-android-more-vertical" href="#"></a>
 
-      <nav class="nav">
-        <ul class="nav__list">
+      <div class="nav-action">
+        <ul class="nav-action__list">
           {{#if training.status}}
-            <li class="nav__item">
-              <a class="nav__link btn--status" href="#">Desativar</a>
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--status" href="#">Desativar</a>
             </li>
           {{else}}
-            <li class="nav__item">
-              <a class="nav__link btn--status" href="#">Ativar</a>
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--status" href="#">Ativar</a>
             </li>
 
-            <li class="nav__item">
-              <a class="nav__link btn--delete" href="#">Remover</a>
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--delete" href="#">Remover</a>
             </li>
           {{/if}}
         </ul>
-      </nav>
+      </div>
     </div>
   </header>
 

@@ -3,22 +3,22 @@
     <div class="container">
       <h1 class="header__title">{{training.description}}</h1>
 
-      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+      <a class="nav-action__btn nav-action--back ion-android-arrow-back" href="#"></a>
 
       {{#if admin}}
-      <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+      <a class="nav-action__btn nav-action--open ion-android-more-vertical" href="#"></a>
 
-      <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="/training/edit/{{_id}}">Editar</a>
+      <div class="nav-action">
+        <ul class="nav-action__list">
+          <li class="nav-action__item">
+            <a class="nav-action__link" href="/training/edit/{{_id}}">Editar</a>
           </li>
 
-          <li class="nav__item">
-            <a class="nav__link" href="/routine/create/{{_id}}">Adicionar rotina</a>
+          <li class="nav-action__item">
+            <a class="nav-action__link" href="/routine/create/{{_id}}">Adicionar rotina</a>
           </li>
         </ul>
-      </nav>
+      </div>
       {{/if}}
     </div>
   </header>
@@ -28,7 +28,7 @@
       <ol class="list">
         {{#each training.routinesObj}}
           <li class="list__item">
-            <a class="list__link" href="/routine/show/{{_id}}">
+            <a class="list__link {{checkStatus status}}" href="/routine/show/{{_id}}">
               {{description}}
             </a>
           </li>

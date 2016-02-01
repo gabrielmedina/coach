@@ -25,10 +25,5 @@ Template.routineCreate.events({
         history.back();
       }
     });
-  },
-
-  'click .nav--back': function(e, t){
-    e.preventDefault();
-    history.back();
   }
 });

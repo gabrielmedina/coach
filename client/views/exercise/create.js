@@ -37,10 +37,5 @@ Template.exerciseCreate.events({
         Router.go('/exercise');
       }
     });
-  },
-
-  'click .nav--back': function(e, t){
-    e.preventDefault();
-    history.back();
   }
 });

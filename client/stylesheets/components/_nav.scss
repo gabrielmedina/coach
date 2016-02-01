@@ -1,7 +1,11 @@
 // nav
 
 .nav {
+  display: none;
+}
 
+.nav--opened {
+  display: block;
 }
 
 .nav__list {
@@ -13,7 +17,7 @@
 }
 
 .nav__item {
-  
+
 }
 
 .nav__link {
@@ -22,4 +26,15 @@
 
 .nav__link--active {
 
+}
+
+
+// nav actions
+
+.nav-action {
+  display: none;
+}
+
+.nav-action--opened {
+  display: block;
 }

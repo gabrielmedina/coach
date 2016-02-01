@@ -20,10 +20,5 @@ Template.muscleCreate.events({
         Router.go('/muscle');
       }
     });
-  },
-
-  'click .nav--back': function(e, t){
-    e.preventDefault();
-    history.back();
   }
 });

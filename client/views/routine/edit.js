@@ -27,11 +27,6 @@ Template.routineEdit.events({
     });
   },
 
-  'click .nav--back': function(e, t){
-    e.preventDefault();
-    history.back();
-  },
-
   'click .btn--status': function(e){
     e.preventDefault();
 
