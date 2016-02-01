@@ -1,14 +1,23 @@
 <template name="propCreate">
-  <h1>Novo adereço/equipamento</h1>
-
-  <form class="form form--create" action="post">
-    <div class="form__field">
-      <label class="form__label" for="name">Nome</label>
-      <input class="form__input" type="text" id="name" name="name" required autofocus>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Novo equipamento</h1>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
     </div>
+  </header>
 
-    <div class="form__submit">
-      <input class="btn form__btn" type="submit" value="Cadastrar">
+  <main class="main">
+    <div class="container">
+      <form class="form form--create" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" id="name" name="name" required autofocus>
+        </div>
+
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Cadastrar">
+        </div>
+      </form>
     </div>
-  </form>
+  </main>
 </template>

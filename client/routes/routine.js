@@ -1,20 +1,4 @@
-// routes routine exercise
-
-Router.route('routine', {
-  path: '/routine',
-
-  waitOn: function(){
-    return Meteor.subscribe('routines') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
-  },
-
-  onBeforeAction: function(){
-    if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
-    } else {
-      this.next();
-    }
-  }
-});
+// routes routine
 
 Router.route('routineCreate', {
   path: '/routine/create/:_id',
@@ -31,7 +15,7 @@ Router.route('routineCreate', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -42,7 +26,7 @@ Router.route('routineEdit', {
   path: '/routine/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('routines') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
+    return Meteor.subscribe('exercises') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises');
   },
 
   data: function(){
@@ -56,7 +40,7 @@ Router.route('routineShow', {
   path: '/routine/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('routines') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
+    return Meteor.subscribe('exercises') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises');
   },
 
   data: function(){

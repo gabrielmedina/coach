@@ -1,32 +1,79 @@
 <template name="routineExerciseShow">
-  <h1>{{routineExercise.description}}</h1>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">{{routineExercise.exerciseObj.name}}</h1>
 
-  <section>
-    <h1>{{routineExercise.exerciseObj.name}}</h1>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
 
-    <div>
-      <h2>Músculo(s)</h2>
+      {{#if admin}}
+      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
 
-      <ul>
-      {{#each routineExercise.exerciseObj.musclesObj}}
-        <li>{{name}}</li>
-      {{/each}}
-      </ul>
+      <div class="nav-action">
+        <ul class="nav-action__list">
+          <li class="nav-action__item">
+            <a class="nav-action__link" href="/routine-exercise/edit/{{_id}}">Editar</a>
+          </li>
+        </ul>
+      </div>
+      {{/if}}
     </div>
+  </header>
 
-    <div>
-      <h2>Adereço/Equipamento</h2>
-      <p>{{routineExercise.exerciseObj.propObj.name}}</p>
+  <main class="main">
+    <div class="container">
+      <section class="section">
+        <div class="row">
+          <div class="section__group">
+            <h2 class="section__title">Músculo(s)</h2>
+
+            <div class="section__text">
+              <ul>
+                {{#each routineExercise.exerciseObj.musclesObj}}
+                  <li>{{name}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+
+          <div class="section__group">
+            <h2 class="section__title">Equipamento</h2>
+
+            <div class="section__text">
+              <p>
+                {{routineExercise.exerciseObj.propObj.name}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="section__group">
+            <h2 class="section__title">Séries</h2>
+
+            <div class="section__text">
+              <p>
+                {{routineExercise.sets}}
+              </p>
+            </div>
+          </div>
+
+          <div class="section__group">
+            <h2 class="section__title">Repetições</h2>
+
+            <div class="section__text">
+              <p>
+                {{routineExercise.reps}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a class="btn btn--back" href="#">
+          Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
+        </a>
+      </footer>
     </div>
-
-    <div>
-      <h2>Séries</h2>
-      <p>{{routineExercise.sets}}</p>
-
-      <h2>Repetições</h2>
-      <p>{{routineExercise.reps}}</p>
-    </div>
-  </section>
-
-  <a class="btn--back" href="#">Feito!</a>
+  </main>
 </template>

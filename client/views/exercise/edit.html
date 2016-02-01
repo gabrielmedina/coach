@@ -1,41 +1,63 @@
 <template name="exerciseEdit">
-  <h1>Alterar exercício</h1>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Alterar exercício</h1>
 
-  <form class="form form--edit" action="post">
-    <div class="form__field">
-      <label class="form__label" for="name">Nome</label>
-      <input class="form__input" type="text" id="name" name="name" value="{{exercise.name}}" required autofocus>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
+
+      <div class="nav-action">
+        <ul class="nav-action__list">
+          {{#if exercise.status}}
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--status" href="#">Desativar</a>
+            </li>
+          {{else}}
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--status" href="#">Ativar</a>
+            </li>
+
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--delete" href="#">Remover</a>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
     </div>
+  </header>
 
-    <div class="form__field">
-      <label class="form__label" for="prop">Adereço/Equipamento</label>
-      <select class="form__select" name="prop" id="prop">
-        {{#each props}}
-          <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-      </select>
-    </div>
-
-    <div class="form__field">
-      <label class="form__label" for="muscles">Músculo</label>
-
-      {{#each muscles}}
-        <div class="form-checkbox">
-          <input class="form-checkbox__input muscles" type="checkbox" name="muscle" id="{{_id}}" value="{{_id}}">
-          <label class="form-checkbox__label" for="{{_id}}">{{name}}</label>
+  <main class="main">
+    <div class="container">
+      <form class="form form--edit" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" id="name" name="name" value="{{exercise.name}}" required autofocus>
         </div>
-      {{/each}}
-    </div>
 
-    <div class="form__submit">
-      <input class="btn form__btn" type="submit" value="Atualizar">
-    </div>
-  </form>
+        <div class="form__field">
+          <label class="form__label" for="prop">Adereço/Equipamento</label>
+          <select class="form__select" name="prop" id="prop">
+            {{#each props}}
+              <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
 
-  {{#if exercise.status}}
-    <a href="#" class="btn--status">Desativar</a>
-  {{else}}
-    <a href="#" class="btn--status">Ativar</a>
-    <a href="#" class="btn--delete">Remover</a>
-  {{/if}}
+        <div class="form__field">
+          <label class="form__label" for="muscles">Músculo</label>
+
+          {{#each muscles}}
+            <div class="form-checkbox">
+              <input class="form-checkbox__input muscles" type="checkbox" name="muscle" id="{{_id}}" value="{{_id}}">
+              <label class="form-checkbox__label" for="{{_id}}">{{name}}</label>
+            </div>
+          {{/each}}
+        </div>
+
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Atualizar">
+        </div>
+      </form>
+    </div>
+  </main>
 </template>

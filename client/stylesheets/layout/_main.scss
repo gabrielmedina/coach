@@ -1,0 +1,11 @@
+// main
+
+.main {
+  padding: 4rem 0 5rem;
+}
+
+@include media($screen-md) {
+  .main {
+    padding: 6rem 0 7rem;
+  }
+}

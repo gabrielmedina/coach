@@ -1,21 +1,43 @@
 <template name="routineEdit">
-  <h1>Alterar rotina</h1>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Alterar rotina</h1>
 
-  <form class="form form--edit" action="post">
-    <div class="form__field">
-      <label class="form__label" for="description">Descrição</label>
-      <input class="form__input" type="text" name="description" id="description" value="{{routine.description}}" required>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
+
+      <div class="nav-action">
+        <ul class="nav-action__list">
+          {{#if routine.status}}
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--status" href="#">Desativar</a>
+            </li>
+          {{else}}
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--status" href="#">Ativar</a>
+            </li>
+
+            <li class="nav-action__item">
+              <a class="nav-action__link btn--delete" href="#">Remover</a>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
     </div>
+  </header>
 
-    <div class="form__submit">
-      <input class="btn form__btn" type="submit" value="Atualizar">
+  <main class="main">
+    <div class="container">
+      <form class="form form--edit" action="post">
+        <div class="form__field">
+          <label class="form__label" for="description">Descrição</label>
+          <input class="form__input" type="text" name="description" id="description" value="{{routine.description}}" required>
+        </div>
+
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Atualizar">
+        </div>
+      </form>
     </div>
-  </form>
-
-  {{#if routine.status}}
-    <a href="#" class="btn--status">Desativar</a>
-  {{else}}
-    <a href="#" class="btn--status">Ativar</a>
-    <a href="#" class="btn--delete">Remover</a>
-  {{/if}}
+  </main>
 </template>

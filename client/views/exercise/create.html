@@ -1,34 +1,43 @@
 <template name="exerciseCreate">
-  <h1>Novo exercício</h1>
-
-  <form class="form form--create" action="post">
-    <div class="form__field">
-      <label class="form__label" for="name">Nome</label>
-      <input class="form__input" type="text" id="name" name="name" required autofocus>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Novo exercício</h1>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
     </div>
+  </header>
 
-    <div class="form__field">
-      <label class="form__label" for="prop">Adereço/Equipamento</label>
-      <select class="form__select" name="prop" id="prop">
-        {{#each props}}
-          <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-      </select>
+  <main class="main">
+    <div class="container">
+      <form class="form form--create" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" id="name" name="name" required autofocus>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="prop">Equipamento</label>
+          <select class="form__select" name="prop" id="prop">
+            {{#each props}}
+              <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
+
+        <div class="form__field">
+          <label class="form__label" for="muscles">Músculo</label>
+
+          {{#each muscles}}
+          <div class="form-checkbox">
+            <input class="form-checkbox__input muscles" type="checkbox" name="muscle" id="{{_id}}" value="{{_id}}">
+            <label class="form-checkbox__label" for="{{_id}}">{{name}}</label>
+          </div>
+          {{/each}}
+        </div>
+
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Cadastrar">
+        </div>
+      </form>
     </div>
-
-    <div class="form__field">
-      <label class="form__label" for="muscles">Músculo</label>
-
-      {{#each muscles}}
-      <div class="form-checkbox">
-        <input class="form-checkbox__input muscles" type="checkbox" name="muscle" id="{{_id}}" value="{{_id}}">
-        <label class="form-checkbox__label" for="{{_id}}">{{name}}</label>
-      </div>
-      {{/each}}
-    </div>
-
-    <div class="form__submit">
-      <input class="btn form__btn" type="submit" value="Cadastrar">
-    </div>
-  </form>
+  </main>
 </template>

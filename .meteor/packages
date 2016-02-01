@@ -24,3 +24,5 @@ aldeed:simple-schema
 accounts-base
 accounts-password
 matb33:collection-hooks
+wolves:bourbon
+wolves:neat

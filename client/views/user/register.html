@@ -1,24 +1,34 @@
 <template name="userRegister">
-  <h1>Registrar-se</h1>
-
-  <form class="form form--register" action="post">
-    <div class="form__field">
-      <label class="form__label" for="name">Nome</label>
-      <input class="form__input" type="text" name="name" id="name" required autofocus>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Registrar-se</h1>
     </div>
+  </header>
 
-    <div class="form__field">
-      <label class="form__label" for="email">E-mail</label>
-      <input class="form__input" type="email" name="email" id="email" required>
-    </div>
+  <main class="main">
+    <div class="container">
+      <form class="form form--register" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" name="name" id="name" required autofocus>
+        </div>
 
-    <div class="form__field">
-      <label class="form__label" for="password">Senha</label>
-      <input class="form__input" type="password" name="password" id="password" required>
-    </div>
+        <div class="form__field">
+          <label class="form__label" for="email">E-mail</label>
+          <input class="form__input" type="email" name="email" id="email" required>
+        </div>
 
-    <div class="form__submit">
-      <input class="btn form__btn" type="submit" value="Registrar">
+        <div class="form__field">
+          <label class="form__label" for="password">Senha</label>
+          <input class="form__input" type="password" name="password" id="password" required>
+        </div>
+
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Registrar">
+        </div>
+      </form>
+
+      <a class="btn btn--full" href="/login">Entrar</a>
     </div>
-  </form>
+  </main>
 </template>

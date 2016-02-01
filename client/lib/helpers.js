@@ -1,5 +1,17 @@
 // lib helpers
 
-if(Accounts._resetPasswordToken){
-  Session.set('resetPassword', Accounts._resetPasswordToken);
-}
+Template.registerHelper('admin', function() {
+  if(Meteor.users.findOne({ _id: Meteor.userId() }).profile.type.value !== 3){
+    return true;
+  } else {
+    return false;
+  }
+});
+
+Template.registerHelper('checkStatus', function(status){
+  if(status){
+    return ' list__link--active';
+  } else {
+    return ' list__link--inactive';
+  }
+});

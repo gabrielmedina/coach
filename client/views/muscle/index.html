@@ -1,15 +1,33 @@
 <template name="muscle">
-  <h1>Músculos</h1>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Músculos</h1>
 
-  <a href="/muscle/create">Adicionar</a>
+      {{> nav}}
 
-  <ul>
-    {{#each muscles}}
-    <li>
-      <a class="{{checkStatus status}}" href="/muscle/edit/{{_id}}">
-        {{name}}
-      </a>
-    </li>
-    {{/each}}
-  </ul>
+      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
+
+      <div class="nav-action">
+        <ul class="nav-action__list">
+          <li class="nav-action__item">
+            <a class="nav-action__link" href="/muscle/create">Adicionar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <ul class="list">
+        {{#each muscles}}
+        <li class="list__item">
+          <a class="list__link {{checkStatus status}}" href="/muscle/edit/{{_id}}">
+            {{name}}
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </main>
 </template>

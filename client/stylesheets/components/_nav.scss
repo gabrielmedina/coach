@@ -1,0 +1,183 @@
+// nav
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  width: 100%;
+  height: 100vh;
+
+  @include transform(translateY(-100%));
+  @include transition(.2s ease);
+
+  background: $primary;
+
+  overflow-y: scroll;
+}
+
+.nav--opened {
+  overflow: hidden;
+  height: 100%;
+
+  .nav {
+    @include transform(translateY(0));
+    z-index: 400;
+  }
+
+  .nav__btn--open {
+    z-index: 500;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+.nav__btn {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+
+  color: $white;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.nav__btn--left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nav__btn--right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.nav__list {
+  cursor: default;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__group {
+  background: darken($primary, 4%);
+}
+
+.nav__item {
+  line-height: 4rem;
+  border-bottom: solid 2px rgba($black, .15);
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+}
+
+.nav__link {
+  display: block;
+
+  color: $white;
+  font-size: .95rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  background: rgba($black, .1);
+
+  @include transition(.15s ease);
+
+  &:hover,
+  &:focus {
+    background: rgba($black, .15);
+  }
+}
+
+
+// nav actions
+
+.nav-action {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  z-index: 200;
+
+  width: 100%;
+
+  @include transform(translateX(-100%));
+  @include transition(.2s ease);
+
+  background: lighten($black, 25%);
+}
+
+.nav-action--opened {
+  .nav-action {
+    @include transform(translateX(0));
+  }
+
+  .nav-action__btn--open {
+    z-index: 300;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+.nav-action__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-action__item {
+  line-height: 3.5rem;
+  border-bottom: solid 2px rgba($black, .06);
+
+  &:last-of-type {
+    border: 0;
+  }
+}
+
+.nav-action__link {
+  display: block;
+
+  color: $white;
+  font-size: .95rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+@include media($screen-md) {
+  .nav__btn {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;;
+  }
+
+  .nav__item {
+    line-height: 4.5rem;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+  }
+
+
+  .nav-action {
+    top: 4rem;
+  }
+
+  .nav-action__item {
+    line-height: 4rem;
+  }
+}

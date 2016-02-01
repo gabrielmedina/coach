@@ -1,27 +1,35 @@
 <template name="userRecovery">
-  <h1>Recuperar senha</h1>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Recuperar senha</h1>
+    </div>
+  </header>
 
-  {{#if resetPassword}}
-    <form class="form form--recovery" action="post">
-      <div class="form__field">
-        <label class="form__label" for="password">Nova senha</label>
-        <input class="form__input" type="text" name="password" id="password" required autofocus>
-      </div>
+  <main class="main">
+    <div class="container">
+      {{#if resetPassword}}
+        <form class="form form--recovery" action="post">
+          <div class="form__field">
+            <label class="form__label" for="password">Nova senha</label>
+            <input class="form__input" type="text" name="password" id="password" required autofocus>
+          </div>
 
-      <div class="form__submit">
-        <input class="btn form__btn" type="submit" value="Trocar senha">
-      </div>
-    </form>
-  {{else}}
-    <form class="form form--send" action="post">
-      <div class="form__field">
-        <label class="form__label" for="email">E-mail</label>
-        <input class="form__input" type="email" name="email" id="email" required autofocus>
-      </div>
+          <div class="form__submit">
+            <input class="btn form__btn" type="submit" value="Trocar senha">
+          </div>
+        </form>
+      {{else}}
+        <form class="form form--send" action="post">
+          <div class="form__field">
+            <label class="form__label" for="email">E-mail</label>
+            <input class="form__input" type="email" name="email" id="email" required autofocus>
+          </div>
 
-      <div class="form__submit">
-        <input class="btn form__btn" type="submit" value="Enviar instruções">
-      </div>
-    </form>
-  {{/if}}
+          <div class="form__submit">
+            <input class="btn form__btn" type="submit" value="Enviar instruções">
+          </div>
+        </form>
+      {{/if}}
+    </div>
+  </main>
 </template>

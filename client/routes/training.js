@@ -17,7 +17,7 @@ Router.route('trainingCreate', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -39,7 +39,7 @@ Router.route('trainingEdit', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }

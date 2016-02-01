@@ -1,0 +1,106 @@
+// form
+
+.form {
+
+}
+
+.form__field {
+  margin-bottom: 2rem;
+}
+
+.form__label {
+  color: lighten($black, 40%);
+  font-family: $family-title;
+  font-size: .8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  margin: 0 0 1rem;
+}
+
+%field {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+
+  color: lighten($black, 30%);
+  font-family: $family-title;
+  font-size: 1rem;
+
+  background: $white;
+  border: solid 1px darken($white, 20%);
+
+  padding: 0 .8rem;
+
+  outline: none;
+
+  &:focus {
+    border-color: darken($white, 30%);
+    box-shadow: inset 0 0 0 .2rem rgba($black, .02);
+  }
+}
+
+.form__input {
+  @extend %field;
+  @include appearance(none);
+}
+
+.form__select {
+  @extend %field;
+  @include appearance(none);
+}
+
+.form__textarea {
+  @extend %field;
+}
+
+
+.form-checkbox {
+  position: relative;
+  margin-bottom: .2rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.form-checkbox__label {
+  cursor: pointer;
+
+  display: block;
+  width: 100%;
+
+  color: lighten($black, 30%);
+  font-family: $family-title;
+  font-size: 1rem;
+
+  padding: .5rem .5rem .5rem 2.2rem;
+
+  background: rgba($black, .05);
+}
+
+.form-checkbox__input {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+
+.form__submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  text-align: center;
+}
+
+
+// resets
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

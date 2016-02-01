@@ -1,21 +1,5 @@
 // routes routine exercise
 
-Router.route('routineExercise', {
-  path: '/routine-exercise',
-
-  waitOn: function(){
-    return Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
-  },
-
-  onBeforeAction: function(){
-    if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
-    } else {
-      this.next();
-    }
-  }
-});
-
 Router.route('routineExerciseCreate', {
   path: '/routine-exercise/create/:_id',
 
@@ -31,7 +15,7 @@ Router.route('routineExerciseCreate', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }
@@ -53,7 +37,7 @@ Router.route('routineExerciseEdit', {
 
   onBeforeAction: function(){
     if(Meteor.user().profile.type.value == 3){
-      Router.go('/');
+      Router.go('/training');
     } else {
       this.next();
     }

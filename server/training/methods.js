@@ -2,6 +2,8 @@
 
 Meteor.methods({
   createTraining: function(training){
+    Training.update({ practitioner: training.practitioner }, {$set : {status: false} }, {multi: true});
+
     return Training.insert(training);
   },
 
