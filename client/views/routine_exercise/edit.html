@@ -1,53 +1,57 @@
 <template name="routineExerciseEdit">
   <header class="header">
-    <h1 class="header__title">Alterar rotina do exercício</h1>
+    <div class="container">
+      <h1 class="header__title">Alterar rotina do exercício</h1>
 
-    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
-    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        {{#if routineExercise.status}}
-          <li class="nav__item">
-            <a class="nav__link btn--status" href="#">Desativar</a>
-          </li>
-        {{else}}
-          <li class="nav__item">
-            <a class="nav__link btn--status" href="#">Ativar</a>
-          </li>
+      <nav class="nav">
+        <ul class="nav__list">
+          {{#if routineExercise.status}}
+            <li class="nav__item">
+              <a class="nav__link btn--status" href="#">Desativar</a>
+            </li>
+          {{else}}
+            <li class="nav__item">
+              <a class="nav__link btn--status" href="#">Ativar</a>
+            </li>
 
-          <li class="nav__item">
-            <a class="nav__link btn--delete" href="#">Remover</a>
-          </li>
-        {{/if}}
-      </ul>
-    </nav>
+            <li class="nav__item">
+              <a class="nav__link btn--delete" href="#">Remover</a>
+            </li>
+          {{/if}}
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="main">
-    <form class="form form--edit" action="post">
-      <div class="form__field">
-        <label class="form__label" for="name">Nome</label>
-        <select class="form__select" name="exercise" id="exercise" required autofocus>
-          {{#each exercises}}
-            <option value="{{_id}}">{{name}}</option>
-          {{/each}}
-        </select>
-      </div>
+    <div class="container">
+      <form class="form form--edit" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <select class="form__select" name="exercise" id="exercise" required autofocus>
+            {{#each exercises}}
+              <option value="{{_id}}">{{name}}</option>
+            {{/each}}
+          </select>
+        </div>
 
-      <div class="form__field">
-        <label class="form__label" for="sets">Séries</label>
-        <input class="form__input" type="number" id="sets" name="sets" value="{{routineExercise.sets}}" required>
-      </div>
+        <div class="form__field">
+          <label class="form__label" for="sets">Séries</label>
+          <input class="form__input" type="number" id="sets" name="sets" value="{{routineExercise.sets}}" required>
+        </div>
 
-      <div class="form__field">
-        <label class="form__label" for="reps">Repetições</label>
-        <input class="form__input" type="number" id="reps" name="reps" value="{{routineExercise.reps}}" required>
-      </div>
+        <div class="form__field">
+          <label class="form__label" for="reps">Repetições</label>
+          <input class="form__input" type="number" id="reps" name="reps" value="{{routineExercise.reps}}" required>
+        </div>
 
-      <div class="form__submit">
-        <input class="btn form__btn" type="submit" value="Atualizar">
-      </div>
-    </form>
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Atualizar">
+        </div>
+      </form>
+    </div>
   </main>
 </template>

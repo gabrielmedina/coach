@@ -1,67 +1,71 @@
 <template name="routineExerciseShow">
   <header class="header">
-    <h1 class="header__title">{{routineExercise.exerciseObj.name}}</h1>
+    <div class="container">
+      <h1 class="header__title">{{routineExercise.exerciseObj.name}}</h1>
 
-    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
 
-    {{#if admin}}
-    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+      {{#if admin}}
+      <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a class="nav__link" href="/routine-exercise/edit/{{_id}}">Editar</a>
-        </li>
-      </ul>
-    </nav>
-    {{/if}}
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="/routine-exercise/edit/{{_id}}">Editar</a>
+          </li>
+        </ul>
+      </nav>
+      {{/if}}
+    </div>
   </header>
 
   <main class="main">
-    <section class="section">
-      <div class="section__group">
-        <h2 class="section__subtitle">Músculo(s)</h2>
+    <div class="container">
+      <section class="section">
+        <div class="section__group">
+          <h2 class="section__subtitle">Músculo(s)</h2>
 
-        <ul class="section-list">
-          {{#each routineExercise.exerciseObj.musclesObj}}
-            <li class="section-list__item">{{name}}</li>
-          {{/each}}
-        </ul>
-      </div>
-
-      <div class="section_group">
-        <h2 class="section__subtitle">Adereço/Equipamento</h2>
-
-        <div class="section__text">
-          <p>
-            {{routineExercise.exerciseObj.propObj.name}}
-          </p>
+          <ul class="section-list">
+            {{#each routineExercise.exerciseObj.musclesObj}}
+              <li class="section-list__item">{{name}}</li>
+            {{/each}}
+          </ul>
         </div>
-      </div>
 
-      <div class="section__group">
-        <h2 class="section__subtitle">Séries</h2>
+        <div class="section_group">
+          <h2 class="section__subtitle">Adereço/Equipamento</h2>
 
-        <div class="section__text">
-          <p>
-            {{routineExercise.sets}}
-          </p>
+          <div class="section__text">
+            <p>
+              {{routineExercise.exerciseObj.propObj.name}}
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="section__group">
-        <h2 class="section__subtitle">Repetições</h2>
+        <div class="section__group">
+          <h2 class="section__subtitle">Séries</h2>
 
-        <div class="section__text">
-          <p>
-            {{routineExercise.reps}}
-          </p>
+          <div class="section__text">
+            <p>
+              {{routineExercise.sets}}
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <a class="btn btn--full btn--back" href="#">
-      Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
-    </a>
+        <div class="section__group">
+          <h2 class="section__subtitle">Repetições</h2>
+
+          <div class="section__text">
+            <p>
+              {{routineExercise.reps}}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <a class="btn btn--full btn--back" href="#">
+        Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
+      </a>
+    </div>
   </main>
 </template>

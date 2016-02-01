@@ -1,39 +1,43 @@
 <template name="muscleEdit">
   <header class="header">
-    <h1 class="header__title">Alterar músculo</h1>
+    <div class="container">
+      <h1 class="header__title">Alterar músculo</h1>
 
-    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
-    <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
+      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav--open ion-android-more-vertical" href="#"></a>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        {{#if muscle.status}}
-          <li class="nav__item">
-            <a class="nav__link btn--status" href="#">Desativar</a>
-          </li>
-        {{else}}
-          <li class="nav__item">
-            <a class="nav__link btn--status" href="#">Ativar</a>
-          </li>
+      <nav class="nav">
+        <ul class="nav__list">
+          {{#if muscle.status}}
+            <li class="nav__item">
+              <a class="nav__link btn--status" href="#">Desativar</a>
+            </li>
+          {{else}}
+            <li class="nav__item">
+              <a class="nav__link btn--status" href="#">Ativar</a>
+            </li>
 
-          <li class="nav__item">
-            <a class="nav__link btn--delete" href="#">Remover</a>
-          </li>
-        {{/if}}
-      </ul>
-    </nav>
+            <li class="nav__item">
+              <a class="nav__link btn--delete" href="#">Remover</a>
+            </li>
+          {{/if}}
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main class="main">
-    <form class="form form--edit" action="post">
-      <div class="form__field">
-        <label class="form__label" for="name">Nome</label>
-        <input class="form__input" type="text" id="name" name="name" value="{{muscle.name}}" required autofocus>
-      </div>
+    <div class="container">
+      <form class="form form--edit" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" id="name" name="name" value="{{muscle.name}}" required autofocus>
+        </div>
 
-      <div class="form__submit">
-        <input class="btn form__btn" type="submit" value="Atualizar">
-      </div>
-    </form>
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Atualizar">
+        </div>
+      </form>
+    </div>
   </main>
 </template>

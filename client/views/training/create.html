@@ -1,31 +1,34 @@
 <template name="trainingCreate">
   <header class="header">
-    <h1 class="header__title">Novo treinamento</h1>
-
-    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+    <div class="container">
+      <h1 class="header__title">Novo treinamento</h1>
+      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+    </div>
   </header>
 
   <main class="main">
-    <form class="form form--create" action="post">
-      <input type="hidden" id="instructor" name="instructor" value="{{currentUser._id}}">
+    <div class="container">
+      <form class="form form--create" action="post">
+        <input type="hidden" id="instructor" name="instructor" value="{{currentUser._id}}">
 
-      <div class="form__field">
-        <label class="form__label" for="description">Descrição</label>
-        <input class="form__input" type="text" name="description" id="description" required autofocus>
-      </div>
+        <div class="form__field">
+          <label class="form__label" for="description">Descrição</label>
+          <input class="form__input" type="text" name="description" id="description" required autofocus>
+        </div>
 
-      <div class="form__field">
-        <label class="form__label" for="practitioner">Praticante</label>
-        <select class="form__select" name="practitioner" id="practitioner">
-          {{#each practitioners}}
-            <option value="{{_id}}">{{profile.name}}</option>
-          {{/each}}
-        </select>
-      </div>
+        <div class="form__field">
+          <label class="form__label" for="practitioner">Praticante</label>
+          <select class="form__select" name="practitioner" id="practitioner">
+            {{#each practitioners}}
+              <option value="{{_id}}">{{profile.name}}</option>
+            {{/each}}
+          </select>
+        </div>
 
-      <div class="form__submit">
-        <input class="btn form__btn" type="submit" value="Cadastrar">
-      </div>
-    </form>
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Cadastrar">
+        </div>
+      </form>
+    </div>
   </main>
 </template>

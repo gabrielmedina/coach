@@ -1,20 +1,23 @@
 <template name="routineCreate">
   <header class="header">
-    <h1 class="header__title">Nova rotina</h1>
-
-    <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+    <div class="container">
+      <h1 class="header__title">Nova rotina</h1>
+      <a class="nav__btn nav--back ion-android-arrow-back" href="#"></a>
+    </div>
   </header>
 
   <main class="main">
-    <form class="form form--create" action="post">
-      <div class="form__field">
-        <label class="form__label" for="description">Descrição</label>
-        <input class="form__input" type="text" name="description" id="description" required>
-      </div>
+    <div class="container">
+      <form class="form form--create" action="post">
+        <div class="form__field">
+          <label class="form__label" for="description">Descrição</label>
+          <input class="form__input" type="text" name="description" id="description" required>
+        </div>
 
-      <div class="form__submit">
-        <input class="btn form__btn" type="submit" value="Cadastrar">
-      </div>
-    </form>
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Cadastrar">
+        </div>
+      </form>
+    </div>
   </main>
 </template>
