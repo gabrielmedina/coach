@@ -1,0 +1,40 @@
+// loading
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+
+  width: 100%;
+  height: 100vh;
+
+  background: $primary;
+}
+
+.loading__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translateX(-50%) translateY(-60%));
+}
+
+.loading__logo {
+  width: 10rem;
+  @include animation(loading 4s ease infinite);
+}
+
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
