@@ -4,16 +4,6 @@
       <h1 class="header__title">Exercícios</h1>
 
       {{> nav}}
-
-      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
-
-      <div class="nav-action">
-        <ul class="nav-action__list">
-          <li class="nav-action__item">
-            <a class="nav-action__link" href="/exercise/create">Adicionar</a>
-          </li>
-        </ul>
-      </div>
     </div>
   </header>
 
@@ -28,6 +18,10 @@
         </li>
         {{/each}}
       </ul>
+
+      <footer class="footer">
+        <a class="btn" href="/exercise/create">Adicionar</a>
+      </footer>
     </div>
   </main>
 </template>
