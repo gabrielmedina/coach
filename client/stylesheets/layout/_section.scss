@@ -1,5 +1,53 @@
 // section
 
 .section {
+  @include row;
+}
 
+.section__group {
+  text-align: center;
+
+  padding: 1.5rem 0;
+
+  border-bottom: solid 1px rgba($black, .06);
+}
+
+.section__title {
+  color: darken($white, 30%);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.section__text {
+  color: lighten($black, 40%);
+  font-size: 1.4rem;
+
+  p {
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+
+@include media($screen-md) {
+  .row {
+    .section__group {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+  }
+
+  .section__group {
+    padding: 2.5rem 0;
+  }
+
+  .section__text {
+    font-size: 1.6rem;
+  }
 }

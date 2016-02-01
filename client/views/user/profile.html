@@ -2,18 +2,31 @@
   <header class="header">
     <div class="container">
       <h1 class="header__title">Perfil</h1>
+
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
+
+      <div class="nav-action">
+        <ul class="nav-action__list">
+          <li class="nav-action__item">
+            <a class="nav-action__link" href="#">Editar</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </header>
 
   <main class="main">
     <div class="container">
       <section class="section">
-        <h2 class="section__title">{{ user.name }}</h2>
+        <div class="section__group">
+          <h2 class="section__title">{{ user.name }}</h2>
 
-        <div class="section__text">
-          <p>
-            <strong>Tipo</strong>: {{ user.type }}
-          </p>
+          <div class="section__text">
+            <p>
+              {{ user.type }}
+            </p>
+          </div>
         </div>
       </section>
     </div>

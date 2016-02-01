@@ -13,10 +13,6 @@
           <li class="nav-action__item">
             <a class="nav-action__link" href="/routine/edit/{{_id}}">Editar</a>
           </li>
-
-          <li class="nav-action__item">
-            <a class="nav-action__link" href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
-          </li>
         </ul>
       </div>
       {{/if}}
@@ -28,12 +24,16 @@
       <ol class="list">
         {{#each routine.exercisesObj}}
           <li class="list__item">
-            <a class="list__link" href="/routine-exercise/show/{{_id}}">
+            <a class="list__link {{checkStatus status}}" href="/routine-exercise/show/{{_id}}">
               {{exerciseObj.name}}
             </a>
           </li>
         {{/each}}
       </ol>
+
+      <footer class="footer">
+        <a class="btn" href="/routine-exercise/create/{{_id}}">Adicionar</a>
+      </footer>
     </div>
   </main>
 </template>

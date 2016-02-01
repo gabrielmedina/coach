@@ -7,11 +7,11 @@ Template.training.helpers({
     if(user.profile.type.value === 3){
       return Training.find({ practitioner: Meteor.userId() }, {sort: {modifiedAt: -1}});
     } else {
-      return Training.find({}, {sort: {practitioner: 1}});
+      return Training.find({}, {sort: {modifiedAt: -1}});
     }
   }
 });
 
 Template.training.events({
-  
+
 });

@@ -13,6 +13,7 @@
 @import "base/default";
 
 // layout
+@import "layout/footer";
 @import "layout/header";
 @import "layout/main";
 @import "layout/section";
@@ -20,5 +21,6 @@
 // components
 @import "components/btn";
 @import "components/form";
+@import "components/list";
 @import "components/logo";
 @import "components/nav";

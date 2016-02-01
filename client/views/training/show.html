@@ -13,10 +13,6 @@
           <li class="nav-action__item">
             <a class="nav-action__link" href="/training/edit/{{_id}}">Editar</a>
           </li>
-
-          <li class="nav-action__item">
-            <a class="nav-action__link" href="/routine/create/{{_id}}">Adicionar rotina</a>
-          </li>
         </ul>
       </div>
       {{/if}}
@@ -34,6 +30,10 @@
           </li>
         {{/each}}
       </ol>
+
+      <footer class="footer">
+        <a class="btn" href="/routine/create/{{_id}}">Adicionar</a>
+      </footer>
     </div>
   </main>
 </template>

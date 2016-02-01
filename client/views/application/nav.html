@@ -7,21 +7,33 @@
     </h1>
 
     <ul class="nav__list">
-      <li class="nav__item">
-        <a class="nav__link" href="/prop">Equipamentos</a>
-      </li>
+      {{#if admin}}
+        <li class="nav__item">
+          <a class="nav__link" href="/training">Treinamentos</a>
+        </li>
 
-      <li class="nav__item">
-        <a class="nav__link" href="/muscle">Músculos</a>
-      </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/exercise">Exercícios</a>
+        </li>
 
-      <li class="nav__item">
-        <a class="nav__link" href="/exercise">Exercícios</a>
-      </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/prop">Equipamentos</a>
+        </li>
 
-      <li class="nav__item">
-        <a class="nav__link" href="/training">Treinamentos</a>
-      </li>
+        <li class="nav__item">
+          <a class="nav__link" href="/muscle">Músculos</a>
+        </li>
+      {{/if}}
+
+      <div class="nav__group">
+        <li class="nav__item">
+          <a class="nav__link" href="/profile">Perfil</a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link" href="/logout">Sair</a>
+        </li>
+      </div>
     </ul>
   </nav>
 </template>

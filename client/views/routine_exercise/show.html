@@ -22,50 +22,58 @@
   <main class="main">
     <div class="container">
       <section class="section">
-        <div class="section__group">
-          <h2 class="section__subtitle">Músculo(s)</h2>
+        <div class="row">
+          <div class="section__group">
+            <h2 class="section__title">Músculo(s)</h2>
 
-          <ul class="section-list">
-            {{#each routineExercise.exerciseObj.musclesObj}}
-              <li class="section-list__item">{{name}}</li>
-            {{/each}}
-          </ul>
-        </div>
+            <div class="section__text">
+              <ul>
+                {{#each routineExercise.exerciseObj.musclesObj}}
+                  <li>{{name}}</li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
 
-        <div class="section_group">
-          <h2 class="section__subtitle">Adereço/Equipamento</h2>
+          <div class="section__group">
+            <h2 class="section__title">Equipamento</h2>
 
-          <div class="section__text">
-            <p>
-              {{routineExercise.exerciseObj.propObj.name}}
-            </p>
+            <div class="section__text">
+              <p>
+                {{routineExercise.exerciseObj.propObj.name}}
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="section__group">
-          <h2 class="section__subtitle">Séries</h2>
+        <div class="row">
+          <div class="section__group">
+            <h2 class="section__title">Séries</h2>
 
-          <div class="section__text">
-            <p>
-              {{routineExercise.sets}}
-            </p>
+            <div class="section__text">
+              <p>
+                {{routineExercise.sets}}
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div class="section__group">
-          <h2 class="section__subtitle">Repetições</h2>
+          <div class="section__group">
+            <h2 class="section__title">Repetições</h2>
 
-          <div class="section__text">
-            <p>
-              {{routineExercise.reps}}
-            </p>
+            <div class="section__text">
+              <p>
+                {{routineExercise.reps}}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <a class="btn btn--full btn--back" href="#">
-        Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
-      </a>
+      <footer class="footer">
+        <a class="btn btn--back" href="#">
+          Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
+        </a>
+      </footer>
     </div>
   </main>
 </template>
