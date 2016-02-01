@@ -5,7 +5,7 @@ Template.layout.helpers({
 });
 
 Template.layout.events({
-  'click .nav--back': function(e, t){
+  'click .nav-action--back': function(e, t){
     e.preventDefault();
     history.back();
   },

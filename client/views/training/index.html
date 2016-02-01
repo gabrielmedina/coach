@@ -4,15 +4,17 @@
       <h1 class="header__title">Treinamentos</h1>
 
       {{#if admin}}
-      <a class="nav-action__btn nav-action--open ion-android-more-vertical" href="#"></a>
+        {{> nav}}
 
-      <div class="nav-action">
-        <ul class="nav-action__list">
-          <li class="nav-action__item">
-            <a class="nav-action__link" href="/training/create">Adicionar</a>
-          </li>
-        </ul>
-      </div>
+        <a class="nav-action__btn nav-action--open ion-android-more-vertical" href="#"></a>
+
+        <div class="nav-action">
+          <ul class="nav-action__list">
+            <li class="nav-action__item">
+              <a class="nav-action__link" href="/training/create">Adicionar</a>
+            </li>
+          </ul>
+        </div>
       {{/if}}
     </div>
   </header>
