@@ -1,20 +1,4 @@
-// routes routine exercise
-
-Router.route('routine', {
-  path: '/routine',
-
-  waitOn: function(){
-    return Meteor.subscribe('exercises') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises');
-  },
-
-  onBeforeAction: function(){
-    if(Meteor.user().profile.type.value == 3){
-      Router.go('/training');
-    } else {
-      this.next();
-    }
-  }
-});
+// routes routine
 
 Router.route('routineCreate', {
   path: '/routine/create/:_id',

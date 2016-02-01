@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container">
       <h1 class="header__title">Novo exercício</h1>
-      <a class="nav-action__btn nav-action--back ion-android-arrow-back" href="#"></a>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
     </div>
   </header>
 
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="prop">Adereço/Equipamento</label>
+          <label class="form__label" for="prop">Equipamento</label>
           <select class="form__select" name="prop" id="prop">
             {{#each props}}
               <option value="{{_id}}">{{name}}</option>

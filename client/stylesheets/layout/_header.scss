@@ -1,9 +1,12 @@
 // header
 
 .header {
-  
+  height: 3rem;
+  line-height: 3rem;
+  background: $primary;
 }
 
 .header__title {
-
+  color: $white;
+  text-align: center;
 }

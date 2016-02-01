@@ -5,18 +5,26 @@ Template.layout.helpers({
 });
 
 Template.layout.events({
-  'click .nav-action--back': function(e, t){
+  'click .btn--back': function(e, t){
     e.preventDefault();
     history.back();
   },
 
-  'click .nav--open': function(e, t){
+  'click .nav__btn--open': function(e, t){
     e.preventDefault();
-    $('.nav').toggleClass('nav--opened');
+    $('html').toggleClass('nav--opened');
   },
 
-  'click .nav-action--open': function(e, t){
+  'click .nav-action__btn--open': function(e, t){
     e.preventDefault();
-    $('.nav-action').toggleClass('nav-action--opened');
+    $('html').toggleClass('nav-action--opened');
+  },
+
+  'click .nav__link': function(e, t){
+    $('html').toggleClass('nav--opened');
+  },
+
+  'click .nav-action__link': function(e, t){
+    $('html').toggleClass('nav-action--opened');
   }
 });
