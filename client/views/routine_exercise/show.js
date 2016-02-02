@@ -2,7 +2,7 @@
 
 Template.routineExerciseShow.helpers({
   routineExercise: function(){
-    return this.routineExercise;
+    return RoutineExercise.findOne({ _id: this._id });
   }
 });
 

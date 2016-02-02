@@ -21,7 +21,7 @@
 
 .loading__logo {
   width: 10rem;
-  @include animation(loading 4s ease infinite);
+  @include animation(loading 2s ease infinite);
 }
 
 

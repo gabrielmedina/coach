@@ -2,7 +2,7 @@
 
 Template.routineShow.helpers({
   routine: function(){
-    return this.routine;
+    return Routine.findOne({ _id: this._id });
   }
 });
 

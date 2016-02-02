@@ -2,7 +2,7 @@
 
 Template.trainingShow.helpers({
   training: function(){
-    return this.training;
+    return Training.findOne({ _id: this._id });
   }
 });
 
