@@ -87,6 +87,27 @@
 }
 
 
+.form__links {
+  text-align: center;
+
+  a {
+    display: inline-block;
+
+    color: lighten($black, 30%);
+    font-size: .9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    margin: 0 1rem;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+
 .form__submit {
   position: fixed;
   bottom: 0;
