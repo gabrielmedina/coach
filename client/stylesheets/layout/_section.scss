@@ -7,7 +7,7 @@
 .section__group {
   text-align: center;
 
-  padding: 1.5rem 0;
+  padding: 2rem 0;
 
   border-bottom: solid 1px rgba($black, .06);
 }
@@ -32,19 +32,24 @@
     padding: 0;
     list-style: none;
   }
+
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
 }
 
 
 @include media($screen-md) {
   .row {
     .section__group {
-      @include span-columns(6);
-      @include omega(2n);
+      @include span-columns(4);
+      @include omega(3n);
     }
   }
 
   .section__group {
-    padding: 2.5rem 0;
+    padding: 3rem 0;
   }
 
   .section__text {
