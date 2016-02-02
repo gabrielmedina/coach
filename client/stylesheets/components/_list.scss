@@ -27,7 +27,7 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  background: rgba($black, .05);
+  background: rgba($black, .02);
 
   @include transition(.15s ease);
 
@@ -41,15 +41,14 @@
 }
 
 .list__link--active {
-  color: $white;
-  background: $primary;
+  background: rgba($black, .1);
 
   &:hover {
-    box-shadow: inset 0 0 10rem rgba($black, .2);
+    box-shadow: inset 0 0 10rem rgba($black, .1);
   }
 
   &:focus {
-    background: darken($primary, 10%);
+    background: rgba($black, .15);
   }
 }
 

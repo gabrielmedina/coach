@@ -14,13 +14,13 @@
   text-transform: uppercase;
 
   border: 0;
-  background: $primary;
+  background: lighten($black, 20%);
 
   @include transition(.1s ease);
 
   &:hover,
   &:focus {
-    background: darken($primary, 10%);
+    background: lighten($black, 15%);
   }
 }
 
