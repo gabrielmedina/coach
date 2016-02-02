@@ -12,5 +12,5 @@ Router.onBeforeAction(function(){
     this.next();
   }
 }, {
-  except: ['userLogin', 'userRegister', 'userRecovery']
+  except: ['userLogin', 'userRegister', 'userRecovery', 'userRecoveryPassword']
 });

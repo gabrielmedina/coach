@@ -2,6 +2,7 @@
   <header class="header">
     <div class="container">
       <h1 class="header__title">Recuperar senha</h1>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
     </div>
   </header>
 
@@ -11,11 +12,11 @@
         <form class="form form--recovery" action="post">
           <div class="form__field">
             <label class="form__label" for="password">Nova senha</label>
-            <input class="form__input" type="text" name="password" id="password" required autofocus>
+            <input class="form__input" type="password" name="password" id="password" required autofocus>
           </div>
 
           <div class="form__submit">
-            <input class="btn form__btn" type="submit" value="Trocar senha">
+            <input class="btn form__btn" type="submit" value="Registrar nova senha">
           </div>
         </form>
       {{else}}
@@ -30,10 +31,6 @@
           </div>
         </form>
       {{/if}}
-
-      <div class="form__links">
-        <a href="/login">Entrar</a>
-      </div>
     </div>
   </main>
 </template>

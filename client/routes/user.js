@@ -44,6 +44,19 @@ Router.route('userRecovery', {
   }
 });
 
+Router.route('userRecoveryPassword', {
+  path: '/recovery/:_token',
+
+  onBeforeAction: function() {
+    Session.set('resetPassword', this.params._token);
+    this.next();
+  },
+
+  action: function() {
+    this.render('userRecovery');
+  }
+});
+
 Router.route('userLogout', {
   path: '/logout',
 
