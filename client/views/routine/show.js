@@ -2,10 +2,10 @@
 
 Template.routineShow.helpers({
   routine: function(){
-    return Routine.findOne({ _id: this._id });
+    return this.routine;
   }
 });
 
 Template.routineShow.events({
-  
+
 });

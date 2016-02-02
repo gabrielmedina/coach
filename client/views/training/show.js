@@ -2,10 +2,10 @@
 
 Template.trainingShow.helpers({
   training: function(){
-    return Training.findOne({ _id: this._id });
+    return this.training;
   }
 });
 
 Template.trainingShow.events({
-  
+
 });

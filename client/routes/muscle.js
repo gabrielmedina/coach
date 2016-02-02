@@ -13,6 +13,15 @@ Router.route('muscle', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Músculos - Coach',
+      og: {
+        'title': 'Músculos - Coach'
+      }
+    });
   }
 });
 
@@ -25,6 +34,15 @@ Router.route('muscleCreate', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Adicionar músculo - Coach',
+      og: {
+        'title': 'Adicionar músculo - Coach'
+      }
+    });
   }
 });
 
@@ -47,5 +65,14 @@ Router.route('muscleEdit', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Alterar músculo - Coach',
+      og: {
+        'title': 'Alterar músculo - Coach'
+      }
+    });
   }
 });

@@ -13,6 +13,15 @@ Router.route('exercise', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Exercícios - Coach',
+      og: {
+        'title': 'Exercícios - Coach'
+      }
+    });
   }
 });
 
@@ -29,6 +38,15 @@ Router.route('exerciseCreate', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Adicionar exercício - Coach',
+      og: {
+        'title': 'Adicionar exercício - Coach'
+      }
+    });
   }
 });
 
@@ -51,5 +69,14 @@ Router.route('exerciseEdit', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Alterar exercício - Coach',
+      og: {
+        'title': 'Alterar exercício - Coach'
+      }
+    });
   }
 });

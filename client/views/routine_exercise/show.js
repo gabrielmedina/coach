@@ -2,10 +2,10 @@
 
 Template.routineExerciseShow.helpers({
   routineExercise: function(){
-    return RoutineExercise.findOne({ _id: this._id });
+    return this.routineExercise;
   }
 });
 
 Template.routineExerciseShow.events({
-  
+
 });

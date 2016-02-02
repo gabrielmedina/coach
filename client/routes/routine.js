@@ -19,6 +19,15 @@ Router.route('routineCreate', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Adicionar rotina - Coach',
+      og: {
+        'title': 'Adicionar rotina - Coach'
+      }
+    });
   }
 });
 
@@ -33,6 +42,15 @@ Router.route('routineEdit', {
     return {
       _id: this.params._id
     };
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Editar rotina - Coach',
+      og: {
+        'title': 'Editar rotina - Coach'
+      }
+    });
   }
 });
 
@@ -44,8 +62,21 @@ Router.route('routineShow', {
   },
 
   data: function(){
+    var obj = Routine.findOne({ _id: this.params._id });
+
     return {
-      _id: this.params._id
+      routine: obj
     };
+  },
+
+  onAfterAction: function(){
+    var obj = this.data().routine;
+
+    SEO.set({
+      title: obj.description + ' - Coach',
+      og: {
+        'title': obj.description + ' - Coach'
+      }
+    });
   }
 });

@@ -19,6 +19,15 @@ Router.route('routineExerciseCreate', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Adicionar exercício - Coach',
+      og: {
+        'title': 'Adicionar exercício - Coach'
+      }
+    });
   }
 });
 
@@ -41,6 +50,15 @@ Router.route('routineExerciseEdit', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Alterar exercício - Coach',
+      og: {
+        'title': 'Alterar exercício - Coach'
+      }
+    });
   }
 });
 
@@ -52,8 +70,21 @@ Router.route('routineExerciseShow', {
   },
 
   data: function(){
+    var obj = RoutineExercise.findOne({ _id: this.params._id });
+
     return {
-      _id: this.params._id
+      routineExercise: obj
     };
+  },
+
+  onAfterAction: function(){
+    var obj = this.data().routineExercise;
+
+    SEO.set({
+      title: obj.exerciseObj.name + ' - Coach',
+      og: {
+        'title': obj.exerciseObj.name + ' - Coach'
+      }
+    });
   }
 });

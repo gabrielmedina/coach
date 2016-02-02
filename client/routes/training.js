@@ -5,6 +5,15 @@ Router.route('training', {
 
   waitOn: function(){
     return Meteor.subscribe('users') && Meteor.subscribe('trainings') && Meteor.subscribe('routines');
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Treinamentos - Coach',
+      og: {
+        'title': 'Treinamentos - Coach'
+      }
+    });
   }
 });
 
@@ -21,6 +30,15 @@ Router.route('trainingCreate', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Adicionar treinamento - Coach',
+      og: {
+        'title': 'Treinamentos - Coach',
+      }
+    });
   }
 });
 
@@ -43,6 +61,15 @@ Router.route('trainingEdit', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Alterar treinamento - Coach',
+      og: {
+        'title': 'Alterar treinamento - Coach'
+      }
+    });
   }
 });
 
@@ -54,8 +81,21 @@ Router.route('trainingShow', {
   },
 
   data: function(){
+    var obj = Training.findOne({ _id: this.params._id });
+
     return {
-      _id: this.params._id
+      training: obj
     };
+  },
+
+  onAfterAction: function(){
+    var obj = this.data().training;
+
+    SEO.set({
+      title: obj.description + ' - Coach',
+      og: {
+        'title': obj.description + ' - Coach'
+      }
+    });
   }
 });

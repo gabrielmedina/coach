@@ -13,6 +13,15 @@ Router.route('prop', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Equipamentos - Coach',
+      og: {
+        'title': 'Equipamentos - Coach'
+      }
+    });
   }
 });
 
@@ -25,6 +34,15 @@ Router.route('propCreate', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Adicionar equipamento - Coach',
+      og: {
+        'title': 'Adicionar equipamento - Coach'
+      }
+    });
   }
 });
 
@@ -47,5 +65,14 @@ Router.route('propEdit', {
     } else {
       this.next();
     }
+  },
+
+  onAfterAction: function(){
+    SEO.set({
+      title: 'Alterar equipamento - Coach',
+      og: {
+        'title': 'Alterar equipamento - Coach'
+      }
+    });
   }
 });
