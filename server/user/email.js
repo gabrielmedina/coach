@@ -5,10 +5,9 @@ Accounts.emailTemplates.resetPassword.text = function(user, url) {
   var newUrl = Meteor.absoluteUrl('recovery/' + token);
 
   var str = user.profile.name + ', \n';
-      str+= 'Para redefinir sua senha, basta acessar o link abaixo: \n';
+      str+= 'Para redefinir sua senha, basta acessar o link abaixo: \n\n';
       str+= newUrl;
-      str+= '\nBom treino!';
-      str+= '\nSuporte Coach.';
+      str+= '\n\nSuporte Coach.';
 
   return str;
 };
