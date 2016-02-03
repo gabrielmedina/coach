@@ -17,7 +17,7 @@ Template.trainingCreate.events({
     var training = {
       instructor: t.find('#instructor').value,
       description: t.find('#description').value,
-      practitioner: t.find('#practitioner').value,
+      practitioner: this._id,
       routines: [],
       status: true
     }

@@ -16,15 +16,6 @@
           <input class="form__input" type="text" name="description" id="description" required autofocus>
         </div>
 
-        <div class="form__field">
-          <label class="form__label" for="practitioner">Praticante</label>
-          <select class="form__select" name="practitioner" id="practitioner">
-            {{#each practitioners}}
-              <option value="{{_id}}">{{profile.name}}</option>
-            {{/each}}
-          </select>
-        </div>
-
         <div class="form__submit">
           <input class="btn form__btn" type="submit" value="Cadastrar">
         </div>

@@ -1,14 +1,12 @@
 // training index
 
 Template.training.helpers({
-  trainings: function(){
-    var user = Meteor.users.findOne({ _id: Meteor.userId() });
+  practitionerId: function(){
+    return this._id;
+  },
 
-    if(user.profile.type.value === 3){
-      return Training.find({ practitioner: Meteor.userId() }, {sort: {modifiedAt: -1}});
-    } else {
-      return Training.find({}, {sort: {modifiedAt: -1}});
-    }
+  trainings: function(){
+    return Training.find({ practitioner: this._id }, {sort: {modifiedAt: -1}});
   }
 });
 
