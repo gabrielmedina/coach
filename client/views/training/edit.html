@@ -30,19 +30,11 @@
     <div class="container">
       <form class="form form--edit" action="post">
         <input type="hidden" id="instructor" name="instructor" value="{{currentUser._id}}">
+        <input type="hidden" id="practitioner" name="practitioner" value="{{training.practitioner}}">
 
         <div class="form__field">
           <label class="form__label" for="description">Descrição</label>
           <input class="form__input" type="text" name="description" id="description" value="{{training.description}}" required autofocus>
-        </div>
-
-        <div class="form__field">
-          <label class="form__label" for="practitioner">Praticante</label>
-          <select class="form__select" name="practitioner" id="practitioner">
-            {{#each practitioners}}
-              <option value="{{_id}}">{{profile.name}}</option>
-            {{/each}}
-          </select>
         </div>
 
         <div class="form__submit">

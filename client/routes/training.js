@@ -5,6 +5,14 @@ Router.route('trainingSearch', {
 
   waitOn: function(){
     return Meteor.subscribe('users');
+  },
+
+  onBeforeAction: function(){
+    if(Meteor.user().profile.type.value == 3){
+      Router.go('/training/' + Meteor.userId());
+    } else {
+      this.next();
+    }
   }
 });
 

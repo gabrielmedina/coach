@@ -3,14 +3,6 @@
 Template.trainingEdit.helpers({
   training: function(){
     return Training.findOne({ _id: this._id });
-  },
-
-  practitioners: function(){
-    return Meteor.users.find({'profile.type.value': 3});
-  },
-
-  routines: function(){
-    return Routine.find({});
   }
 });
 
