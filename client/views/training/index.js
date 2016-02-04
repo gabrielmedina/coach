@@ -2,13 +2,15 @@
 
 Template.training.helpers({
   trainings: function(){
-    var user = Meteor.users.findOne({ _id: Meteor.userId() });
-
-    if(user.profile.type.value === 3){
-      return Training.find({ practitioner: Meteor.userId() }, {sort: {modifiedAt: -1}});
+    if(Meteor.user().profile.type.value === 3) {
+      return Training.find({ $and: [{ practitioner: this._id }, { status: true }] } , {sort: {modifiedAt: -1}});
     } else {
-      return Training.find({}, {sort: {modifiedAt: -1}});
+      return Training.find({ practitioner: this._id }, {sort: {modifiedAt: -1}});
     }
+  },
+
+  practitionerId: function(){
+    return this._id;
   }
 });
 

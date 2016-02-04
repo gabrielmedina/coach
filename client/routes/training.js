@@ -1,18 +1,42 @@
 // routes training
 
-Router.route('training', {
+Router.route('trainingSearch', {
   path: '/training',
 
   waitOn: function(){
-    return Meteor.subscribe('users') && Meteor.subscribe('trainings') && Meteor.subscribe('routines');
+    return Meteor.subscribe('users');
+  },
+
+  onBeforeAction: function(){
+    if(Meteor.user().profile.type.value == 3){
+      Router.go('/training/' + Meteor.userId());
+    } else {
+      this.next();
+    }
+  }
+});
+
+Router.route('training', {
+  path: '/training/:_id',
+
+  waitOn: function(){
+    return Meteor.subscribe('trainings') && Meteor.subscribe('routines');
+  },
+
+  data: function(){
+    return {
+      _id: this.params._id
+    };
   }
 });
 
 Router.route('trainingCreate', {
-  path: '/training/create',
+  path: '/training/:_id/create',
 
-  waitOn: function(){
-    return Meteor.subscribe('users') && Meteor.subscribe('routines');
+  data: function(){
+    return {
+      _id: this.params._id
+    };
   },
 
   onBeforeAction: function(){
