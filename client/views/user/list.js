@@ -1,10 +1,10 @@
-// training search
+// user list
 
-Template.trainingSearch.rendered = function() {
-  UsersSearch.search('', { 'profile.type.value': 3 });
+Template.userList.rendered = function() {
+  UsersSearch.search('');
 };
 
-Template.trainingSearch.helpers({
+Template.userList.helpers({
   users: function(){
     return UsersSearch.getData();
   },
@@ -14,13 +14,13 @@ Template.trainingSearch.helpers({
   }
 });
 
-Template.trainingSearch.events({
+Template.userList.events({
   'submit .form--search': function(e, t){
     e.preventDefault();
   },
 
   'keyup .input--search': _.throttle(function(e, t) {
     var text = $(e.target).val().trim();
-    UsersSearch.search(text, { 'profile.type.value': 3 });
+    UsersSearch.search(text);
   }, 200)
 });

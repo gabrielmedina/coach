@@ -1,0 +1,28 @@
+<template name="userList">
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Lista de usuários</h1>
+
+      {{> nav}}
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <form class="form form--search">
+        <div class="form__field">
+          <label class="form__label" for="search">Filtrar usuários</label>
+          <input class="form__input input--search" name="search" id="search" type="search" required>
+        </div>
+      </form>
+
+      <ol class="list list--users">
+        {{#each users}}
+        <li class="list__item">
+          <a class="list__link {{checkStatus profile.status}}" href="/user/edit/{{_id}}">{{profile.name}}</a>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+  </main>
+</template>

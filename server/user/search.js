@@ -1,18 +1,17 @@
 // user search
 
 SearchSource.defineSource('users', function(searchText, options) {
-  var options = {sort: {isoScore: -1}, limit: 20};
-
   if(searchText) {
     var regExp = buildRegExp(searchText);
+
     var selector = {$and: [
       { 'profile.name': regExp },
-      { 'profile.type.value': 3 }
+      options || {}
     ]};
 
-    return Meteor.users.find(selector, options).fetch();
+    return Meteor.users.find(selector, {limit: 10}).fetch();
   } else {
-    return Meteor.users.find({'profile.type.value': 3}, options).fetch();
+    return Meteor.users.find(options || {}, {limit: 10}).fetch();
   }
 });
 

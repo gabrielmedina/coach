@@ -3,7 +3,7 @@
     <div class="container">
       <h1 class="header__title">Treinamentos</h1>
 
-      {{#if admin}}
+      {{#if authorized 2}}
         <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
       {{else}}
         {{> nav}}
@@ -23,7 +23,7 @@
         {{/each}}
       </ul>
 
-      {{#if admin}}
+      {{#if authorized 2}}
       <footer class="footer">
         <a class="btn" href="/training/{{practitionerId}}/create">Adicionar Treinamento</a>
       </footer>

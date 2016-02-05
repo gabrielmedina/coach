@@ -3,11 +3,11 @@
 
   <nav class="nav">
     <h1 class="logo">
-      <img class="logo__image" src="img/logo.svg" alt="Coach">
+      <img class="logo__image" src="/img/logo.svg" alt="Coach">
     </h1>
 
     <ul class="nav__list">
-      {{#if admin}}
+      {{#if authorized 2}}
         <li class="nav__item">
           <a class="nav__link" href="/training">Treinamentos</a>
         </li>
@@ -23,6 +23,12 @@
         <li class="nav__item">
           <a class="nav__link" href="/muscle">Músculos</a>
         </li>
+
+        {{#if authorized 1}}
+        <li class="nav__item">
+          <a class="nav__link" href="/user/list">Usuários</a>
+        </li>
+        {{/if}}
       {{/if}}
 
       <div class="nav__group">
