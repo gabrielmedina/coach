@@ -1,0 +1,36 @@
+<template name="userEdit">
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Perfil</h1>
+
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <form class="form form--edit" action="post">
+        <div class="form__field">
+          <label class="form__label" for="name">Nome</label>
+          <input class="form__input" type="text" id="name" name="name" value="{{user.profile.name}}" required autofocus>
+        </div>
+
+        {{#if authorized 1}}
+        <div class="form__field">
+          <label class="form__label" for="type">Tipo</label>
+
+          <select class="form__select" id="type" name="type">
+            <option {{selected user.profile.type.value 1}} value="1">Administrador</option>
+            <option {{selected user.profile.type.value 2}} value="2">Instrutor</option>
+            <option {{selected user.profile.type.value 3}} value="3">Praticante</option>
+          </select>
+        </div>
+        {{/if}}
+
+        <div class="form__submit">
+          <input class="btn form__btn" type="submit" value="Atualizar">
+        </div>
+      </form>
+    </div>
+  </main>
+</template>

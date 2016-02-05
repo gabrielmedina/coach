@@ -4,7 +4,7 @@ Template.exerciseEdit.helpers({
   exercise: function(){
     return Exercise.findOne({ _id: this._id });
   },
-
+  
   props: function(){
     return Prop.find({}, {sort: { name: 1 }});
   },

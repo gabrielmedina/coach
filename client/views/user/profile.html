@@ -9,7 +9,7 @@
       <div class="nav-action">
         <ul class="nav-action__list">
           <li class="nav-action__item">
-            <a class="nav-action__link" href="#">Editar</a>
+            <a class="nav-action__link" href="/user/edit/{{user._id}}">Editar</a>
           </li>
         </ul>
       </div>
@@ -20,11 +20,11 @@
     <div class="container">
       <section class="section">
         <div class="section__group">
-          <h2 class="section__title">{{ user.name }}</h2>
+          <h2 class="section__title">{{user.profile.name}}</h2>
 
           <div class="section__text">
             <p>
-              {{ user.type }}
+              {{user.profile.type.name}}
             </p>
           </div>
         </div>

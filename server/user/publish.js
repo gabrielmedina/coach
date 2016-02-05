@@ -5,5 +5,5 @@ Meteor.publish('user', function(id){
 });
 
 Meteor.publish('users', function(){
-  return Meteor.users.find({}, {fields: {profile: 1}});
+  return Meteor.users.find({}, {fields: {profile: 1, emails: 1}});
 });
