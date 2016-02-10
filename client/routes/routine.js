@@ -3,10 +3,6 @@
 Router.route('routineCreate', {
   path: '/routine/create/:_id',
 
-  waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
-  },
-
   data: function(){
     return {
       training_id: this.params._id
@@ -26,7 +22,7 @@ Router.route('routineEdit', {
   path: '/routine/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('exercises') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises');
+    return Meteor.subscribe('routine', this.params._id);
   },
 
   data: function(){
@@ -40,7 +36,7 @@ Router.route('routineShow', {
   path: '/routine/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('exercises') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises');
+    return Meteor.subscribe('routine', this.params._id) && Meteor.subscribe('exercises') && Meteor.subscribe('routineExercises');
   },
 
   data: function(){

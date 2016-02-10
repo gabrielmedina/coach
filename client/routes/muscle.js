@@ -32,7 +32,7 @@ Router.route('muscleEdit', {
   path: '/muscle/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('muscles');
+    return Meteor.subscribe('muscle', this.params._id);
   },
 
   data: function(){

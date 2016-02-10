@@ -1,7 +1,7 @@
 <template name="routineExerciseEdit">
   <header class="header">
     <div class="container">
-      <h1 class="header__title">Alterar rotina do exercício</h1>
+      <h1 class="header__title">Alterar {{routineExercise.exerciseObj.name}}</h1>
 
       <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
       <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
@@ -29,15 +29,6 @@
   <main class="main">
     <div class="container">
       <form class="form form--edit" action="post">
-        <div class="form__field">
-          <label class="form__label" for="name">Nome</label>
-          <select class="form__select" name="exercise" id="exercise" required autofocus>
-            {{#each exercises}}
-              <option value="{{_id}}">{{name}}</option>
-            {{/each}}
-          </select>
-        </div>
-
         <div class="form__field">
           <label class="form__label" for="sets">Séries</label>
           <input class="form__input" type="number" id="sets" name="sets" value="{{routineExercise.sets}}" required>

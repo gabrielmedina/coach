@@ -32,7 +32,7 @@ Router.route('propEdit', {
   path: '/prop/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('props');
+    return Meteor.subscribe('prop', this.params._id);
   },
 
   data: function(){

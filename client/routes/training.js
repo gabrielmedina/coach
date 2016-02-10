@@ -20,7 +20,7 @@ Router.route('training', {
   path: '/training/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('routines');
+    return Meteor.subscribe('trainingsPractitioner', this.params._id);
   },
 
   data: function(){
@@ -52,7 +52,7 @@ Router.route('trainingEdit', {
   path: '/training/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('users') && Meteor.subscribe('routines');
+    return Meteor.subscribe('training', this.params._id);
   },
 
   data: function(){
@@ -74,7 +74,7 @@ Router.route('trainingShow', {
   path: '/training/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('trainings') && Meteor.subscribe('routines') && Meteor.subscribe('routineExercises') && Meteor.subscribe('exercises');
+    return Meteor.subscribe('training', this.params._id) && Meteor.subscribe('routines');
   },
 
   data: function(){

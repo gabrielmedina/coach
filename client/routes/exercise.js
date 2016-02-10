@@ -4,7 +4,7 @@ Router.route('exercise', {
   path: '/exercise',
 
   waitOn: function(){
-    return Meteor.subscribe('exercises') && Meteor.subscribe('props') && Meteor.subscribe('muscles');
+    return Meteor.subscribe('exercises');
   },
 
   onBeforeAction: function(){
@@ -36,7 +36,7 @@ Router.route('exerciseEdit', {
   path: '/exercise/edit/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('exercises') && Meteor.subscribe('props') && Meteor.subscribe('muscles');
+    return Meteor.subscribe('exercise', this.params._id) && Meteor.subscribe('props') && Meteor.subscribe('muscles');
   },
 
   data: function(){
