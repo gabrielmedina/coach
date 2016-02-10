@@ -1,0 +1,37 @@
+// messagem
+
+.messages {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+
+  text-align: center;
+
+  padding: 1rem;
+
+  @include transform(translateY(-50%));
+}
+
+.messages__title {
+  color: rgba($black, .2);
+  font-size: 3rem;
+  margin: 0;
+}
+
+.messages__text {
+  color: rgba($black, .4);
+  font-size: 1.2rem;
+
+  p {
+    margin: 0 0 1rem;
+  }
+}
+
+@include media($screen-md) {
+  .messages__title {
+    font-size: 4rem;
+  }
+}

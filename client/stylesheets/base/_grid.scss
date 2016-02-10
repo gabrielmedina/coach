@@ -8,6 +8,7 @@ $container-lg: 1120px;
 
 
 .container {
+  @include row;
   padding: 0 15px;
 
   @include media($screen-sm) {

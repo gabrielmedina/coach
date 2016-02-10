@@ -9,15 +9,24 @@
 
   <main class="main">
     <div class="container">
-      <ul class="list">
-        {{#each muscles}}
-        <li class="list__item">
-          <a class="list__link {{checkStatus status}}" href="/muscle/edit/{{_id}}">
-            {{name}}
-          </a>
-        </li>
-        {{/each}}
-      </ul>
+      {{#if muscles.count}}
+        <ul class="list">
+          {{#each muscles}}
+          <li class="list__item">
+            <a class="list__link {{checkStatus status}}" href="/muscle/edit/{{_id}}">
+              {{name}}
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <div class="messages">
+          <h1 class="messages__title">Opa!</h1>
+          <div class="messages__text">
+            <p>Ainda não existe nenhum <strong>músculo</strong> cadastrado.</p>
+          </div>
+        </div>
+      {{/if}}
 
       <footer class="footer">
         <a class="btn" href="/muscle/create">Adicionar Músculo</a>

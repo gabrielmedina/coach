@@ -21,15 +21,28 @@
 
   <main class="main">
     <div class="container">
-      <ol class="list">
-        {{#each training.routinesObj}}
-          <li class="list__item">
-            <a class="list__link {{checkStatus status}}" href="/routine/show/{{_id}}">
-              {{description}}
-            </a>
-          </li>
-        {{/each}}
-      </ol>
+      {{#if training.routinesObj.count}}
+        <ol class="list">
+          {{#each training.routinesObj}}
+            <li class="list__item">
+              <a class="list__link {{checkStatus status}}" href="/routine/show/{{_id}}">
+                {{description}}
+              </a>
+            </li>
+          {{/each}}
+        </ol>
+      {{else}}
+        <div class="messages">
+          <h1 class="messages__title">Opa!</h1>
+          <div class="messages__text">
+            <p>
+              Você ainda não possui nenhuma <strong>rotina</strong>
+              a ser seguida.
+            </p>
+            <p>Aguarde seu instrutor para começar!</p>
+          </div>
+        </div>
+      {{/if}}
 
       {{#if authorized 2}}
       <footer class="footer">
