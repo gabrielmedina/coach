@@ -24,7 +24,7 @@ Template.trainingCreate.events({
 
     Meteor.call('createTraining', training, function(err, result){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         Router.go('/training/show/' + result);
       }

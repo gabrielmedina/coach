@@ -9,7 +9,7 @@ Template.userLogin.events({
 
     Meteor.loginWithPassword(email, password, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       }
     });
 

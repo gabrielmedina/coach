@@ -15,7 +15,7 @@ Template.propCreate.events({
 
     Meteor.call('createProp', prop, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         Router.go('/prop');
       }

@@ -15,7 +15,7 @@ Template.muscleCreate.events({
 
     Meteor.call('createMuscle', muscle, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         Router.go('/muscle');
       }

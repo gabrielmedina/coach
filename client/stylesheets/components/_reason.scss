@@ -1,0 +1,20 @@
+// reason
+
+.reason {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+
+  width: 100%;
+
+  color: $white;
+  font-size: 1rem;
+  text-align: center;
+
+  padding: .6rem;
+
+  background: lighten($black, 15%);
+}

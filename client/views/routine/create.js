@@ -20,7 +20,7 @@ Template.routineCreate.events({
 
     Meteor.call('createRoutine', routine, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }

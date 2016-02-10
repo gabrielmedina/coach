@@ -20,7 +20,7 @@ Template.routineEdit.events({
 
     Meteor.call('editRoutine', this._id, routine, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -32,7 +32,7 @@ Template.routineEdit.events({
 
     Meteor.call('statusRoutine', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -44,7 +44,7 @@ Template.routineEdit.events({
 
     Meteor.call('deleteRoutine', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
