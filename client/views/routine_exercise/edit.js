@@ -22,7 +22,7 @@ Template.routineExerciseEdit.events({
 
     Meteor.call('editRoutineExercise', this._id, routine_exercise, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -34,7 +34,7 @@ Template.routineExerciseEdit.events({
 
     Meteor.call('statusRoutineExercise', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -46,7 +46,7 @@ Template.routineExerciseEdit.events({
 
     Meteor.call('deleteRoutineExercise', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }

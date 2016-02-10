@@ -19,7 +19,7 @@ Template.trainingEdit.events({
 
     Meteor.call('editTraining', this._id, training, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -31,7 +31,7 @@ Template.trainingEdit.events({
 
     Meteor.call('statusTraining', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -43,7 +43,7 @@ Template.trainingEdit.events({
 
     Meteor.call('deleteTraining', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         Router.go('/training');
       }

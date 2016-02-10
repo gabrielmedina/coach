@@ -16,7 +16,7 @@ Template.propEdit.events({
 
     Meteor.call('editProp', this._id, prop, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -28,7 +28,7 @@ Template.propEdit.events({
 
     Meteor.call('statusProp', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -40,7 +40,7 @@ Template.propEdit.events({
 
     Meteor.call('deleteProp', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }

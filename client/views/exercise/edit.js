@@ -4,7 +4,7 @@ Template.exerciseEdit.helpers({
   exercise: function(){
     return Exercise.findOne({ _id: this._id });
   },
-  
+
   props: function(){
     return Prop.find({}, {sort: { name: 1 }});
   },
@@ -35,7 +35,7 @@ Template.exerciseEdit.events({
 
     Meteor.call('editExercise', this._id, exercise, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -47,7 +47,7 @@ Template.exerciseEdit.events({
 
     Meteor.call('statusExercise', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -59,7 +59,7 @@ Template.exerciseEdit.events({
 
     Meteor.call('deleteExercise', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }

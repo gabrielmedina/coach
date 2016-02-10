@@ -16,7 +16,7 @@ Template.muscleEdit.events({
 
     Meteor.call('editMuscle', this._id, muscle, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -28,7 +28,7 @@ Template.muscleEdit.events({
 
     Meteor.call('statusMuscle', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }
@@ -40,7 +40,7 @@ Template.muscleEdit.events({
 
     Meteor.call('deleteMuscle', this._id, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         history.back();
       }

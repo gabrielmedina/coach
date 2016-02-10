@@ -14,7 +14,7 @@ Template.userRecovery.events({
 
     Accounts.forgotPassword({email: email}, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       }
     });
 
@@ -28,7 +28,7 @@ Template.userRecovery.events({
 
     Accounts.resetPassword(Session.get('resetPassword'), password, function(err){
       if(err){
-        console.log(err.reason);
+        reason(err.reason, 'error');
       } else {
         Session.set('resetPassword', null);
         Router.go('/training');

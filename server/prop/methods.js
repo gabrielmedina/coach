@@ -3,14 +3,22 @@
 Meteor.methods({
   createProp: function(prop){
     if(Prop.findOne({ name: prop.name })){
-      throw new Meteor.Error(500, 'It has been registered');
+      throw new Meteor.Error(403, 'Já existe um equipamento com este nome');
     } else {
       return Prop.insert(prop);
     }
   },
 
   editProp: function(id, prop){
-    return Prop.update({ _id: id }, { $set: prop });
+    if(Prop.findOne({_id: {$ne: id}, name: prop.name})){
+      throw new Meteor.Error(403, 'Já existe um equipamento com este nome');
+      return false;
+    } else {
+      return Prop.update(
+        { _id: id },
+        { $set: prop }
+      );
+    }
   },
 
   deleteProp: function(id){
@@ -21,9 +29,15 @@ Meteor.methods({
     var prop = Prop.findOne({ _id: id });
 
     if(prop.status == true){
-      Prop.update({ _id: prop._id }, { $set: { status: false }});
+      Prop.update(
+        { _id: prop._id },
+        { $set: { status: false }}
+      );
     } else {
-      Prop.update({ _id: prop._id }, { $set: { status: true }});
+      Prop.update(
+        { _id: prop._id },
+        { $set: { status: true }}
+      );
     }
   }
 });
