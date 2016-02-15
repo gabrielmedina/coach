@@ -36,7 +36,7 @@
           Enviar imagem <span class="icon--right ion-upload"></span>
         </button>
       </div>
-      
+
       <form class="form form--edit" action="post">
         <div class="form__field">
           <label class="form__label" for="name">Nome</label>
@@ -44,12 +44,14 @@
         </div>
 
         <div class="form__field">
-          <label class="form__label" for="prop">Adereço/Equipamento</label>
-          <select class="form__select" name="prop" id="prop">
-            {{#each props}}
-              <option value="{{_id}}">{{name}}</option>
-            {{/each}}
-          </select>
+          <label class="form__label" for="props">Equipamentos</label>
+
+          {{#each props}}
+          <div class="form-checkbox">
+            <input class="form-checkbox__input props" type="checkbox" name="prop" id="{{_id}}" value="{{_id}}">
+            <label class="form-checkbox__label" for="{{_id}}">{{name}}</label>
+          </div>
+          {{/each}}
         </div>
 
         <div class="form__field">

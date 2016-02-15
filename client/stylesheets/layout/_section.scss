@@ -19,18 +19,18 @@
   font-size: 1.4rem;
   text-align: center;
 
-  margin: 0 0 1rem;
+  margin: .5rem 0 1rem;
 }
 
 .section__caption {
   color: darken($white, 25%);
-  font-size: 1rem;
+  font-size: .9rem;
   margin: 0;
 }
 
 .section__text {
   color: lighten($black, 50%);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 
   p {
     margin: 0;
@@ -47,6 +47,10 @@
     display: inline-block;
     margin: 0 1rem;
   }
+}
+
+.section__text--big {
+  font-size: 1.8rem;
 }
 
 .section__figure {
@@ -92,7 +96,11 @@
   }
 
   .section__text {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .section__text--big {
+    font-size: 1.8rem;
   }
 
   .section__gallery {

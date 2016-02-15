@@ -27,10 +27,19 @@ Template.exerciseEdit.events({
       }
     }
 
+    var props = [];
+    var propsElements = t.findAll('.props');
+
+    for(var i = 0; i < propsElements.length; i++){
+      if(propsElements[i].checked){
+        props.push(propsElements[i].value);
+      }
+    }
+
     var exercise = {
       name: t.find('#name').value,
-      prop: t.find('#prop').value,
-      muscles: muscles,
+      prop: props,
+      muscles: muscles
     };
 
     Meteor.call('editExercise', this._id, exercise, function(err){
