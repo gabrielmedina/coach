@@ -34,6 +34,12 @@ Schemas.Exercise = new SimpleSchema({
     optional: false
   },
 
+  images: {
+    type: [String],
+    label: 'Imagens',
+    optional: true
+  },
+
   prop: {
     type: String,
     label: 'Referência ao adereço/equipamento',
@@ -54,3 +60,30 @@ Schemas.Exercise = new SimpleSchema({
 });
 
 Exercise.attachSchema(Schemas.Exercise);
+
+
+exerciseImages = new FS.Collection('exerciseImages', {
+  stores: [
+    new FS.Store.FileSystem('exerciseThumbs', {
+      transformWrite: function(fileObj, readStream, writeStream) {
+        gm(readStream, fileObj.name()).resize('500').stream().pipe(writeStream);
+      }
+    }),
+    new FS.Store.FileSystem('exerciseImages'),
+  ]
+});
+
+exerciseImages.allow({
+  insert: function () {
+    return true;
+  },
+  update: function () {
+    return true;
+  },
+  remove: function () {
+    return true;
+  },
+  download: function () {
+    return true;
+  }
+});

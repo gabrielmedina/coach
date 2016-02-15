@@ -8,6 +8,15 @@
 
   <main class="main">
     <div class="container">
+      <div class="form__field">
+        <label class="form__label" for="image">Imagem</label>
+        <input class="form__input--hidden images" type="file" id="image" name="image" multiple required>
+
+        <button class="form__btn--upload">
+          Enviar imagem <span class="icon--right ion-upload"></span>
+        </button>
+      </div>
+      
       <form class="form form--create" action="post">
         <div class="form__field">
           <label class="form__label" for="name">Nome</label>
