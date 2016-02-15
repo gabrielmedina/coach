@@ -47,17 +47,19 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="section__group">
-              <h2 class="section__caption">Equipamento</h2>
+          <div class="section__group">
+            <h2 class="section__caption">Equipamento</h2>
 
-              <div class="section__text">
-                <p>
-                  {{routineExercise.exerciseObj.propObj.name}}
-                </p>
-              </div>
+            <div class="section__text">
+              <ul>
+                {{#each routineExercise.exerciseObj.propsObj}}
+                  <li>{{name}}</li>
+                {{/each}}
+              </ul>
             </div>
+          </div>
 
+          <div class="row">
             <div class="section__group">
               <h2 class="section__caption">Séries</h2>
 

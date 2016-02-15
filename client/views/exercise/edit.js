@@ -74,7 +74,7 @@ Template.exerciseEdit.events({
     $('.form__btn--upload').html('Imagem selecionada ' + '<span class="icon--right ion-image"></span>');
 
     var files = event.target.files;
-    var images = new Array();
+    var images = [];
 
     for (var i = 0, ln = files.length; i < ln; i++) {
       var fileObj = exerciseImages.insert(files[i]);

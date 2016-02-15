@@ -23,9 +23,18 @@ Template.exerciseCreate.events({
       }
     }
 
+    var props = [];
+    var propsElements = t.findAll('.props');
+
+    for(var i = 0; i < propsElements.length; i++){
+      if(propsElements[i].checked){
+        props.push(propsElements[i].value);
+      }
+    }
+
     var exercise = {
       name: t.find('#name').value,
-      prop: t.find('#prop').value,
+      props: props,
       muscles: muscles,
       status: true
     };
@@ -47,7 +56,7 @@ Template.exerciseCreate.events({
     $('.form__btn--upload').html('Imagem selecionada ' + '<span class="icon--right ion-image"></span>');
 
     var files = event.target.files;
-    var images = new Array();
+    var images = [];
 
     for (var i = 0, ln = files.length; i < ln; i++) {
       var fileObj = exerciseImages.insert(files[i]);
