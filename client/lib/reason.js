@@ -2,15 +2,16 @@
 
 reason = function(msg, value){
   $('.reason')
-    .addClass('reason--' + value)
+    .addClass('reason--active')
     .stop()
     .html(msg)
-    .fadeIn(300)
-    .delay(5000)
-    .fadeOut(300)
     .on('click', function(){
       $(this)
-        .stop()
-        .fadeOut(300);
+        .removeClass('reason--active')
     });
+
+  Meteor.setTimeout(function(){
+    $('.reason')
+      .removeClass('reason--active')
+  }, 3000);
 }

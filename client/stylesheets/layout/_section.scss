@@ -13,14 +13,24 @@
 }
 
 .section__title {
+  line-height: 1.5;
+
+  color: darken($white, 50%);
+  font-size: 1.4rem;
+  text-align: center;
+
+  margin: 0 0 1rem;
+}
+
+.section__caption {
   color: darken($white, 30%);
   font-size: 1rem;
   margin: 0;
 }
 
 .section__text {
-  color: lighten($black, 50%);
-  font-size: 1.4rem;
+  color: lighten($black, 45%);
+  font-size: 1.6rem;
 
   p {
     margin: 0;
@@ -39,7 +49,24 @@
   }
 }
 
+.section__figure {
+
+}
+
+.section__image {
+  width: 100%;
+}
+
+
 @include media($screen-md) {
+  .section__gallery {
+    @include span-columns(4);
+  }
+
+  .section__content {
+    @include span-columns(8);
+  }
+
   .row {
     .section__group {
       @include span-columns(4);

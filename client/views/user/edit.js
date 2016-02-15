@@ -55,8 +55,8 @@ Template.userEdit.events({
   'change #image': function(e, t) {
     $('.form__btn--upload').html('Imagem selecionada ' + '<span class="icon--right ion-image"></span>');
 
-    if(t.find('#image') != null){
-      var file = $('#image').get(0).files[0];
+    if(t.findAll('.images') != null){
+      var file = $('.images').get(0).files[0];
       var fileObj = userImages.insert(file);
 
       user = {
@@ -71,6 +71,5 @@ Template.userEdit.events({
         }
       });
     }
-
   }
 });
