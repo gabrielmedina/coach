@@ -26,9 +26,11 @@
 
 @include media($screen-md) {
   .reason {
-    height: 4rem;
     line-height: 4rem;
-
     @include transform(translateY(4rem));
+  }
+
+  .reason--active {
+    @include transform(translateY(0));
   }
 }

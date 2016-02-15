@@ -17,6 +17,33 @@
   }
 }
 
+.list__item--figured {
+  position: relative;
+  padding-top: 2rem;
+}
+
+.list__figure {
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  width: 3rem;
+  height: 3rem;
+
+  background: $white;
+  border-radius: 100%;
+  box-shadow: 0 0 0 .2rem rgba($black, .1);
+
+  overflow: hidden;
+
+  @include transition(.1s ease);
+  @include transform(translateX(-50%));
+}
+
+.list__image {
+  width: 100%;
+}
+
 .list__link {
   display: block;
 

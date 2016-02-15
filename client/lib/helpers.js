@@ -23,3 +23,13 @@ Template.registerHelper('selected', function(x, y){
     return '';
   }
 });
+
+Template.registerHelper('image', function(value){
+  console.log(value);
+
+  if(value === undefined){
+    return false;
+  } else {
+    return true;
+  }
+});
