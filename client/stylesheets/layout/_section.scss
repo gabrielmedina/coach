@@ -15,7 +15,7 @@
 .section__title {
   line-height: 1.5;
 
-  color: darken($white, 50%);
+  color: darken($white, 40%);
   font-size: 1.4rem;
   text-align: center;
 
@@ -23,14 +23,14 @@
 }
 
 .section__caption {
-  color: darken($white, 30%);
+  color: darken($white, 25%);
   font-size: 1rem;
   margin: 0;
 }
 
 .section__text {
-  color: lighten($black, 45%);
-  font-size: 1.6rem;
+  color: lighten($black, 50%);
+  font-size: 1.5rem;
 
   p {
     margin: 0;
@@ -53,14 +53,27 @@
 
 }
 
+.section__figure--rounded {
+  width: 12rem;
+  height: 12rem;
+
+  margin: 0 auto;
+
+  border-radius: 100%;
+  box-shadow: 0 0 0 .3rem rgba($black, .1);
+
+  overflow: hidden;
+}
+
 .section__image {
   width: 100%;
 }
 
 
 @include media($screen-md) {
-  .section__gallery {
-    @include span-columns(4);
+  .section__title {
+    font-size: 1.8rem;
+    margin: 0 0 1.5rem;
   }
 
   .section__content {
@@ -80,5 +93,14 @@
 
   .section__text {
     font-size: 1.6rem;
+  }
+
+  .section__gallery {
+    @include span-columns(4);
+  }
+
+  .section__figure--rounded {
+    width: 16rem;
+    height: 16rem;
   }
 }

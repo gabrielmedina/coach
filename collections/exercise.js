@@ -64,12 +64,7 @@ Exercise.attachSchema(Schemas.Exercise);
 
 exerciseImages = new FS.Collection('exerciseImages', {
   stores: [
-    new FS.Store.FileSystem('exerciseThumbs', {
-      transformWrite: function(fileObj, readStream, writeStream) {
-        gm(readStream, fileObj.name()).resize('500').stream().pipe(writeStream);
-      }
-    }),
-    new FS.Store.FileSystem('exerciseImages'),
+    new FS.Store.FileSystem('exerciseImages')
   ]
 });
 

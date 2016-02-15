@@ -31,7 +31,5 @@ check
 cfs:standard-packages
 cfs:ejson-file
 cfs:filesystem
-cfs:graphicsmagick
 http
-aldeed:http
 richsilv:owl-carousel

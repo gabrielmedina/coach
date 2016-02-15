@@ -133,6 +133,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 1000;
 
   width: 100%;
 
@@ -145,4 +146,13 @@
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
+}
+
+
+@include media($screen-md) {
+  .form--search {
+    .form__field {
+      margin-bottom: 1.5rem;
+    }
+  }
 }

@@ -2,12 +2,7 @@
 
 userImages = new FS.Collection('userImages', {
   stores: [
-    new FS.Store.FileSystem('userThumbs', {
-      transformWrite: function(fileObj, readStream, writeStream) {
-        gm(readStream, fileObj.name()).resize('500').stream().pipe(writeStream);
-      }
-    }),
-    new FS.Store.FileSystem('userImages'),
+    new FS.Store.FileSystem('userImages')
   ]
 });
 

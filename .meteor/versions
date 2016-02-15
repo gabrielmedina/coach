@@ -2,7 +2,6 @@ accounts-base@1.2.2
 accounts-password@1.1.4
 aldeed:collection2@2.8.0
 aldeed:collection2-core@1.0.0
-aldeed:http@0.2.2
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
 aldeed:simple-schema@1.5.3
@@ -26,7 +25,6 @@ cfs:data-man@0.0.6
 cfs:ejson-file@0.1.4
 cfs:file@0.1.17
 cfs:filesystem@0.1.2
-cfs:graphicsmagick@0.0.18
 cfs:http-methods@0.0.30
 cfs:http-publish@0.0.13
 cfs:power-queue@0.9.11
