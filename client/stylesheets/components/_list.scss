@@ -19,7 +19,7 @@
 
 .list__item--figured {
   position: relative;
-  padding-top: 2rem;
+  padding-top: 2.4rem;
 }
 
 .list__figure {
@@ -93,6 +93,12 @@
       margin-bottom: 1.5rem;
     }
   }
+
+  .list__item--figured {
+    position: relative;
+    padding-top: 2rem;
+  }
+
 
   .list__link {
     font-size: 1rem;
