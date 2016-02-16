@@ -25,8 +25,6 @@ Template.registerHelper('selected', function(x, y){
 });
 
 Template.registerHelper('image', function(value){
-  console.log(value);
-
   if(value === undefined){
     return false;
   } else {

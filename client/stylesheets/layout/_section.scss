@@ -70,7 +70,10 @@
 }
 
 .section__image {
-  width: 100%;
+  position: relative;
+  left: 50%;
+  height: 100%;
+  @include transform(translateX(-50%));
 }
 
 
