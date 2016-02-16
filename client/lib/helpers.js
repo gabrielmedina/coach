@@ -8,6 +8,14 @@ Template.registerHelper('authorized', function(level) {
   }
 });
 
+Template.registerHelper('execution', function(value, comparator) {
+  if(value == comparator){
+    return true;
+  } else {
+    return false;
+  }
+});
+
 Template.registerHelper('checkStatus', function(status){
   if(status){
     return ' list__link--active';
@@ -16,8 +24,8 @@ Template.registerHelper('checkStatus', function(status){
   }
 });
 
-Template.registerHelper('selected', function(x, y){
-  if(x == y){
+Template.registerHelper('selected', function(value, comparator){
+  if(value == comparator){
     return 'selected';
   } else {
     return '';

@@ -2,9 +2,10 @@
 
 Routine = new Mongo.Collection('routines', {
   transform: function(doc){
-    doc.exercisesObj = RoutineExercise.find({
-      _id: { $in: doc.exercises }
-    });
+    doc.exercisesObj = RoutineExercise.find(
+      { _id: { $in: doc.exercises } },
+      { sort: { createdAt: 1 } }
+    );
 
     return doc;
   }
@@ -40,6 +41,12 @@ Schemas.Routine = new SimpleSchema({
     type: String,
     label: 'Referência ao treinamento',
     optional: false
+  },
+
+  execution: {
+    type: Number,
+    label: 'Status da rotina',
+    optional: true
   },
 
   status: {

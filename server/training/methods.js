@@ -23,6 +23,10 @@ Meteor.methods({
     return Training.remove(id);
   },
 
+  executionTraining: function(id, training){
+    return Training.update({ _id: id }, { $set: training });
+  },
+
   statusTraining: function(id){
     var training = Training.findOne({ _id: id });
 
