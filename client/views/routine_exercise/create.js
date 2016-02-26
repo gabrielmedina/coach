@@ -15,6 +15,8 @@ Template.routineExerciseCreate.events({
       sets: t.find('#sets').value,
       reps: t.find('#reps').value,
       routine: this.routine_id,
+      execution: 0,
+      done: false,
       status: true
     };
 
@@ -22,6 +24,7 @@ Template.routineExerciseCreate.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });

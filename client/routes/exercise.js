@@ -53,3 +53,25 @@ Router.route('exerciseEdit', {
     }
   }
 });
+
+Router.route('exerciseImage', {
+  path: '/exercise/image/:_id',
+
+  waitOn: function(){
+    return Meteor.subscribe('exercise', this.params._id);
+  },
+
+  data: function(){
+    return {
+      _id: this.params._id
+    };
+  },
+
+  onBeforeAction: function(){
+    if(Meteor.user().profile.type.value == 3){
+      Router.go('/training');
+    } else {
+      this.next();
+    }
+  }
+});

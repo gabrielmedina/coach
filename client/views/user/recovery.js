@@ -15,6 +15,8 @@ Template.userRecovery.events({
     Accounts.forgotPassword({email: email}, function(err){
       if(err){
         reason(err.reason, 'error');
+      } else {
+        reason('E-mail enviado', 'success');
       }
     });
 
@@ -31,6 +33,7 @@ Template.userRecovery.events({
         reason(err.reason, 'error');
       } else {
         Session.set('resetPassword', null);
+        reason('Senha alterada', 'success');
         Router.go('/training');
       }
     });

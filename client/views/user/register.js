@@ -19,6 +19,8 @@ Template.userRegister.events({
     Accounts.createUser({email: email, password: password, profile: profile}, function(err){
       if(err){
         reason(err.reason, 'error');
+      } else {
+        reason('Vamos treinar!', 'success');
       }
     });
 

@@ -24,6 +24,8 @@ Meteor.methods({
   },
 
   executionTraining: function(id, training){
+    Routine.update({ training: id }, {$set : {done: false} }, {multi: true});
+
     return Training.update({ _id: id }, { $set: training });
   },
 

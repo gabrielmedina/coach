@@ -44,6 +44,12 @@ Meteor.methods({
     Routine.remove(id);
   },
 
+  executionRoutine: function(id, routine){
+    RoutineExercise.update({ routine: id }, {$set : {done: false} }, {multi: true});
+
+    return Routine.update({ _id: id }, { $set: routine });
+  },
+
   statusRoutine: function(id){
     var routine = Routine.findOne({ _id: id });
 

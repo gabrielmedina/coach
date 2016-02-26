@@ -1,0 +1,21 @@
+<template name="exerciseImage">
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">{{ exercise.name }}</h1>
+      <a class="nav__btn nav__btn--right ion-android-arrow-forward" href="/exercise"></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="form__field">
+        <label class="form__label" for="image">Imagem</label>
+        <input class="form__input--hidden images" type="file" id="image" name="image" accept="image/*" multiple>
+
+        <button class="form__btn--upload">
+          Enviar imagem <span class="icon--right ion-upload"></span>
+        </button>
+      </div>
+    </div>
+  </main>
+</template>

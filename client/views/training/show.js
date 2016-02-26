@@ -10,12 +10,26 @@ Template.trainingShow.events({
   'click .execution__btn--initial': function(e, t) {
     e.preventDefault();
 
-    var historical = Training.findOne({ _id: this._id }).historical || [];
-    historical.push(new Date());
+    var historical = {
+      practitioner: Meteor.userId(),
+      training: this._id,
+      date: new Date(),
+      routines: [],
+      exercises: []
+    };
+
+    Meteor.call('createHistorical', historical, function(err, result){
+      if(err){
+        reason(err.reason, 'error');
+      }
+
+      if(result){
+        Session.set('historical', result);
+      }
+    });
 
     var training = {
-      execution: 1,
-      historical: historical
+      execution: 1
     };
 
     Meteor.call('executionTraining', this._id, training, function(err){
@@ -41,10 +55,5 @@ Template.trainingShow.events({
         history.back();
       }
     });
-  },
-
-  'click .modal__link--close': function(e, t) {
-    e.preventDefault();
-    modal();
   }
 });

@@ -16,12 +16,18 @@
 
   @include transform(translateY(3.5rem));
   @include transition(.15s ease);
-
-  background: $primary;
 }
 
 .reason--active {
   @include transform(translateY(0));
+}
+
+.reason--error {
+  background: $danger;
+}
+
+.reason--success {
+  background: $success;
 }
 
 @include media($screen-md) {

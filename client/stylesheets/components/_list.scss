@@ -57,9 +57,22 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  background: rgba($black, .02);
+  background: rgba($black, .1);
 
   @include transition(.15s ease);
+
+
+  &:hover {
+    box-shadow: inset 0 0 10rem rgba($black, .1);
+  }
+
+  &:focus {
+    background: rgba($black, .15);
+  }
+}
+
+.list__link--disabled {
+  background: rgba($black, .02);
 
   &:hover {
     box-shadow: inset 0 0 10rem rgba($black, .1);
@@ -70,17 +83,11 @@
   }
 }
 
-.list__link--active {
-  background: rgba($black, .1);
-
-  &:hover {
-    box-shadow: inset 0 0 10rem rgba($black, .1);
-  }
-
-  &:focus {
-    background: rgba($black, .15);
-  }
+.list__link--done {
+  color: lighten($black, 50%);
+  background: rgba($black, .02);
 }
+
 
 @include media($screen-md) {
   .list__item {

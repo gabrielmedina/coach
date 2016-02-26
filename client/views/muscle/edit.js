@@ -18,6 +18,7 @@ Template.muscleEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -30,6 +31,7 @@ Template.muscleEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -42,6 +44,7 @@ Template.muscleEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });

@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
 
   opacity: 0;
   width: 100%;
@@ -29,15 +29,7 @@
 .modal__content {
   position: relative;
   top: 50%;
-  @include transform(translateY(-50%));
-}
-
-.modal__footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
+  @include transform(translateY(-55%));
 }
 
 .modal__title {
@@ -49,10 +41,14 @@
 
 .modal__caption {
   color: $white;
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: 300;
 
   margin: 0 0 .5rem;
+}
+
+.modal__caption--small {
+  font-size: 1.8rem;
 }
 
 .modal__btn {
@@ -79,15 +75,4 @@
     color: $primary;
     background: $white;
   }
-}
-
-.modal__link {
-  display: inline-block;
-  height: 3.5rem;
-  line-height: 3.5rem;
-
-  color: $white;
-  font-size: .9rem;
-  text-decoration: none;
-  text-transform: uppercase;
 }

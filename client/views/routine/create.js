@@ -14,6 +14,8 @@ Template.routineCreate.events({
       description: t.find('#description').value,
       training: this.training_id,
       exercises: [],
+      execution: 0,
+      done: false,
       status: true
     };
 
@@ -22,6 +24,7 @@ Template.routineCreate.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });

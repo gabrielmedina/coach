@@ -3,7 +3,9 @@
     <div class="container">
       <h1 class="header__title">{{routine.description}}</h1>
 
-      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      {{#if execution routine.execution 0}}
+        <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      {{/if}}
 
       {{#if authorized 2}}
       <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
@@ -24,11 +26,15 @@
       {{#if routine.exercisesObj.count}}
         <ol class="list">
           {{#each routine.exercisesObj}}
-            <li class="list__item">
-              <a class="list__link {{checkStatus status}}" href="/routine-exercise/show/{{_id}}">
-                {{exerciseObj.name}}
-              </a>
-            </li>
+          <li class="list__item">
+            <a class="list__link {{checkStatus status}} {{checkDone done}}" href="/routine-exercise/show/{{_id}}">
+              {{exerciseObj.name}}
+
+              {{#if done}}
+                <span class="icon--right ion-android-done"></span>
+              {{/if}}
+            </a>
+          </li>
           {{/each}}
         </ol>
       {{else}}
@@ -45,10 +51,28 @@
       {{/if}}
 
       {{#if authorized 2}}
-      <footer class="footer">
-        <a class="btn" href="/routine-exercise/create/{{_id}}">Adicionar Exercício</a>
-      </footer>
+        <footer class="footer">
+          <a class="btn" href="/routine-exercise/create/{{_id}}">Adicionar Exercício</a>
+        </footer>
+      {{else}}
+        <footer class="footer">
+          {{#if execution routine.execution 0}}
+            <a class="btn execution__btn--initial" href="#">Iniciar</a>
+          {{else}}
+            <a class="btn btn--secondary execution__btn--finalize" href="#">Finalizar</a>
+          {{/if}}
+        </footer>
       {{/if}}
     </div>
+
+    {{#if execution routine.execution 0}}
+    <section class="modal modal--active">
+      <div class="modal__content">
+        <h1 class="modal__title">Rotina {{routine.description}}</h1>
+        <h2 class="modal__caption">Vamos!</h2>
+        <a class="modal__btn execution__btn--initial" href="#">Iniciar</a>
+      </div>
+    </section>
+    {{/if}}
   </main>
 </template>

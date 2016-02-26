@@ -3,7 +3,9 @@
     <div class="container">
       <h1 class="header__title">Exercício</h1>
 
-      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      {{#if execution routineExercise.execution 0}}
+        <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+      {{/if}}
 
       {{#if authorized 2}}
       <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
@@ -84,10 +86,22 @@
       </section>
 
       <footer class="footer">
-        <a class="btn btn--back" href="#">
-          Feito! <span class="icon--right ion-ios-checkmark-empty"></span>
-        </a>
+        {{#if execution routineExercise.execution 0}}
+          <a class="btn execution__btn--initial" href="#">Iniciar</a>
+        {{else}}
+          <a class="btn btn--secondary execution__btn--finalize" href="#">Finalizar</a>
+        {{/if}}
       </footer>
     </div>
+
+    {{#if execution routineExercise.execution 0}}
+    <section class="modal modal--active">
+      <div class="modal__content">
+        <h1 class="modal__title">{{routineExercise.exerciseObj.name}}</h1>
+        <h2 class="modal__caption">Força!</h2>
+        <a class="modal__btn execution__btn--initial" href="#">Iniciar</a>
+      </div>
+    </section>
+    {{/if}}
   </main>
 </template>

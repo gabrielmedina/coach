@@ -36,7 +36,7 @@ Router.route('routineShow', {
   path: '/routine/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('routine', this.params._id) && Meteor.subscribe('exercises') && Meteor.subscribe('routineExercises');
+    return Meteor.subscribe('routine', this.params._id) && Meteor.subscribe('exercises') && Meteor.subscribe('routineExercises') && Meteor.subscribe('historicals', Meteor.userId());
   },
 
   data: function(){

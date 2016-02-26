@@ -57,13 +57,7 @@ Schemas.Training = new SimpleSchema({
     label: 'Referência as rotinas do treinamento',
     optional: true
   },
-
-  historical: {
-    type: [String],
-    label: 'Referência ao histórico de treinamentos',
-    optional: true
-  },
-
+  
   execution: {
     type: Number,
     label: 'Status do treinamento',

@@ -21,6 +21,7 @@ Template.trainingEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Alteração realizada', 'success');
         history.back();
       }
     });
@@ -33,6 +34,7 @@ Template.trainingEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -45,6 +47,7 @@ Template.trainingEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         Router.go('/training');
       }
     });

@@ -49,6 +49,12 @@ Schemas.Routine = new SimpleSchema({
     optional: true
   },
 
+  done: {
+    type: Boolean,
+    label: 'Feito',
+    optional: true
+  },
+
   status: {
     type: Boolean,
     label: 'Status',

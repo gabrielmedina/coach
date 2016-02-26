@@ -9,18 +9,24 @@ Template.registerHelper('authorized', function(level) {
 });
 
 Template.registerHelper('execution', function(value, comparator) {
-  if(value == comparator){
-    return true;
-  } else {
-    return false;
+  if(Meteor.user().profile.type.value == 3){
+    if(value == comparator){
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 
 Template.registerHelper('checkStatus', function(status){
+  if(!status){
+    return ' list__link--disabled';
+  }
+});
+
+Template.registerHelper('checkDone', function(status){
   if(status){
-    return ' list__link--active';
-  } else {
-    return ' list__link--inactive';
+    return ' list__link--done';
   }
 });
 
