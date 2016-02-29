@@ -15,7 +15,6 @@ Template.routineExerciseEdit.events({
     e.preventDefault();
 
     var routine_exercise = {
-      exercise: t.find('#exercise').value,
       sets: t.find('#sets').value,
       reps: t.find('#reps').value
     };

@@ -3,76 +3,119 @@
     <div class="container">
       <h1 class="header__title">{{routine.description}}</h1>
 
-      {{#if execution routine.execution 0}}
-        <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
-      {{/if}}
-
       {{#if authorized 2}}
-      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
+        <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+        <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
 
-      <div class="nav-action">
-        <ul class="nav-action__list">
-          <li class="nav-action__item">
-            <a class="nav-action__link" href="/routine/edit/{{_id}}">Editar</a>
-          </li>
-        </ul>
-      </div>
+        <div class="nav-action">
+          <ul class="nav-action__list">
+            <li class="nav-action__item">
+              <a class="nav-action__link" href="/routine/edit/{{_id}}">Editar</a>
+            </li>
+          </ul>
+        </div>
+      {{else}}
+        {{#if execution routine.execution 0}}
+          <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+        {{/if}}
       {{/if}}
     </div>
   </header>
 
   <main class="main">
     <div class="container">
-      {{#if routine.exercisesObj.count}}
-        <ol class="list">
-          {{#each routine.exercisesObj}}
-          <li class="list__item">
-            <a class="list__link {{checkStatus status}} {{checkDone done}}" href="/routine-exercise/show/{{_id}}">
-              {{exerciseObj.name}}
+      {{#if authorized 2}}
+        {{#if routine.exercisesObj.count}}
+          <ol class="list">
+            {{#each routine.exercisesObj}}
+            <li class="list__item">
+              <a class="list__link {{checkStatus status}} {{checkDone done}}" href="/routine-exercise/show/{{_id}}">
+                {{exerciseObj.name}}
 
-              {{#if done}}
-                <span class="icon--right ion-android-done"></span>
-              {{/if}}
-            </a>
-          </li>
-          {{/each}}
-        </ol>
-      {{else}}
-        <div class="messages">
-          <h1 class="messages__title">Opa!</h1>
-          <div class="messages__text">
-            <p>
-              Você ainda não possui nenhum <strong>exercício</strong>
-              a realizar.
-            </p>
-            <p>Aguarde seu instrutor para começar!</p>
+                {{#if done}}
+                  <span class="icon--right ion-android-done"></span>
+                {{/if}}
+              </a>
+            </li>
+            {{/each}}
+          </ol>
+        {{else}}
+          <div class="messages">
+            <h1 class="messages__title">Opa!</h1>
+            <div class="messages__text">
+              <p>
+                Essa rotina ainda não possui nenhum <strong>exercício</strong>.
+              </p>
+            </div>
           </div>
-        </div>
+        {{/if}}
+      {{else}}
+        {{#if routine.done}}
+          <div class="messages">
+            <h1 class="messages__title">Opa!</h1>
+            <div class="messages__text">
+              <p>
+                Essa rotina já foi finalizada.
+              </p>
+            </div>
+          </div>
+        {{else}}
+          {{#if routine.exercisesObj.count}}
+            <ol class="list">
+              {{#each routine.exercisesObj}}
+              <li class="list__item">
+                <a class="list__link {{checkStatus status}} {{checkDone done}}" href="/routine-exercise/show/{{_id}}">
+                  {{exerciseObj.name}}
+
+                  {{#if done}}
+                    <span class="icon--right ion-android-done"></span>
+                  {{/if}}
+                </a>
+              </li>
+              {{/each}}
+            </ol>
+          {{else}}
+            <div class="messages">
+              <h1 class="messages__title">Opa!</h1>
+              <div class="messages__text">
+                <p>
+                  Você ainda não possui nenhum <strong>exercício</strong>
+                  a realizar.
+                </p>
+                <p>Aguarde seu instrutor para começar!</p>
+              </div>
+            </div>
+          {{/if}}
+        {{/if}}
       {{/if}}
 
       {{#if authorized 2}}
         <footer class="footer">
-          <a class="btn" href="/routine-exercise/create/{{_id}}">Adicionar Exercício</a>
+          <a class="btn" href="/routine-exercise/create/{{_id}}">Adicionar exercício</a>
         </footer>
       {{else}}
-        <footer class="footer">
-          {{#if execution routine.execution 0}}
-            <a class="btn execution__btn--initial" href="#">Iniciar</a>
-          {{else}}
-            <a class="btn btn--secondary execution__btn--finalize" href="#">Finalizar</a>
-          {{/if}}
-        </footer>
+        {{#unless routine.done}}
+          <footer class="footer">
+            {{#if execution routine.execution 0}}
+              <a class="btn execution__btn--initial" href="#">Iniciar rotina</a>
+            {{else}}
+              <a class="btn btn--secondary execution__btn--finalize" href="#">Finalizar rotina</a>
+            {{/if}}
+          </footer>
+        {{/unless}}
       {{/if}}
     </div>
 
-    {{#if execution routine.execution 0}}
-    <section class="modal modal--active">
-      <div class="modal__content">
-        <h1 class="modal__title">Rotina {{routine.description}}</h1>
-        <h2 class="modal__caption">Vamos!</h2>
-        <a class="modal__btn execution__btn--initial" href="#">Iniciar</a>
-      </div>
-    </section>
-    {{/if}}
+    {{#unless routine.done}}
+      {{#if execution routine.execution 0}}
+      <section class="modal modal--active">
+        <div class="modal__content">
+          <h1 class="modal__title">Rotina {{routine.description}}</h1>
+          <h2 class="modal__caption">Vamos!</h2>
+          <a class="modal__btn execution__btn--initial" href="#">Iniciar</a>
+        </div>
+      </section>
+      {{/if}}
+    {{/unless}}
   </main>
 </template>

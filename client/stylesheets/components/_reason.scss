@@ -11,8 +11,9 @@
   line-height: 3.5rem;
 
   color: $white;
-  font-size: 1rem;
+  font-size: .8rem;
   text-align: center;
+  text-transform: uppercase;
 
   @include transform(translateY(3.5rem));
   @include transition(.15s ease);
@@ -33,6 +34,7 @@
 @include media($screen-md) {
   .reason {
     line-height: 4rem;
+    font-size: .9rem;
     @include transform(translateY(4rem));
   }
 

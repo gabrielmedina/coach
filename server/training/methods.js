@@ -8,7 +8,7 @@ Meteor.methods({
   },
 
   editTraining: function(id, training){
-    Training.update({ practitioner: training.practitioner }, { $set: {status: false} }, {multi: true});
+    Training.update({ practitioner: training.practitioner }, {$set : {status: false} }, {multi: true});
 
     return Training.update({ _id: id }, { $set: training });
   },
@@ -31,6 +31,8 @@ Meteor.methods({
 
   statusTraining: function(id){
     var training = Training.findOne({ _id: id });
+
+    Training.update({ practitioner: training.practitioner }, {$set : {status: false} }, {multi: true});
 
     if(training.status == true){
       Training.update({ _id: training._id }, { $set: { status: false }});
