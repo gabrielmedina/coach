@@ -21,50 +21,49 @@ Training = new Mongo.Collection('trainings', {
 
 
 Training.before.insert(function(id, doc){
-  doc.createdAt = Date.now();
-  doc.modifiedAt = Date.now();
+  doc.createdAt = new Date();
 });
 
 Training.before.update(function(id, doc, fields, modifier, options){
   modifier.$set = modifier.$set || {};
-  modifier.$set.modifiedAt = Date.now();
+  modifier.$set.modifiedAt = new Date();
 });
 
 
 var Schemas = {};
 
 Schemas.Training = new SimpleSchema({
-  description: {
+  'description': {
     type: String,
     label: 'Descrição do treinamento',
     optional: false
   },
 
-  practitioner: {
+  'practitioner': {
     type: String,
     label: 'Referência ao praticante',
     optional: false
   },
 
-  instructor: {
+  'instructor': {
     type: String,
     label: 'Referência ao instrutor',
     optional: false
   },
 
-  routines: {
+  'routines': {
     type: [String],
     label: 'Referência as rotinas do treinamento',
     optional: true
   },
-  
-  execution: {
+
+  'execution': {
     type: Number,
     label: 'Status do treinamento',
     optional: true
   },
 
-  status: {
+  'status': {
     type: Boolean,
     label: 'Status',
     optional: false

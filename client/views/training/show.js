@@ -10,21 +10,20 @@ Template.trainingShow.events({
   'click .execution__btn--initial': function(e, t) {
     e.preventDefault();
 
+    var trainingObj = Training.findOne({ _id: this._id });
+
     var historical = {
       practitioner: Meteor.userId(),
-      training: this._id,
-      date: new Date(),
-      routines: [],
+      training: {
+        'description': trainingObj.description,
+        'instructor': Meteor.users.findOne({ _id: trainingObj.instructor })
+      },
       exercises: []
     };
 
     Meteor.call('createHistorical', historical, function(err, result){
       if(err){
         reason(err.reason, 'error');
-      }
-
-      if(result){
-        Session.set('historical', result);
       }
     });
 

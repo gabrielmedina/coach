@@ -4,25 +4,25 @@ Muscle = new Mongo.Collection('muscles');
 
 
 Muscle.before.insert(function(id, doc){
-  doc.createdAt = Date.now();
+  doc.createdAt = new Date();
 });
 
 Muscle.before.update(function(id, doc, fields, modifier, options){
   modifier.$set = modifier.$set || {};
-  modifier.$set.modifiedAt = Date.now();
+  modifier.$set.modifiedAt = new Date();
 });
 
 
 var Schemas = {};
 
 Schemas.Muscle = new SimpleSchema({
-  name: {
+  'name': {
     type: String,
     label: 'Nome',
     optional: false
   },
 
-  status: {
+  'status': {
     type: Boolean,
     label: 'Status',
     optional: false

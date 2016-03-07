@@ -206,3 +206,9 @@
     line-height: 4rem;
   }
 }
+
+@media print {
+  .nav__btn {
+    display: none;
+  }
+}

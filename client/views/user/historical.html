@@ -1,0 +1,45 @@
+<template name="historical">
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">{{user.profile.name}}</h1>
+      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      {{#each historicals}}
+      <article class="print">
+        <header class="print__header">
+          <h2 class="print__title">{{formatDate createAt}} - {{training.description}}</h2>
+          <p class="print__author">Responsável: {{training.instructor.profile.name}}</p>
+        </header>
+
+        <div class="row">
+          {{#each exercises}}
+          <section class="print__item">
+            <h3 class="print__caption">{{name}}</h3>
+
+            <p class="print__description">Músculo(s) trabalhado(s)</p>
+
+            <ul class="print-list">
+              {{#each muscles}}
+              <li class="print-list__item">{{name}}</li>
+              {{/each}}
+            </ul>
+
+            <p class="print__description">Equipamento(s) utilizado(s)</p>
+
+            <ul class="print-list">
+              {{#each props}}
+              <li class="print-list__item">{{name}}</li>
+              {{/each}}
+            </ul>
+          </section>
+          {{/each}}
+        </div>
+      </article>
+      {{/each}}
+    </div>
+  </main>
+</template>

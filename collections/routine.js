@@ -13,49 +13,49 @@ Routine = new Mongo.Collection('routines', {
 
 
 Routine.before.insert(function(id, doc){
-  doc.createdAt = Date.now();
+  doc.createdAt = new Date();
 });
 
 Routine.before.update(function(id, doc, fields, modifier, options){
   modifier.$set = modifier.$set || {};
-  modifier.$set.modifiedAt = Date.now();
+  modifier.$set.modifiedAt = new Date();
 });
 
 
 var Schemas = {};
 
 Schemas.Routine = new SimpleSchema({
-  description: {
+  'description': {
     type: String,
     label: 'Descrição da rotina',
     optional: false
   },
 
-  exercises: {
+  'exercises': {
     type: [String],
     label: 'Referência aos exercícios para esta rotina',
     optional: true
   },
 
-  training: {
+  'training': {
     type: String,
     label: 'Referência ao treinamento',
     optional: false
   },
 
-  execution: {
+  'execution': {
     type: Number,
     label: 'Status da rotina',
     optional: true
   },
 
-  done: {
+  'done': {
     type: Boolean,
     label: 'Feito',
     optional: true
   },
 
-  status: {
+  'status': {
     type: Boolean,
     label: 'Status',
     optional: false

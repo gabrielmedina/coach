@@ -8,6 +8,14 @@
 
   <main class="main">
     <div class="container">
+      {{#if authorized 1}}
+        {{#if practitioner user.profile.type.value}}
+        <div class="form__field">
+          <a class="btn btn--secondary" href="/historical/{{_id}}">Histório de treinamento</a>
+        </div>
+        {{/if}}
+      {{/if}}
+
       <div class="form__field">
         <label class="form__label" for="image">Imagem</label>
         <input class="form__input--hidden images" type="file" id="image" name="image" accept="image/*">

@@ -10,19 +10,6 @@ Template.routineShow.events({
   'click .execution__btn--initial': function(e, t) {
     e.preventDefault();
 
-    var routines = Historical.find({ practitioner: Meteor.userId() }, { sort: {createdAt: -1 }}).routines || [];
-    routines.push(this._id);
-
-    var historical = {
-      routines: routines
-    }
-
-    Meteor.call('editHistorical', Session.get('historical'), historical, function(err, result){
-      if(err){
-        reason(err.reason, 'error');
-      }
-    });
-
     var routine = {
       execution: 1
     };

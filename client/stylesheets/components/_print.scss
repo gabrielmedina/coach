@@ -1,0 +1,75 @@
+// print
+
+.print {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+.print__header {
+  padding: .5em;
+  background: rgba($black, .03);
+}
+
+.print__title {
+  color: lighten($black, 40%);
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.print__author {
+  color: lighten($black, 60%);
+  font-size: .8em;
+  margin: 0;
+}
+
+.print__item {
+  padding: 1.5em 0;
+  border-bottom: solid .1rem rgba($black, .1);
+}
+
+.print__caption {
+  color: lighten($black, 40%);
+  font-size: 1.1em;
+  margin: 0 0 .5em;
+}
+
+.print__description {
+  color: lighten($black, 60%);
+  font-size: .8em;
+  margin: 0;
+}
+
+
+.print-list {
+  margin: 0 0 .5em;
+  padding: 0;
+  list-style: none;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+.print-list__item {
+  display: inline-block;
+
+  color: lighten($black, 30%);
+  font-size: 1.1em;
+
+  margin: 0 .5em;
+}
+
+@media print {
+  .print {
+    font-size: .6em;
+  }
+
+  .print__item {
+    @include span-columns(3);
+    @include omega(4n);
+  }
+}

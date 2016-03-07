@@ -26,7 +26,7 @@
     <div class="container">
       <section class="section">
         <h1 class="section__title">
-          {{routineExercise.exerciseObj.name}}
+          <span class="exercise">{{routineExercise.exerciseObj.name}}</span>
 
           {{#unless authorized 2}}
             {{#if routineExercise.done}}
@@ -38,7 +38,7 @@
         <div class="section__gallery">
           {{#each routineExercise.exerciseObj.images}}
           <figure class="section__figure">
-            <img class="section__image" src="/cfs/files/exerciseImages/{{this}}" alt="">
+            <img class="section__image images" src="{{imagePath}}{{this}}" alt="Imagem do exercício">
           </figure>
           {{/each}}
         </div>
@@ -50,7 +50,7 @@
             <div class="section__text">
               <ul>
                 {{#each routineExercise.exerciseObj.musclesObj}}
-                  <li>{{name}}</li>
+                  <li class="muscles">{{name}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -62,7 +62,7 @@
             <div class="section__text">
               <ul>
                 {{#each routineExercise.exerciseObj.propsObj}}
-                  <li>{{name}}</li>
+                  <li class="props">{{name}}</li>
                 {{/each}}
               </ul>
             </div>
@@ -73,9 +73,7 @@
               <h2 class="section__caption">Séries</h2>
 
               <div class="section__text section__text--big">
-                <p>
-                  {{routineExercise.sets}}
-                </p>
+                <p class="sets">{{routineExercise.sets}}</p>
               </div>
             </div>
 
@@ -83,9 +81,7 @@
               <h2 class="section__caption">Repetições</h2>
 
               <div class="section__text section__text--big">
-                <p>
-                  {{routineExercise.reps}}
-                </p>
+                <p class="reps">{{routineExercise.reps}}</p>
               </div>
             </div>
           </div>
@@ -98,7 +94,7 @@
           {{#if execution routineExercise.execution 0}}
             <a class="btn execution__btn--initial" href="#">Iniciar exercício</a>
           {{else}}
-            <a class="btn btn--secondary execution__btn--finalize" href="#">Finalizar exercício</a>
+            <a class="btn execution__btn--finalize" href="#">Finalizar exercício</a>
           {{/if}}
         </footer>
         {{/unless}}

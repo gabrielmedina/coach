@@ -8,6 +8,14 @@ Template.registerHelper('authorized', function(level) {
   }
 });
 
+Template.registerHelper('practitioner', function(value) {
+  if(value == 3){
+    return true;
+  } else {
+    return false;
+  }
+});
+
 Template.registerHelper('execution', function(value, comparator) {
   if(Meteor.user().profile.type.value == 3){
     if(value == comparator){
@@ -44,4 +52,12 @@ Template.registerHelper('image', function(value){
   } else {
     return true;
   }
+});
+
+Template.registerHelper('imagePath', function(value){
+  return '/cfs/files/exerciseImages/';
+});
+
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('DD/MM/YYYY');
 });
