@@ -22,7 +22,7 @@
         <div class="section__group">
           <figure class="section__figure section__figure--rounded">
             {{#if image user.profile.image }}
-              <img class="section__image" src="/cfs/files/userImages/{{ user.profile.image }}" alt="{{user.profile.name}}">
+              <img class="section__image" src="{{imagePath}}{{user.profile.image}}" alt="{{user.profile.name}}">
             {{/if}}
           </figure>
         </div>

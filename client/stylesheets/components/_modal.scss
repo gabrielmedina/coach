@@ -1,0 +1,78 @@
+// modal
+
+.modal {
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+
+  text-align: center;
+
+  background: rgba($primary, .95);
+
+  @include transform(scale(.9));
+  @include transition(.2s ease);
+}
+
+.modal--active {
+  z-index: 1000;
+  opacity: 1;
+  @include transform(scale(1));
+}
+
+.modal__content {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-55%));
+}
+
+.modal__title {
+  color: $white;
+  font-size: 1rem;
+
+  margin: 0;
+}
+
+.modal__caption {
+  color: $white;
+  font-size: 2.4rem;
+  font-weight: 300;
+
+  margin: 0 0 .5rem;
+}
+
+.modal__caption--small {
+  font-size: 1.8rem;
+}
+
+.modal__btn {
+  display: inline-block;
+  height: 3.5rem;
+  line-height: 3.5rem;
+
+  color: $white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  padding: 0 3rem;
+
+  border-radius: .2rem;
+  border: solid .1rem $white;
+
+  @include transition(.15s ease);
+
+  &:hover,
+  &:focus {
+    color: $primary;
+    background: $white;
+  }
+}

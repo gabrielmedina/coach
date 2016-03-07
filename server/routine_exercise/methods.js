@@ -40,6 +40,10 @@ Meteor.methods({
     RoutineExercise.remove(id);
   },
 
+  executionRoutineExercise: function(id, exercise){
+    return RoutineExercise.update({ _id: id }, { $set: exercise });
+  },
+
   statusRoutineExercise: function(id){
     var routine_exercise = RoutineExercise.findOne({ _id: id });
 

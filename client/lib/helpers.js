@@ -8,16 +8,38 @@ Template.registerHelper('authorized', function(level) {
   }
 });
 
-Template.registerHelper('checkStatus', function(status){
-  if(status){
-    return ' list__link--active';
+Template.registerHelper('practitioner', function(value) {
+  if(value == 3){
+    return true;
   } else {
-    return ' list__link--inactive';
+    return false;
   }
 });
 
-Template.registerHelper('selected', function(x, y){
-  if(x == y){
+Template.registerHelper('execution', function(value, comparator) {
+  if(Meteor.user().profile.type.value == 3){
+    if(value == comparator){
+      return true;
+    } else {
+      return false;
+    }
+  }
+});
+
+Template.registerHelper('checkStatus', function(status){
+  if(!status){
+    return ' list__link--disabled';
+  }
+});
+
+Template.registerHelper('checkDone', function(status){
+  if(status){
+    return ' list__link--done';
+  }
+});
+
+Template.registerHelper('selected', function(value, comparator){
+  if(value == comparator){
     return 'selected';
   } else {
     return '';
@@ -30,4 +52,12 @@ Template.registerHelper('image', function(value){
   } else {
     return true;
   }
+});
+
+Template.registerHelper('imagePath', function(value){
+  return '/cfs/files/exerciseImages/';
+});
+
+Template.registerHelper('formatDate', function(date) {
+  return moment(date).format('DD/MM/YYYY');
 });

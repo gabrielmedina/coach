@@ -19,6 +19,8 @@ Template.trainingCreate.events({
       description: t.find('#description').value,
       practitioner: this._id,
       routines: [],
+      historical: [],
+      execution: 0,
       status: true
     }
 
@@ -26,6 +28,7 @@ Template.trainingCreate.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         Router.go('/training/show/' + result);
       }
     });

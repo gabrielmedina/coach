@@ -74,7 +74,7 @@ Router.route('trainingShow', {
   path: '/training/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('training', this.params._id) && Meteor.subscribe('routines');
+    return Meteor.subscribe('training', this.params._id) && Meteor.subscribe('routines') && Meteor.subscribe('historicals', this.params._id) && Meteor.subscribe('users');
   },
 
   data: function(){

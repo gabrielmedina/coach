@@ -33,3 +33,4 @@ cfs:ejson-file
 cfs:filesystem
 http
 richsilv:owl-carousel
+momentjs:moment

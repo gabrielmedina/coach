@@ -43,6 +43,7 @@ Template.userEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -67,6 +68,7 @@ Template.userEdit.events({
         if(err){
           reason(err.reason, 'error');
         } else {
+          reason('Feito', 'success');
           $('.form__btn--upload').html('Imagem enviada ' + '<span class="icon--right ion-checkmark"></span>');
         }
       });

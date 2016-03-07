@@ -3,52 +3,117 @@
     <div class="container">
       <h1 class="header__title">{{training.description}}</h1>
 
-      <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
-
       {{#if authorized 2}}
-      <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
+        <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+        <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
 
-      <div class="nav-action">
-        <ul class="nav-action__list">
-          <li class="nav-action__item">
-            <a class="nav-action__link" href="/training/edit/{{_id}}">Editar</a>
-          </li>
-        </ul>
-      </div>
+        <div class="nav-action">
+          <ul class="nav-action__list">
+            <li class="nav-action__item">
+              <a class="nav-action__link" href="/training/edit/{{_id}}">Editar</a>
+            </li>
+          </ul>
+        </div>
+      {{else}}
+        {{#if execution training.execution 0}}
+          <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
+        {{/if}}
       {{/if}}
     </div>
   </header>
 
   <main class="main">
     <div class="container">
-      {{#if training.routinesObj.count}}
-        <ol class="list">
-          {{#each training.routinesObj}}
-            <li class="list__item">
-              <a class="list__link {{checkStatus status}}" href="/routine/show/{{_id}}">
-                {{description}}
-              </a>
-            </li>
-          {{/each}}
-        </ol>
-      {{else}}
-        <div class="messages">
-          <h1 class="messages__title">Opa!</h1>
-          <div class="messages__text">
-            <p>
-              Você ainda não possui nenhuma <strong>rotina</strong>
-              a ser seguida.
-            </p>
-            <p>Aguarde seu instrutor para começar!</p>
+      {{#if authorized 2}}
+        {{#if training.routinesObj.count}}
+          <ol class="list">
+            {{#each training.routinesObj}}
+              <li class="list__item">
+                <a class="list__link {{checkStatus status}} {{checkDone done}}" href="/routine/show/{{_id}}">
+                  {{description}}
+
+                  {{#if done}}
+                    <span class="icon--right ion-android-done"></span>
+                  {{/if}}
+                </a>
+              </li>
+            {{/each}}
+          </ol>
+        {{else}}
+          <div class="messages">
+            <h1 class="messages__title">Opa!</h1>
+            <div class="messages__text">
+              <p>
+                Esse treinamento ainda não possui nenhuma <strong>rotina</strong>.
+              </p>
+            </div>
           </div>
-        </div>
+        {{/if}}
+      {{else}}
+        {{#if routine.done}}
+          <div class="messages">
+            <h1 class="messages__title">Opa!</h1>
+            <div class="messages__text">
+              <p>
+                Essa rotina já foi finalizada.
+              </p>
+            </div>
+          </div>
+        {{else}}
+          {{#if training.routinesObj.count}}
+            <ol class="list">
+              {{#each training.routinesObj}}
+                <li class="list__item">
+                  <a class="list__link {{checkStatus status}} {{checkDone done}}" href="/routine/show/{{_id}}">
+                    {{description}}
+
+                    {{#if done}}
+                      <span class="icon--right ion-android-done"></span>
+                    {{/if}}
+                  </a>
+                </li>
+              {{/each}}
+            </ol>
+          {{else}}
+            <div class="messages">
+              <h1 class="messages__title">Opa!</h1>
+              <div class="messages__text">
+                <p>
+                  Você ainda não possui nenhuma <strong>rotina</strong>
+                  a ser seguida.
+                </p>
+                <p>Aguarde seu instrutor para começar!</p>
+              </div>
+            </div>
+          {{/if}}
+        {{/if}}
       {{/if}}
 
       {{#if authorized 2}}
-      <footer class="footer">
-        <a class="btn" href="/routine/create/{{_id}}">Adicionar Rotina</a>
-      </footer>
+        <footer class="footer">
+          <a class="btn" href="/routine/create/{{_id}}">Adicionar rotina</a>
+        </footer>
+      {{else}}
+        <footer class="footer">
+          {{#if execution training.execution 0}}
+            <a class="btn execution__btn--initial" href="#">Iniciar treinamento</a>
+          {{else}}
+            <a class="btn execution__btn--finalize" href="#">Finalizar treinamento</a>
+          {{/if}}
+        </footer>
       {{/if}}
     </div>
+
+    {{#unless authorized 2}}
+      {{#if execution training.execution 0}}
+      <section class="modal modal--active">
+        <div class="modal__content">
+          <h1 class="modal__title">Treino {{training.description}}</h1>
+          <h2 class="modal__caption">Bora treinar?</h2>
+          <a class="modal__btn execution__btn--initial" href="#">Iniciar</a>
+        </div>
+      </section>
+      {{/if}}
+    {{/unless}}
   </main>
 </template>

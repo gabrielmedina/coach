@@ -39,39 +39,14 @@ Template.exerciseCreate.events({
       status: true
     };
 
-    Meteor.call('createExercise', exercise, function(err){
+    Meteor.call('createExercise', exercise, function(err, result){
       if(err){
         reason(err.reason, 'error');
-      } else {
-        Router.go('/exercise');
       }
-    });
-  },
 
-  'click .form__btn--upload': function(e, t){
-    $('#image').click();
-  },
-
-  'change .images': function(e, t) {
-    $('.form__btn--upload').html('Imagem selecionada ' + '<span class="icon--right ion-image"></span>');
-
-    var files = event.target.files;
-    var images = [];
-
-    for (var i = 0, ln = files.length; i < ln; i++) {
-      var fileObj = exerciseImages.insert(files[i]);
-      images.push(fileObj._id);
-    }
-
-    exercise = {
-      images: images
-    };
-
-    Meteor.call('editExercise', this._id, exercise, function(err){
-      if(err){
-        reason(err.reason, 'error');
-      } else {
-        $('.form__btn--upload').html('Imagens enviadas ' + '<span class="icon--right ion-checkmark"></span>');
+      if(result){
+        reason('Feito', 'success');
+        Router.go('/exercise/image/' + result);
       }
     });
   }

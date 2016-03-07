@@ -42,7 +42,7 @@
   line-height: 3.5rem;
 
   color: $white;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: center;
 
   @include transition(.15s ease);
@@ -63,6 +63,17 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.nav__btn--full {
+  width: 100%;
+
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  padding: 0 1rem;
 }
 
 .nav__list {
@@ -174,6 +185,10 @@
     line-height: 4rem;;
   }
 
+  .nav__btn--full {
+    width: 100%;
+  }
+
   .nav__item {
     line-height: 4.5rem;
   }
@@ -189,5 +204,11 @@
 
   .nav-action__item {
     line-height: 4rem;
+  }
+}
+
+@media print {
+  .nav__btn {
+    display: none;
   }
 }

@@ -17,6 +17,7 @@ Template.propCreate.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         Router.go('/prop');
       }
     });

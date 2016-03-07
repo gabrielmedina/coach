@@ -16,43 +16,43 @@ Exercise = new Mongo.Collection('exercises', {
 
 
 Exercise.before.insert(function(id, doc){
-  doc.createdAt = Date.now();
+  doc.createdAt = new Date();
 });
 
 Exercise.before.update(function(id, doc, fields, modifier, options){
   modifier.$set = modifier.$set || {};
-  modifier.$set.modifiedAt = Date.now();
+  modifier.$set.modifiedAt = new Date();
 });
 
 
 var Schemas = {};
 
 Schemas.Exercise = new SimpleSchema({
-  name: {
+  'name': {
     type: String,
     label: 'Nome',
     optional: false
   },
 
-  images: {
+  'images': {
     type: [String],
     label: 'Imagens',
     optional: true
   },
 
-  props: {
+  'props': {
     type: [String],
     label: 'Referência aos equipamentos deste treinamento',
     optional: false
   },
 
-  muscles: {
+  'muscles': {
     type: [String],
     label: 'Referência aos músculos deste treinamento',
     optional: true
   },
 
-  status: {
+  'status': {
     type: Boolean,
     label: 'Status',
     optional: false

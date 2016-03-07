@@ -26,6 +26,16 @@
   }
 }
 
+.btn--secondary {
+  color: lighten($black, 40%);
+  background: rgba($black, .1);
+
+  &:hover,
+  &:focus {
+    background: rgba($black, .15);
+  }
+}
+
 
 @include media($screen-md) {
   .btn {

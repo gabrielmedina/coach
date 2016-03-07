@@ -15,7 +15,6 @@ Template.routineExerciseEdit.events({
     e.preventDefault();
 
     var routine_exercise = {
-      exercise: t.find('#exercise').value,
       sets: t.find('#sets').value,
       reps: t.find('#reps').value
     };
@@ -24,6 +23,7 @@ Template.routineExerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -36,6 +36,7 @@ Template.routineExerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -48,6 +49,7 @@ Template.routineExerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });

@@ -48,7 +48,7 @@ Router.route('routineExerciseShow', {
   path: '/routine-exercise/show/:_id',
 
   waitOn: function(){
-    return Meteor.subscribe('routineExercise', this.params._id) && Meteor.subscribe('exercises') && Meteor.subscribe('props') && Meteor.subscribe('muscles');
+    return Meteor.subscribe('routineExercise', this.params._id) && Meteor.subscribe('exercises') && Meteor.subscribe('props') && Meteor.subscribe('muscles') && Meteor.subscribe('historicals', Meteor.userId());
   },
 
   data: function(){

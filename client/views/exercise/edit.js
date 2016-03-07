@@ -46,6 +46,7 @@ Template.exerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -58,6 +59,7 @@ Template.exerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -70,6 +72,7 @@ Template.exerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         history.back();
       }
     });
@@ -98,6 +101,7 @@ Template.exerciseEdit.events({
       if(err){
         reason(err.reason, 'error');
       } else {
+        reason('Feito', 'success');
         $('.form__btn--upload').html('Imagens enviadas ' + '<span class="icon--right ion-checkmark"></span>');
       }
     });
