@@ -1,18 +1,6 @@
 // collection exercise
 
-Exercise = new Mongo.Collection('exercises', {
-  transform: function(doc){
-    doc.musclesObj = Muscle.find({
-      _id: { $in: doc.muscles }
-    });
-
-    doc.propsObj = Prop.find({
-      _id: { $in: doc.props }
-    });
-
-    return doc;
-  }
-});
+Exercise = new Mongo.Collection('exercises');
 
 
 Exercise.before.insert(function(id, doc){

@@ -49,7 +49,7 @@
 
             <div class="section__text">
               <ul>
-                {{#each routineExercise.exerciseObj.musclesObj}}
+                {{#each muscles routineExercise.exerciseObj.muscles}}
                   <li class="muscles">{{name}}</li>
                 {{/each}}
               </ul>
@@ -61,8 +61,8 @@
 
             <div class="section__text">
               <ul>
-                {{#each routineExercise.exerciseObj.propsObj}}
-                  <li class="props">{{name}}</li>
+                {{#each props routineExercise.exerciseObj.props}}
+                  <li class="muscles">{{name}}</li>
                 {{/each}}
               </ul>
             </div>

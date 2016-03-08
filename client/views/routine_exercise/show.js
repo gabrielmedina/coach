@@ -12,7 +12,27 @@ Template.routineExerciseShow.rendered = function() {
 Template.routineExerciseShow.helpers({
   routineExercise: function(){
     return RoutineExercise.findOne({ _id: this._id });
-  }
+  },
+
+  muscles: function(muscles){
+    var musclesObj = [];
+
+    for (var i = 0; i < muscles.length; i++) {
+      musclesObj.push(Muscle.findOne({ _id: muscles[i] }));
+    }
+
+    return musclesObj;
+  },
+
+  props: function(props){
+    var propsObj = [];
+
+    for (var i = 0; i < props.length; i++) {
+      propsObj.push(Prop.findOne({ _id: props[i] }));
+    }
+
+    return propsObj;
+  },
 });
 
 Template.routineExerciseShow.events({
