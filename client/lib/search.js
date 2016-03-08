@@ -5,6 +5,7 @@ var options = {
   localSearch: true
 };
 
-var fields = ['profile.name'];
-
-UsersSearch = new SearchSource('users', fields, options);
+UsersSearch = new SearchSource('users', ['profile.name'], options);
+PropsSearch = new SearchSource('props', ['name'], options);
+MusclesSearch = new SearchSource('muscles', ['name'], options);
+ExercisesSearch = new SearchSource('exercises', ['name'], options);

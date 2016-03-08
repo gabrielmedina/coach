@@ -2,7 +2,8 @@
 
 SearchSource.defineSource('users', function(searchText, options) {
   if(searchText) {
-    var regExp = buildRegExp(searchText);
+    var parts = searchText.trim().split(/[ \-\:]+/);
+    var regExp = RegExp("(" + parts.join('|') + ")", "ig");
 
     var selector = {$and: [
       { 'profile.name': regExp },
@@ -14,8 +15,3 @@ SearchSource.defineSource('users', function(searchText, options) {
     return Meteor.users.find(options || {}, {limit: 10}).fetch();
   }
 });
-
-function buildRegExp(searchText) {
-  var parts = searchText.trim().split(/[ \-\:]+/);
-  return new RegExp("(" + parts.join('|') + ")", "ig");
-}

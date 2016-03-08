@@ -8,24 +8,22 @@
 
   <main class="main">
     <div class="container">
-      {{#if exercises.count}}
-        <ul class="list">
-          {{#each exercises}}
-          <li class="list__item">
-            <a class="list__link {{checkStatus status}}" href="/exercise/edit/{{_id}}">
-              {{name}}
-            </a>
-          </li>
-          {{/each}}
-        </ul>
-      {{else}}
-        <div class="messages">
-          <h1 class="messages__title">Opa!</h1>
-          <div class="messages__text">
-            <p>Ainda não existe nenhum <strong>exercício</strong> cadastrado.</p>
-          </div>
+      <form class="form form--search">
+        <div class="form__field">
+          <label class="form__label" for="search">Filtrar exercícios</label>
+          <input class="form__input input--search" name="search" id="search" type="search" autocomplete="off" required>
         </div>
-      {{/if}}
+      </form>
+
+      <ol class="list">
+        {{#each exercises}}
+        <li class="list__item">
+          <a class="list__link {{checkStatus status}}" href="/exercise/edit/{{_id}}">
+            {{name}}
+          </a>
+        </li>
+        {{/each}}
+      </ol>
 
       <footer class="footer">
         <a class="btn" href="/exercise/create">Adicionar Exercício</a>
