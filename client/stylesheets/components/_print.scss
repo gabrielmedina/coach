@@ -31,6 +31,10 @@
   border-bottom: solid .1rem rgba($black, .1);
 }
 
+.print__group {
+  padding: .5rem 0;
+}
+
 .print__caption {
   color: lighten($black, 40%);
   font-size: 1.1em;
@@ -43,9 +47,16 @@
   margin: 0;
 }
 
+.print__text {
+  color: lighten($black, 30%);
+  font-size: 1em;
+
+  margin: 0;
+}
+
 
 .print-list {
-  margin: 0 0 .5em;
+  margin: 0;
   padding: 0;
   list-style: none;
 
@@ -58,18 +69,25 @@
   display: inline-block;
 
   color: lighten($black, 30%);
-  font-size: 1.1em;
+  font-size: 1em;
 
   margin: 0 .5em;
 }
 
+
 @media print {
   .print {
     font-size: .6em;
+    border-bottom: solid 1px rgba($black, .2);
   }
 
   .print__item {
     @include span-columns(3);
     @include omega(4n);
+    border: 0;
+  }
+
+  .print__group {
+    padding: .2rem 0;
   }
 }

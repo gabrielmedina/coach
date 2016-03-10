@@ -20,21 +20,33 @@
           <section class="print__item">
             <h3 class="print__caption">{{name}}</h3>
 
-            <p class="print__description">Músculo(s) trabalhado(s)</p>
+            <div class="print__group">
+              <p class="print__description">Músculo(s)</p>
+              <ul class="print-list">
+                {{#each muscles}}
+                <li class="print-list__item">{{name}}</li>
+                {{/each}}
+              </ul>
+            </div>
 
-            <ul class="print-list">
-              {{#each muscles}}
-              <li class="print-list__item">{{name}}</li>
-              {{/each}}
-            </ul>
+            <div class="print__group">
+              <p class="print__description">Equipamento(s)</p>
+              <ul class="print-list">
+                {{#each props}}
+                <li class="print-list__item">{{name}}</li>
+                {{/each}}
+              </ul>
+            </div>
 
-            <p class="print__description">Equipamento(s) utilizado(s)</p>
+            <div class="print__group">
+              <p class="print__description">Séries</p>
+              <p class="print__text">{{sets}}</p>
+            </div>
 
-            <ul class="print-list">
-              {{#each props}}
-              <li class="print-list__item">{{name}}</li>
-              {{/each}}
-            </ul>
+            <div class="print__group">
+              <p class="print__description">Repetições</p>
+              <p class="print__text">{{reps}}</p>
+            </div>
           </section>
           {{/each}}
         </div>
