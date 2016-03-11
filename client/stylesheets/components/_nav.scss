@@ -42,7 +42,7 @@
   line-height: 3.5rem;
 
   color: $white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
 
   @include transition(.15s ease);
@@ -182,7 +182,9 @@
   .nav__btn {
     width: 4rem;
     height: 4rem;
-    line-height: 4rem;;
+    line-height: 4rem;
+
+    font-size: 1.2rem;
   }
 
   .nav__btn--full {

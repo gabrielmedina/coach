@@ -35,6 +35,14 @@
   padding: .5rem 0;
 }
 
+.print__columns {
+  @include row;
+
+  .print__group {
+    @include span-columns(6);
+  }
+}
+
 .print__caption {
   color: lighten($black, 40%);
   font-size: 1.1em;
@@ -82,8 +90,8 @@
   }
 
   .print__item {
-    @include span-columns(3);
-    @include omega(4n);
+    @include span-columns(4);
+    @include omega(3n);
     border: 0;
   }
 

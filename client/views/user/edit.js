@@ -17,21 +17,21 @@ Template.userEdit.events({
         case '1':
           user['profile.type'] = {
             name: 'Administrador',
-            type: 1
+            value: 1
           }
         break;
 
         case '2':
           user['profile.type'] = {
             name: 'Instrutor',
-            type: 2
+            value: 2
           }
         break;
 
         case '3':
           user['profile.type'] = {
             name: 'Praticante',
-            type: 3
+            value: 3
           }
         break;
       }

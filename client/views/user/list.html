@@ -18,10 +18,10 @@
       <ol class="list list--users">
         {{#each users}}
         <li class="list__item list__item--figured">
-          <a class="list__link {{checkStatus profile.status}}" href="/training/{{_id}}">
+          <a class="list__link {{checkStatus profile.status}}" href="/user/edit/{{_id}}">
             <figure class="list__figure">
               {{#if image profile.image }}
-                <img class="list__image" src="/cfs/files/userImages/{{ profile.image }}" alt="{{ profile.name }}">
+                <img class="list__image" src="{{ imageUserPath }}{{ profile.image }}" alt="{{ profile.name }}">
               {{/if}}
             </figure>
 

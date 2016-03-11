@@ -1,7 +1,7 @@
 <template name="routineExerciseEdit">
   <header class="header">
     <div class="container">
-      <h1 class="header__title">Alterar {{routineExercise.exerciseObj.name}}</h1>
+      <h1 class="header__title">Alterar Exercício</h1>
 
       <a class="nav__btn nav__btn--left btn--back ion-android-arrow-back" href="#"></a>
       <a class="nav__btn nav__btn--right nav-action__btn--open ion-android-more-vertical" href="#"></a>
@@ -28,6 +28,10 @@
 
   <main class="main">
     <div class="container">
+      <h1 class="section__title">
+        {{routineExercise.exerciseObj.name}}
+      </h1>      
+
       <form class="form form--edit" action="post">
         <div class="form__field">
           <label class="form__label" for="sets">Séries</label>

@@ -54,8 +54,12 @@ Template.registerHelper('image', function(value){
   }
 });
 
-Template.registerHelper('imagePath', function(value){
+Template.registerHelper('imageExercisePath', function(value){
   return '/cfs/files/exerciseImages/';
+});
+
+Template.registerHelper('imageUserPath', function(value){
+  return '/cfs/files/userImages/';
 });
 
 Template.registerHelper('formatDate', function(date) {
