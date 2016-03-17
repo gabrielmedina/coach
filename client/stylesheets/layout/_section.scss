@@ -87,10 +87,17 @@
     @include span-columns(8);
   }
 
-  .row {
+  .row--two {
     .section__group {
       @include span-columns(6);
       @include omega(2n);
+    }
+  }
+
+  .row--three {
+    .section__group {
+      @include span-columns(4);
+      @include omega(3n);
     }
   }
 
