@@ -60,7 +60,10 @@ Template.routineExerciseShow.events({
       'muscles': muscles,
       'props': props,
       'sets': routineExerciseObj.sets,
-      'reps': routineExerciseObj.reps
+      'reps': routineExerciseObj.reps,
+      'interval': routineExerciseObj.interval,
+      'speed': routineExerciseObj.speed,
+      'weight': routineExerciseObj.weight
     });
 
     var historical = {

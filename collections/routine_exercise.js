@@ -48,6 +48,24 @@ Schemas.RoutineExercise = new SimpleSchema({
     optional: false
   },
 
+  'interval': {
+    type: String,
+    label: 'Intervalo',
+    optional: false
+  },
+
+  'speed': {
+    type: String,
+    label: 'Velocidade de execução',
+    optional: false
+  },
+
+  'weight': {
+    type: Number,
+    label: 'Carga recomandada',
+    optional: false
+  },
+
   'execution': {
     type: Number,
     label: 'Execução',

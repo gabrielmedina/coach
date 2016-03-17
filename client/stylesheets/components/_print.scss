@@ -35,11 +35,20 @@
   padding: .5rem 0;
 }
 
-.print__columns {
+.row--two {
   @include row;
 
   .print__group {
     @include span-columns(6);
+  }
+}
+
+
+.row--three {
+  @include row;
+
+  .print__group {
+    @include span-columns(4);
   }
 }
 
@@ -93,6 +102,7 @@
     @include span-columns(4);
     @include omega(3n);
     border: 0;
+    padding: .5em 0;
   }
 
   .print__group {

@@ -15,6 +15,9 @@ Template.routineExerciseCreate.events({
       sets: t.find('#sets').value,
       reps: t.find('#reps').value,
       routine: this.routine_id,
+      weight: t.find('#weight').value,
+      interval: t.find('#interval').value,
+      speed: t.find('#speed').value,
       execution: 0,
       done: false,
       status: true

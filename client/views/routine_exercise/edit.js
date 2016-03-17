@@ -16,7 +16,10 @@ Template.routineExerciseEdit.events({
 
     var routine_exercise = {
       sets: t.find('#sets').value,
-      reps: t.find('#reps').value
+      reps: t.find('#reps').value,
+      weight: t.find('#weight').value,
+      interval: t.find('#interval').value,
+      speed: t.find('#speed').value
     };
 
     Meteor.call('editRoutineExercise', this._id, routine_exercise, function(err){
