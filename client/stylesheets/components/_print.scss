@@ -109,3 +109,10 @@
     padding: .2rem 0;
   }
 }
+
+@include media($screen-md) {
+  .print__item {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
